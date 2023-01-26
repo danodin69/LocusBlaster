@@ -1,0 +1,305 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://scripts/in_game_hud.gd" type="Script" id=1]
+[ext_resource path="res://assets/ui/HUD/heart_life.png" type="Texture" id=2]
+[ext_resource path="res://scenes/ui/pilot_hud.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/ui/HUD/life_bar.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/HUD/life_bar_rim.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/HUD/shield_inner.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/HUD/shield_outer.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/HUD/shield_display_improved.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/HUD/arrow_button.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/HUD/arrow_button_pressed.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/HUD/shoot_button.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/HUD/shoot_pressed.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/HUD/pausebutton_pressed.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/HUD/pause_button.png" type="Texture" id=14]
+[ext_resource path="res://assets/ui/HUD/pilot_hud_deco_improved.png" type="Texture" id=15]
+
+[sub_resource type="DynamicFontData" id=14]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=15]
+font_data = SubResource( 14 )
+
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=17]
+size = 18
+font_data = SubResource( 16 )
+
+[sub_resource type="DynamicFontData" id=18]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=19]
+font_data = SubResource( 18 )
+
+[sub_resource type="Theme" id=20]
+Button/fonts/font = SubResource( 15 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 17 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 19 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
+[sub_resource type="DynamicFontData" id=21]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=22]
+size = 70
+font_data = SubResource( 21 )
+
+[node name="InGameHud" type="Control"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ -96.0 ]
+}
+
+[node name="shield" type="Sprite" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0.490196 )
+position = Vector2( 968, 656 )
+scale = Vector2( 2.31218, 2.39004 )
+texture = ExtResource( 8 )
+
+[node name="highscore_counter" type="Label" parent="."]
+anchor_left = 0.0958333
+anchor_top = 0.0945313
+anchor_right = 0.216667
+anchor_bottom = 0.15
+margin_bottom = -15.0
+theme = SubResource( 20 )
+custom_fonts/font = SubResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="health_guage_hearts" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 120.0
+margin_right = 212.0
+margin_bottom = 198.0
+
+[node name="AnimatedSprite" type="Sprite" parent="health_guage_hearts"]
+position = Vector2( 32, 48 )
+scale = Vector2( 0.727127, 0.609415 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite2" type="Sprite" parent="health_guage_hearts"]
+position = Vector2( 200, 48 )
+scale = Vector2( 0.727127, 0.609415 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite3" type="Sprite" parent="health_guage_hearts"]
+position = Vector2( 376, 48 )
+scale = Vector2( 0.727127, 0.609415 )
+texture = ExtResource( 2 )
+
+[node name="health_guage" type="TextureProgress" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -560.0
+margin_top = 152.0
+margin_right = -141.0
+margin_bottom = 181.0
+value = 55.0
+texture_over = ExtResource( 5 )
+texture_progress = ExtResource( 4 )
+nine_patch_stretch = true
+
+[node name="shield_status" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -320.0
+margin_top = 184.0
+margin_right = -144.0
+margin_bottom = 224.0
+
+[node name="shield1" type="Control" parent="shield_status"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -20.0
+margin_right = 40.0
+margin_bottom = 20.0
+
+[node name="active" type="Sprite" parent="shield_status/shield1"]
+visible = false
+position = Vector2( 14, 26.1666 )
+scale = Vector2( 0.0833333, 0.0833333 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="rim" type="Sprite" parent="shield_status/shield1"]
+position = Vector2( 14, 26.1666 )
+scale = Vector2( 0.0833333, 0.0833333 )
+texture = ExtResource( 7 )
+
+[node name="shield2" type="Control" parent="shield_status"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="active" type="Sprite" parent="shield_status/shield2"]
+visible = false
+position = Vector2( 14, 26.1666 )
+scale = Vector2( 0.0833333, 0.0833333 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="rim" type="Sprite" parent="shield_status/shield2"]
+position = Vector2( 14, 26.1666 )
+scale = Vector2( 0.0833333, 0.0833333 )
+texture = ExtResource( 7 )
+
+[node name="shield3" type="Control" parent="shield_status"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -40.0
+margin_top = -20.0
+margin_bottom = 20.0
+
+[node name="active" type="Sprite" parent="shield_status/shield3"]
+visible = false
+position = Vector2( 14, 26.1666 )
+scale = Vector2( 0.0833333, 0.0833333 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="rim" type="Sprite" parent="shield_status/shield3"]
+position = Vector2( 14, 26.1666 )
+scale = Vector2( 0.0833333, 0.0833333 )
+texture = ExtResource( 7 )
+
+[node name="pilot_hud" parent="." instance=ExtResource( 3 )]
+
+[node name="focus" parent="pilot_hud/CanvasLayer" index="0"]
+visible = true
+texture = ExtResource( 15 )
+
+[node name="health" parent="pilot_hud/CanvasLayer" index="1"]
+visible = false
+
+[node name="mobile_controls" type="CanvasLayer" parent="."]
+
+[node name="directions" type="Control" parent="mobile_controls"]
+anchor_right = 0.4125
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="arrow_up" type="TouchScreenButton" parent="mobile_controls/directions"]
+position = Vector2( 384, 400 )
+scale = Vector2( 1.2, 1.2 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 10 )
+passby_press = true
+action = "move_up"
+
+[node name="arrow_down" type="TouchScreenButton" parent="mobile_controls/directions"]
+position = Vector2( 736, 1072 )
+rotation = -3.14159
+scale = Vector2( 1.2, 1.2 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 10 )
+passby_press = true
+action = "move_down"
+
+[node name="arrow_right" type="TouchScreenButton" parent="mobile_controls/directions"]
+position = Vector2( 1048, 528 )
+rotation = 1.5708
+scale = Vector2( 1.2, 1.2 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 10 )
+passby_press = true
+action = "move_right"
+
+[node name="arrow_left" type="TouchScreenButton" parent="mobile_controls/directions"]
+position = Vector2( 72.0013, 872 )
+rotation = -1.5708
+scale = Vector2( 1.2, 1.2 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 10 )
+passby_press = true
+action = "move_left"
+
+[node name="shooter" type="Control" parent="mobile_controls"]
+anchor_left = 0.595833
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="shoot" type="TouchScreenButton" parent="mobile_controls/shooter"]
+position = Vector2( 184, 192 )
+scale = Vector2( 0.604613, 0.604613 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 12 )
+action = "shoot"
+
+[node name="pause" type="Control" parent="mobile_controls"]
+anchor_left = 0.595833
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="pause" type="TouchScreenButton" parent="mobile_controls/pause"]
+position = Vector2( 632, 1152 )
+scale = Vector2( 0.37414, 0.575541 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 13 )
+action = "pause"
+
+[editable path="pilot_hud"]

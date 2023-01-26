@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Zombie Hyperdrive.ogg-fcd8b03055e3234fdd78e836e64612bd.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Zombie Hyperdrive.ogg"
+dest_files=[ "res://.import/Zombie Hyperdrive.ogg-fcd8b03055e3234fdd78e836e64612bd.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

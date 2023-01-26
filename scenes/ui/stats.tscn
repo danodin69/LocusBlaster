@@ -1,0 +1,161 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/stats.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 102
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=30]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 60
+font_data = SubResource( 30 )
+
+[sub_resource type="DynamicFontData" id=31]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=28]
+size = 90
+font_data = SubResource( 31 )
+
+[sub_resource type="StyleBoxEmpty" id=29]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="Theme" id=32]
+default_font = SubResource( 28 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+Label/colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+Label/constants/line_spacing = 0
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/fonts/font = SubResource( 5 )
+Label/styles/normal = null
+LineEdit/fonts/font = SubResource( 28 )
+LineEdit/styles/focus = SubResource( 29 )
+LineEdit/styles/normal = SubResource( 3 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="Theme" id=33]
+default_font = SubResource( 28 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+Label/colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+Label/constants/line_spacing = 0
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/fonts/font = SubResource( 5 )
+Label/styles/normal = null
+LineEdit/fonts/font = SubResource( 28 )
+LineEdit/styles/focus = SubResource( 29 )
+LineEdit/styles/normal = SubResource( 3 )
+LineEdit/styles/read_only = null
+
+[sub_resource type="DynamicFontData" id=34]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=35]
+size = 90
+font_data = SubResource( 34 )
+
+[node name="Stats" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0392157, 0, 0.0980392, 0.933333 )
+
+[node name="container_h1" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.459375
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="title_text" type="Label" parent="container_h1"]
+margin_left = 868.0
+margin_top = 242.0
+margin_right = 1052.0
+margin_bottom = 345.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "STATS"
+
+[node name="container_h2" type="HBoxContainer" parent="."]
+anchor_top = 0.371875
+anchor_right = 1.0
+anchor_bottom = 0.628125
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="best_score" type="Label" parent="container_h2"]
+margin_left = 648.0
+margin_top = 112.0
+margin_right = 1272.0
+margin_bottom = 215.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "BEST SCORE: 321223"
+
+[node name="container_h3" type="HBoxContainer" parent="."]
+anchor_top = 0.707031
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="close" type="Label" parent="container_h3"]
+margin_left = 832.0
+margin_top = 136.0
+margin_right = 1088.0
+margin_bottom = 239.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "[ close ]"
+
+[node name="choosen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="best_score_text2" type="Label" parent="."]
+anchor_left = 0.337
+anchor_top = 0.628
+anchor_right = 0.337
+anchor_bottom = 0.628
+margin_left = 128.96
+margin_top = -5.84003
+margin_right = 357.96
+margin_bottom = 54.16
+rect_rotation = 0.0495354
+theme = SubResource( 32 )
+text = "DEV Score:"
+
+[node name="best_score2" type="Label" parent="."]
+anchor_left = 0.501042
+anchor_top = 0.607813
+anchor_right = 0.57548
+anchor_bottom = 0.679003
+margin_left = 36.0
+margin_right = 36.0787
+margin_bottom = -0.123596
+rect_rotation = 0.0495354
+theme = SubResource( 33 )
+custom_fonts/font = SubResource( 35 )
+text = "2184"

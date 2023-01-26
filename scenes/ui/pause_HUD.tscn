@@ -1,0 +1,186 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/pause.gd" type="Script" id=1]
+[ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=8]
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 3 )
+
+[sub_resource type="Theme" id=11]
+Button/fonts/font = SubResource( 8 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 70
+font_data = SubResource( 13 )
+
+[node name="pause_HUD" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -640.0
+margin_right = 960.0
+margin_bottom = 640.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0392157, 0, 0.0980392, 0.419608 )
+
+[node name="continue" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_top = -272.0
+margin_right = 96.0
+margin_bottom = -201.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "CONTINUE"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="selector" type="Label" parent="continue"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -35.5
+margin_right = 124.0
+margin_bottom = 35.5
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "[                        ]"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="settings" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.0
+margin_right = 91.0
+margin_bottom = 71.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "SETTINGS"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="selector" type="Label" parent="settings"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -117.5
+margin_top = -35.5
+margin_right = 126.5
+margin_bottom = 35.5
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "[                        ]"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="quit" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -72.0
+margin_top = 256.0
+margin_right = 64.0
+margin_bottom = 327.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "quit"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="selector" type="Label" parent="quit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -120.0
+margin_top = -35.5
+margin_right = 124.0
+margin_bottom = 35.5
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "[                        ]"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+bus = "Sounds"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="choosen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]

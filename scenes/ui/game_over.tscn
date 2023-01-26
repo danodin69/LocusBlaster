@@ -1,0 +1,485 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://scripts/game_over.gd" type="Script" id=1]
+[ext_resource path="res://assets/themes/locus_basic_theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/ui/HUD/text_field.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/American Captain.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=6]
+
+[sub_resource type="DynamicFont" id=21]
+size = 150
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFontData" id=34]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 90
+font_data = SubResource( 34 )
+
+[sub_resource type="DynamicFontData" id=14]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=8]
+font_data = SubResource( 14 )
+
+[sub_resource type="DynamicFontData" id=15]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = SubResource( 15 )
+
+[sub_resource type="DynamicFontData" id=16]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 16 )
+
+[sub_resource type="Theme" id=17]
+Button/fonts/font = SubResource( 8 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=18]
+size = 70
+font_data = SubResource( 13 )
+
+[sub_resource type="Theme" id=19]
+Button/fonts/font = SubResource( 8 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
+[sub_resource type="DynamicFont" id=20]
+size = 68
+font_data = SubResource( 13 )
+
+[sub_resource type="Theme" id=24]
+Button/fonts/font = SubResource( 8 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
+[sub_resource type="DynamicFont" id=25]
+size = 40
+font_data = SubResource( 13 )
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1592 ) ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "notification"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 1592 ), Vector2( 0, 1209 ), Vector2( 0, 1209 ), Vector2( 0, 1592 ) ]
+}
+
+[node name="GameOver" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0392157, 0, 0.0980392, 1 )
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -265.498
+margin_top = 192.047
+margin_right = 265.502
+margin_bottom = 343.047
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 21 )
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -70.0
+margin_top = 56.0
+margin_right = 88.0
+margin_bottom = 113.0
+text = "SUBMIT"
+
+[node name="NewHighscore" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -488.0
+margin_top = -200.0
+margin_right = 491.0
+margin_bottom = 236.0
+
+[node name="Label" type="Label" parent="NewHighscore"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -155.0
+margin_right = 155.0
+margin_bottom = 60.0
+theme = ExtResource( 2 )
+text = "New HighScore!"
+
+[node name="Label2" type="Label" parent="NewHighscore"]
+visible = false
+anchor_top = 0.62
+anchor_bottom = 0.62
+margin_left = 98.0
+margin_top = -30.04
+margin_right = 408.0
+margin_bottom = 29.96
+theme = ExtResource( 2 )
+text = "player name"
+
+[node name="highscore" type="Label" parent="NewHighscore"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -77.0
+margin_top = -45.5
+margin_right = 77.0
+margin_bottom = 45.5
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "2343"
+
+[node name="LineEdit" type="LineEdit" parent="NewHighscore"]
+visible = false
+anchor_left = 0.568433
+anchor_top = 0.52
+anchor_right = 0.758055
+anchor_bottom = 0.662
+margin_left = 0.503967
+margin_top = 0.159973
+margin_right = -0.136047
+margin_bottom = -0.00402832
+theme = ExtResource( 2 )
+align = 3
+max_length = 3
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Sprite" type="Sprite" parent="NewHighscore/LineEdit"]
+position = Vector2( 101.932, 78.25 )
+scale = Vector2( 0.659164, 1.05556 )
+texture = ExtResource( 3 )
+
+[node name="save" type="Label" parent="NewHighscore"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.0
+margin_top = -71.0
+margin_right = 63.0
+theme = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
+text = " save"
+
+[node name="selector" type="Label" parent="NewHighscore/save"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -72.5
+margin_top = -68.0
+margin_right = 72.5
+theme = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
+text = "[             ]"
+
+[node name="score" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -429.0
+margin_top = -326.0
+margin_right = 550.0
+margin_bottom = 316.0
+
+[node name="score_text" type="Label" parent="score"]
+anchor_top = 0.274
+anchor_bottom = 0.274
+margin_left = 213.0
+margin_top = -33.908
+margin_right = 432.0
+margin_bottom = 26.092
+theme = ExtResource( 2 )
+text = "Score:"
+
+[node name="new_score" type="Label" parent="score"]
+anchor_left = 1.0
+anchor_top = 0.275
+anchor_right = 1.0
+anchor_bottom = 0.275
+margin_left = -470.0
+margin_top = -50.55
+margin_right = -204.0
+margin_bottom = 40.45
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "2343"
+
+[node name="best_score_text" type="Label" parent="score"]
+anchor_top = 0.274
+anchor_bottom = 0.274
+margin_left = 213.0
+margin_top = 94.092
+margin_right = 432.0
+margin_bottom = 154.092
+theme = ExtResource( 2 )
+text = "BEST Score:"
+
+[node name="best_score" type="Label" parent="score"]
+anchor_left = 1.0
+anchor_top = 0.275
+anchor_right = 1.0
+anchor_bottom = 0.275
+margin_left = -470.0
+margin_top = 77.45
+margin_right = -204.0
+margin_bottom = 168.45
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "2343"
+
+[node name="restart" type="Label" parent="score"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -316.5
+margin_top = -116.0
+margin_right = -119.5
+margin_bottom = -45.0
+theme = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
+text = " Restart"
+
+[node name="selector" type="Label" parent="score/restart"]
+anchor_left = -0.0634921
+anchor_right = 1.0873
+anchor_bottom = 0.957747
+theme = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
+text = "[                      ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="menu" type="Label" parent="score"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 75.5
+margin_top = -116.0
+margin_right = 205.5
+margin_bottom = -45.0
+theme = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
+text = " menu"
+
+[node name="selector" type="Label" parent="score/menu"]
+anchor_left = -0.0634921
+anchor_right = 1.0873
+anchor_bottom = 0.957747
+theme = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
+text = "[              ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RestartOption" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -429.0
+margin_top = -326.0
+margin_right = 550.0
+margin_bottom = 316.0
+
+[node name="restart" type="Label" parent="RestartOption"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -260.5
+margin_top = -372.0
+margin_right = -63.5
+margin_bottom = -301.0
+theme = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
+text = " Restart"
+
+[node name="selector" type="Label" parent="RestartOption/restart"]
+anchor_left = -0.0634921
+anchor_right = 1.0873
+anchor_bottom = 0.957747
+theme = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
+text = "[                      ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="menu" type="Label" parent="RestartOption"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 35.5
+margin_top = -372.0
+margin_right = 165.5
+margin_bottom = -301.0
+theme = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
+text = " menu"
+
+[node name="selector" type="Label" parent="RestartOption/menu"]
+anchor_left = -0.0634921
+anchor_right = 1.0873
+anchor_bottom = 0.957747
+theme = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
+text = "[              ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="notify" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = 1592.0
+margin_right = 285.0
+margin_bottom = 1663.0
+theme = SubResource( 24 )
+custom_fonts/font = SubResource( 25 )
+text = "saved game!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../notify")
+anims/RESET = SubResource( 22 )
+anims/notification = SubResource( 23 )
+
+[node name="choosen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )

@@ -1,0 +1,280 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://assets/ui/HUD/rect_design.png" type="Texture" id=1]
+[ext_resource path="res://scripts/settings.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=4]
+
+[sub_resource type="Theme" id=14]
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=8]
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 3 )
+
+[sub_resource type="Theme" id=11]
+Button/fonts/font = SubResource( 8 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 70
+font_data = SubResource( 13 )
+
+[node name="settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 14 )
+script = ExtResource( 2 )
+
+[node name="PopupPanel" type="Popup" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -455.0
+margin_top = -289.0
+margin_right = 422.0
+margin_bottom = 335.0
+
+[node name="TextureRect" type="TextureRect" parent="PopupPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -404.5
+margin_top = -272.5
+margin_right = 404.5
+margin_bottom = 272.5
+texture = ExtResource( 1 )
+expand = true
+
+[node name="music" type="Label" parent="PopupPanel"]
+anchor_left = 0.126568
+anchor_top = 0.225962
+anchor_right = 0.917902
+anchor_bottom = 0.339744
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "Music"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="switch" type="Label" parent="PopupPanel/music"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "  OFF"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="selector" type="Label" parent="PopupPanel/music"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "[          ]"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="sounds" type="Label" parent="PopupPanel"]
+anchor_left = 0.126568
+anchor_top = 0.552885
+anchor_right = 0.917902
+anchor_bottom = 0.666667
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "SOUND fx"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="switch" type="Label" parent="PopupPanel/sounds"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "  OFF"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="selector" type="Label" parent="PopupPanel/sounds"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "[          ]"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="music_off" type="Label" parent="PopupPanel"]
+visible = false
+anchor_left = 0.126568
+anchor_top = 0.225962
+anchor_right = 0.917902
+anchor_bottom = 0.339744
+margin_left = -1.52588e-05
+margin_top = 1.52588e-05
+margin_bottom = 4.57764e-05
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "Music"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="switch" type="Label" parent="PopupPanel/music_off"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "   ON"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="selector" type="Label" parent="PopupPanel/music_off"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "[          ]"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="sounds_off" type="Label" parent="PopupPanel"]
+visible = false
+anchor_left = 0.126568
+anchor_top = 0.552885
+anchor_right = 0.917902
+anchor_bottom = 0.666667
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "SOUND fx"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="switch" type="Label" parent="PopupPanel/sounds_off"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "   ON"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="selector" type="Label" parent="PopupPanel/sounds_off"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "[          ]"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="close" type="Label" parent="PopupPanel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -63.5
+margin_top = -143.0
+margin_right = 68.5
+margin_bottom = -72.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "CLOSE"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="selector" type="Label" parent="PopupPanel/close"]
+anchor_left = -0.10606
+anchor_right = 1.12879
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "[               ]"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="ColorRect" type="ColorRect" parent="PopupPanel"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0470588, 0.027451, 0.0627451, 0.882353 )
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+bus = "SoundFX"
+
+[node name="choosen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+bus = "SoundFX"

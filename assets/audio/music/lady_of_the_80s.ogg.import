@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/lady_of_the_80s.ogg-0a2ed5473f495cf08cfbac774b68736a.oggstr"
+
+[deps]
+
+source_file="res://assets/audio/music/lady_of_the_80s.ogg"
+dest_files=[ "res://.import/lady_of_the_80s.ogg-0a2ed5473f495cf08cfbac774b68736a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
