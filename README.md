@@ -1,5 +1,6 @@
 # LOCUS BLASTER [beta]
-by <i>DanDaPanda Games</i>
+![icon](https://user-images.githubusercontent.com/56373611/214917563-07db0eeb-7386-4ff8-864e-a1f1637e96eb.png)
+By <i>DanDaPanda Games</i>
 
 <b>Description</b> 📝
 
