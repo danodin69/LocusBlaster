@@ -11,7 +11,7 @@ A fun 3D space shooter with simple controls and awesome music, to while away tim
 
 I wanted to create a game I'd like to play when I'm pooping 💩  Also I was a fan of arcade games while growing up and just wanted to pay a tribute to my childhood by making my first public game in this genre. 
 
-I know you will find it relaxing and fun!
+I know you will find it hyper and fun!
 
 
 <b>Target Platform</b> 🎯
