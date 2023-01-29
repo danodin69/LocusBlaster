@@ -1,2 +1,0 @@
-# LOCUS BLASTER
-DanDaPandaGames
