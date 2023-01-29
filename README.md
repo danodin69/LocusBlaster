@@ -20,11 +20,18 @@ I wanted to create a game I'd like to play when I'm pooping 💩  Also I was a f
 I know you will find it hyper and fun!
 
 <b>FEATURES</b>
+
+
 Multiple Music for different mood
+
 Score system
+
 Health system
+
 Powerups
+
 Simple Difficulty System
+
 Easy Controls
 
 <b>Target Platform</b> 🎯
