@@ -6,6 +6,7 @@
 
 
 A fun 3D space shooter with simple controls and multiple awesome music, to while away time and keep the brain engaged. 
+Gun down all enemies on site and never let them pass or hit you. 
 
 
 <b>Motive</b> 🏋️
