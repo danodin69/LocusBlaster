@@ -123,11 +123,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.3149 )
 [node name="StarParticles" parent="player" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -231.685 )
 
-[node name="Camera" type="Camera" parent="."]
-far = 300.0
-
 [node name="EnemySpawner" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -300 )
+
+[node name="Camera" type="Camera" parent="."]
+far = 300.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.345381, 0.938463, 0, -0.938463, 0.345381, 0, 11.6345, -15.1063 )
@@ -274,6 +274,10 @@ stream = ExtResource( 16 )
 [node name="GameOver" parent="." instance=ExtResource( 9 )]
 pause_mode = 2
 visible = false
+
+[node name="notify" parent="GameOver" index="6"]
+margin_top = 312.0
+margin_bottom = 383.0
 
 [node name="settings" parent="." instance=ExtResource( 14 )]
 pause_mode = 2

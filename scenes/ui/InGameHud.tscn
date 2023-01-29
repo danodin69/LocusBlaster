@@ -83,12 +83,13 @@ __meta__ = {
 "_edit_vertical_guides_": [ -96.0 ]
 }
 
-[node name="shield" type="Sprite" parent="."]
+[node name="shield" type="TextureRect" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.490196 )
-position = Vector2( 968, 656 )
-scale = Vector2( 2.31218, 2.39004 )
+anchor_right = 1.0
+anchor_bottom = 1.0
 texture = ExtResource( 8 )
+expand = true
 
 [node name="highscore_counter" type="Label" parent="."]
 anchor_left = 0.0958333
