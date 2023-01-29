@@ -208,7 +208,7 @@ margin_right = 4.0
 margin_bottom = 3.99999
 theme = SubResource( 9 )
 custom_fonts/font = SubResource( 10 )
-text = "[                ]"
+text = "[                 ]"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -234,7 +234,7 @@ anchor_right = 1.14844
 anchor_bottom = 0.925
 theme = SubResource( 9 )
 custom_fonts/font = SubResource( 10 )
-text = "[                ]"
+text = "[                 ]"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -260,7 +260,7 @@ anchor_right = 1.14844
 anchor_bottom = 0.870147
 theme = SubResource( 9 )
 custom_fonts/font = SubResource( 10 )
-text = "[               ]"
+text = "[                ]"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -274,7 +274,7 @@ margin_right = 376.0
 margin_bottom = -120.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "SOURCE</>"
+text = " SOURCE</>"
 
 [node name="selector" type="Label" parent="source"]
 visible = false
@@ -283,7 +283,7 @@ anchor_right = 1.08765
 anchor_bottom = 1.21429
 theme = SubResource( 9 )
 custom_fonts/font = SubResource( 10 )
-text = "[                             ]"
+text = "[                              ]"
 __meta__ = {
 "_edit_use_anchors_": true
 }

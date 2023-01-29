@@ -275,10 +275,6 @@ stream = ExtResource( 16 )
 pause_mode = 2
 visible = false
 
-[node name="notify" parent="GameOver" index="6"]
-margin_top = 312.0
-margin_bottom = 383.0
-
 [node name="settings" parent="." instance=ExtResource( 14 )]
 pause_mode = 2
 mouse_filter = 1

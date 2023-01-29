@@ -1,0 +1,24 @@
+INSTRUCTIONS
+
+SHIP CONTROLS
+
+WASD to move
+space to shoot
+
+
+MENU UI CONTROLS
+
+left and right Direction key to move selector, space to select
+
+SETTINGS DIALOG CONTROLSS
+
+up and down direction key to move selector, enter key to select
+
+IN-GAME CONTROLS
+
+P key to pause
+
+
+GENERAL CONTROLS
+
+M key to change music
