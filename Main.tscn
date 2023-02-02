@@ -143,8 +143,13 @@ visible = false
 [node name="CanvasLayer" parent="InGameHud/pilot_hud" index="0"]
 visible = false
 
-[node name="mobile_controls" parent="InGameHud" index="7"]
+[node name="directions" parent="InGameHud/mobile_controls" index="0"]
 visible = false
+
+[node name="Virtual joystick" parent="InGameHud/mobile_controls" index="3"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="pause_HUD" type="Control" parent="."]
 pause_mode = 2
@@ -274,10 +279,6 @@ stream = ExtResource( 16 )
 [node name="GameOver" parent="." instance=ExtResource( 9 )]
 pause_mode = 2
 visible = false
-
-[node name="notify" parent="GameOver" index="6"]
-margin_top = 312.0
-margin_bottom = 383.0
 
 [node name="settings" parent="." instance=ExtResource( 14 )]
 pause_mode = 2
