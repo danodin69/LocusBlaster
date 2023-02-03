@@ -323,13 +323,16 @@ texture = ExtResource( 12 )
 
 [node name="choosen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+bus = "SoundFX"
 
 [node name="select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+bus = "SoundFX"
 
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -10.214
+bus = "Music"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.85

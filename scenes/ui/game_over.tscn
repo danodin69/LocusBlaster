@@ -375,7 +375,7 @@ anchor_right = 1.0873
 anchor_bottom = 0.957747
 theme = SubResource( 19 )
 custom_fonts/font = SubResource( 20 )
-text = "[                      ]"
+text = "[                        ]"
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -399,7 +399,7 @@ anchor_right = 1.0873
 anchor_bottom = 0.957747
 theme = SubResource( 19 )
 custom_fonts/font = SubResource( 20 )
-text = "[              ]"
+text = "[               ]"
 __meta__ = {
 "_edit_use_anchors_": true
 }

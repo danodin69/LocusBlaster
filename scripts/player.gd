@@ -13,12 +13,21 @@ onready var guns = [$Gun0, $Gun1]
 onready var main = get_tree().current_scene
 var Bullet = load("res://scenes/npcs/Bullet.tscn")
 
+onready var mobile_in_game_control_shooter = get_parent().get_node("InGameHud/mobile_controls/shooter")
+onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/mobile_controls/Virtual joystick")
+onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_controls/pause")
+onready var mobile_ui_controls = get_parent().get_node("InGameHud/mobile_controls/directions")
+
 func _physics_process(delta):
 	
 	is_game_started(game_started, delta)
 
 func is_game_started(var is_started : bool, var delta):
 	if is_started == true:
+		mobile_in_game_control_joystick.show()
+		mobile_in_game_control_shooter.show()
+		mobile_ui_controls.hide()
+		mobile_pause_button.show()
 		
 		inputVector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		inputVector.y = Input.get_action_strength("move_up") - Input.get_action_strength("move_down")

@@ -18,6 +18,7 @@ var current_selector = 0
 var m : int = 1
 var e : int = 1
 
+onready var mobile_control_dialog = get_parent().get_node("InGameHud/mobile_controls/directions/accept_dialog")
 
 func _ready():
 #	$PopupPanel.show()
@@ -33,6 +34,7 @@ func _process(delta):
 
 func handle_main_menu_input():
 	if is_settings_dialog_menu == true:
+		mobile_control_dialog.show()
 		get_parent().get_node("main_menu").out_of_focus = true
 		$PopupPanel.show()
 		if Input.is_action_just_pressed("ui_down") and current_selector < 2:
@@ -63,10 +65,12 @@ func selection_handler_main_menu(_current_selection):
 		$PopupPanel.hide()
 		get_parent().get_node("main_menu").out_of_focus = false
 		is_settings_dialog_menu = false
+		mobile_control_dialog.hide()
 
 
 func handle_pause_menu_input():
 	if is_settings_dialog_pause == true:
+		mobile_control_dialog.show()
 		get_parent().get_node("pause_HUD").out_of_focus = true
 		$PopupPanel.show()
 		if Input.is_action_just_pressed("ui_down") and current_selector < 2:
@@ -98,6 +102,7 @@ func selection_handler_pause_menu(_current_selection):
 		get_parent().get_node("pause_HUD").out_of_focus = false
 		is_settings_dialog_pause = false
 		_current_selection = 0
+		mobile_control_dialog.hide()
 		
 func set_current_selection(_current_selection):
 	selector1.hide()

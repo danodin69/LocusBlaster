@@ -6,6 +6,12 @@ var best_score = mainScript.best_score
 onready var best_score_text = $score/best_score
 var current_selector = 0
 
+onready var mobile_in_game_control_shooter = get_parent().get_node("InGameHud/mobile_controls/shooter")
+onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/mobile_controls/Virtual joystick")
+onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_controls/pause")
+onready var mobile_ui_controls = get_parent().get_node("InGameHud/mobile_controls/directions")
+
+
 func _ready():
 	set_current_selection(0)
 	is_game_over(false)
@@ -20,6 +26,10 @@ func _process(delta):
 
 func is_game_over(var isGameOver : bool):
 	if isGameOver == true:
+		mobile_in_game_control_joystick.hide()
+		mobile_in_game_control_shooter.hide()
+		mobile_ui_controls.show()
+		mobile_pause_button.hide()
 		if Input.is_action_just_pressed("ui_right") and current_selector < 1:
 			$select.play()
 			current_selector += 1
@@ -38,7 +48,10 @@ func selection_handler(_current_selection):
 		mainScript.is_game_restarted = true
 		
 		get_parent().restart_game()
-		
+		mobile_in_game_control_joystick.show()
+		mobile_in_game_control_shooter.show()
+		mobile_ui_controls.hide()
+		mobile_pause_button.show()
 		print("RESTART")
 		
 	elif _current_selection == 1:

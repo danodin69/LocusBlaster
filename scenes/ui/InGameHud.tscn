@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://scripts/in_game_hud.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/HUD/heart_life.png" type="Texture" id=2]
@@ -74,6 +74,22 @@ font_path = "res://assets/fonts/American Captain.otf"
 size = 70
 font_data = SubResource( 21 )
 
+[sub_resource type="StreamTexture" id=23]
+flags = 4
+load_path = "res://.import/joystick_locus_outline.png-9f813b9b985b2912757fdfa8bf76f698.stex"
+
+[sub_resource type="StreamTexture" id=24]
+flags = 4
+load_path = "res://.import/arrow_button_pressed.png-967216cfb207a2240a271d249e0bc1a8.stex"
+
+[sub_resource type="StreamTexture" id=25]
+flags = 4
+load_path = "res://.import/joystick_locus_outline.png-9f813b9b985b2912757fdfa8bf76f698.stex"
+
+[sub_resource type="StreamTexture" id=26]
+flags = 4
+load_path = "res://.import/arrow_button_pressed.png-967216cfb207a2240a271d249e0bc1a8.stex"
+
 [node name="InGameHud" type="Control"]
 pause_mode = 2
 visible = false
@@ -136,10 +152,10 @@ texture = ExtResource( 2 )
 [node name="health_guage" type="TextureProgress" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -560.0
-margin_top = 152.0
-margin_right = -141.0
-margin_bottom = 181.0
+margin_left = -672.0
+margin_top = 160.0
+margin_right = -253.0
+margin_bottom = 189.0
 value = 55.0
 texture_over = ExtResource( 5 )
 texture_progress = ExtResource( 4 )
@@ -148,10 +164,10 @@ nine_patch_stretch = true
 [node name="shield_status" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -320.0
-margin_top = 184.0
-margin_right = -144.0
-margin_bottom = 224.0
+margin_left = -432.0
+margin_top = 192.0
+margin_right = -256.0
+margin_bottom = 232.0
 
 [node name="shield1" type="Control" parent="shield_status"]
 anchor_top = 0.5
@@ -233,48 +249,76 @@ visible = false
 [node name="mobile_controls" type="CanvasLayer" parent="."]
 
 [node name="directions" type="Control" parent="mobile_controls"]
-anchor_right = 0.4125
-anchor_bottom = 1.0
+anchor_left = -0.00416667
+anchor_top = 0.2125
+anchor_right = 0.408333
+anchor_bottom = 1.00625
+margin_left = -32.0
+margin_top = -528.0
+margin_right = -32.0
+margin_bottom = -528.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="arrow_up" type="TouchScreenButton" parent="mobile_controls/directions"]
-position = Vector2( 384, 400 )
-scale = Vector2( 1.2, 1.2 )
+position = Vector2( 312.001, 304 )
+scale = Vector2( 0.632302, 0.696063 )
 normal = ExtResource( 9 )
 pressed = ExtResource( 10 )
 passby_press = true
-action = "move_up"
+action = "ui_up"
 
 [node name="arrow_down" type="TouchScreenButton" parent="mobile_controls/directions"]
-position = Vector2( 736, 1072 )
+position = Vector2( 504, 952 )
 rotation = -3.14159
-scale = Vector2( 1.2, 1.2 )
+scale = Vector2( 0.632302, 0.696063 )
 normal = ExtResource( 9 )
 pressed = ExtResource( 10 )
 passby_press = true
-action = "move_down"
+action = "ui_down"
 
 [node name="arrow_right" type="TouchScreenButton" parent="mobile_controls/directions"]
-position = Vector2( 1048, 528 )
+position = Vector2( 744.001, 544 )
 rotation = 1.5708
-scale = Vector2( 1.2, 1.2 )
+scale = Vector2( 0.632, 0.696 )
 normal = ExtResource( 9 )
 pressed = ExtResource( 10 )
 passby_press = true
-action = "move_right"
+action = "ui_right"
 
 [node name="arrow_left" type="TouchScreenButton" parent="mobile_controls/directions"]
-position = Vector2( 72.0013, 872 )
+position = Vector2( 64.0007, 720 )
 rotation = -1.5708
-scale = Vector2( 1.2, 1.2 )
+scale = Vector2( 0.632, 0.696 )
 normal = ExtResource( 9 )
 pressed = ExtResource( 10 )
 passby_press = true
-action = "move_left"
+action = "ui_left"
+
+[node name="accept" type="TouchScreenButton" parent="mobile_controls/directions"]
+modulate = Color( 1, 1, 1, 0.0509804 )
+position = Vector2( 312, 720 )
+rotation = -1.5708
+scale = Vector2( 0.417886, 0.42651 )
+normal = SubResource( 23 )
+pressed = SubResource( 24 )
+passby_press = true
+action = "ui_accept"
+
+[node name="accept_dialog" type="TouchScreenButton" parent="mobile_controls/directions"]
+visible = false
+modulate = Color( 1, 1, 1, 0.0509804 )
+position = Vector2( 312, 720 )
+rotation = -1.5708
+scale = Vector2( 0.418, 0.427 )
+normal = SubResource( 25 )
+pressed = SubResource( 26 )
+passby_press = true
+action = "enter"
 
 [node name="shooter" type="Control" parent="mobile_controls"]
+visible = false
 anchor_left = 0.595833
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -283,31 +327,37 @@ __meta__ = {
 }
 
 [node name="shoot" type="TouchScreenButton" parent="mobile_controls/shooter"]
-position = Vector2( 184, 192 )
+position = Vector2( 144.001, 584 )
 scale = Vector2( 0.604613, 0.604613 )
 normal = ExtResource( 11 )
 pressed = ExtResource( 12 )
 action = "shoot"
 
 [node name="pause" type="Control" parent="mobile_controls"]
-anchor_left = 0.595833
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
+margin_left = -240.0
+margin_top = -240.0
 
 [node name="pause" type="TouchScreenButton" parent="mobile_controls/pause"]
-position = Vector2( 632, 1152 )
+position = Vector2( 96, 96 )
 scale = Vector2( 0.37414, 0.575541 )
 normal = ExtResource( 14 )
 pressed = ExtResource( 13 )
 action = "pause"
 
 [node name="Virtual joystick" parent="mobile_controls" instance=ExtResource( 16 )]
-__meta__ = {
-"_edit_use_anchors_": false
-}
+visible = false
+anchor_left = 0.0958333
+anchor_top = 0.4375
+anchor_right = 0.342708
+anchor_bottom = 0.795313
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 0.0
+margin_bottom = 0.0
 action_left = "move_left"
 action_right = "move_right"
 action_up = "move_up"

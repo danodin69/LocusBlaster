@@ -10,6 +10,6 @@ func spawn():
 		enemy.transform.origin = transform.origin + Vector3(rand_range(-15,15), rand_range(-10,10), 0)
 
 func _on_Timer_timeout():
-	pass
 	
-	#spawn()
+	
+	spawn()

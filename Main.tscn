@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/npcs/EnemySpawner.tscn" type="PackedScene" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=17]
 [ext_resource path="res://scripts/pause.gd" type="Script" id=18]
 [ext_resource path="res://scripts/stream_music.gd" type="Script" id=19]
-[ext_resource path="res://assets/ui/button_textures/play_button.png" type="Texture" id=20]
 [ext_resource path="res://assets/audio/music/pop-song.mp3" type="AudioStream" id=21]
 
 [sub_resource type="BoxShape" id=23]
@@ -41,6 +40,22 @@ glow_enabled = true
 glow_intensity = 2.24
 glow_strength = 0.78
 glow_bloom = 1.0
+
+[sub_resource type="StreamTexture" id=26]
+flags = 4
+load_path = "res://.import/joystick_locus_outline.png-9f813b9b985b2912757fdfa8bf76f698.stex"
+
+[sub_resource type="StreamTexture" id=27]
+flags = 4
+load_path = "res://.import/arrow_button_pressed.png-967216cfb207a2240a271d249e0bc1a8.stex"
+
+[sub_resource type="StreamTexture" id=28]
+flags = 4
+load_path = "res://.import/joystick_locus_outline.png-9f813b9b985b2912757fdfa8bf76f698.stex"
+
+[sub_resource type="StreamTexture" id=29]
+flags = 4
+load_path = "res://.import/arrow_button_pressed.png-967216cfb207a2240a271d249e0bc1a8.stex"
 
 [sub_resource type="DynamicFontData" id=7]
 font_path = "res://assets/fonts/American Captain.otf"
@@ -138,17 +153,28 @@ visible = false
 
 [node name="main_menu" parent="." instance=ExtResource( 6 )]
 
+[node name="source_canvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="source" parent="source_canvas" instance=ExtResource( 15 )]
+
 [node name="InGameHud" parent="." instance=ExtResource( 8 )]
 
 [node name="CanvasLayer" parent="InGameHud/pilot_hud" index="0"]
 visible = false
 
-[node name="directions" parent="InGameHud/mobile_controls" index="0"]
-visible = false
+[node name="accept" parent="InGameHud/mobile_controls/directions" index="4"]
+normal = SubResource( 26 )
+pressed = SubResource( 27 )
 
-[node name="Virtual joystick" parent="InGameHud/mobile_controls" index="3"]
+[node name="accept_dialog" parent="InGameHud/mobile_controls/directions" index="5"]
+normal = SubResource( 28 )
+pressed = SubResource( 29 )
+
+[node name="pause" parent="InGameHud/mobile_controls" index="2"]
+visible = false
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="pause_HUD" type="Control" parent="."]
@@ -196,7 +222,7 @@ margin_right = 124.0
 margin_bottom = 35.5
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "[                        ]"
+text = "[                          ]"
 __meta__ = {
 "_editor_description_": ""
 }
@@ -227,7 +253,7 @@ margin_right = 126.5
 margin_bottom = 35.5
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "[                        ]"
+text = "[                          ]"
 __meta__ = {
 "_editor_description_": ""
 }
@@ -280,6 +306,10 @@ stream = ExtResource( 16 )
 pause_mode = 2
 visible = false
 
+[node name="notify" parent="GameOver" index="6"]
+margin_top = 312.0
+margin_bottom = 383.0
+
 [node name="settings" parent="." instance=ExtResource( 14 )]
 pause_mode = 2
 mouse_filter = 1
@@ -293,17 +323,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -195.361 )
 [node name="Stats" parent="." instance=ExtResource( 13 )]
 visible = false
 
-[node name="source_canvas" type="CanvasLayer" parent="."]
+[node name="touch_map" type="CanvasLayer" parent="."]
 visible = false
-
-[node name="source" parent="source_canvas" instance=ExtResource( 15 )]
-
-[node name="touch_map" type="Control" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
 
 [node name="main_menu" type="Control" parent="touch_map"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -311,11 +335,10 @@ anchor_bottom = 1.0
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1538.0
-margin_top = 800.0
-margin_right = -1401.0
-margin_bottom = -294.0
-texture_normal = ExtResource( 20 )
+margin_left = -1585.0
+margin_top = 794.0
+margin_right = -1415.0
+margin_bottom = -282.0
 texture_pressed = ExtResource( 12 )
 expand = true
 

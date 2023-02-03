@@ -20,6 +20,7 @@ __meta__ = {
 }
 pressed_color = Color( 1, 1, 1, 1 )
 joystick_mode = 1
+visibility_mode = 1
 
 [node name="Base" type="TextureRect" parent="."]
 anchor_left = 0.5

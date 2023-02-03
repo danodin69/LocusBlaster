@@ -6,7 +6,10 @@ var pause_scene = load("res://Main.tscn")
 onready var selector1 = $continue/selector
 onready var selector2 = $settings/selector
 onready var selector3 = $quit/selector
-
+onready var mobile_control = get_parent().get_node("InGameHud/mobile_controls/directions")
+onready var mobile_in_game_control_shooter = get_parent().get_node("InGameHud/mobile_controls/shooter")
+onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/mobile_controls/Virtual joystick")
+onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_controls/pause")
 var current_selector = 0
 export var game_paused = false
 func _ready():
@@ -23,6 +26,10 @@ func selection_handler(_current_selection):
 		get_tree().paused = false
 		game_paused = false
 		$".".hide()
+		mobile_control.hide()
+		mobile_pause_button.show()
+		mobile_in_game_control_joystick.show()
+		mobile_in_game_control_shooter.show()
 		
 		#$Timer.start()
 	elif _current_selection == 1:
@@ -61,6 +68,10 @@ func _on_Timer_timeout():
 func is_game_paused(var isPaused : bool):
 	if isPaused == true:
 		if out_of_focus == false:
+			mobile_control.show()
+			mobile_pause_button.hide()
+			mobile_in_game_control_joystick.hide()
+			mobile_in_game_control_shooter.hide()
 			if Input.is_action_just_pressed("ui_down") and current_selector < 2:
 				$select.play()
 				current_selector += 1
@@ -69,6 +80,6 @@ func is_game_paused(var isPaused : bool):
 				current_selector -= 1
 				$select.play()
 				set_current_selection(current_selector)
-			elif Input.is_action_just_pressed("shoot"):
+			elif Input.is_action_just_pressed("ui_accept"):
 				$choosen.play()
 				selection_handler(current_selector)

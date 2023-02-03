@@ -7,9 +7,13 @@ onready var selector3 = $settings/selector
 onready var selector4 = $source/selector
 
 var current_selector = 0
-
+onready var mobile_in_game_control_shooter = get_parent().get_node("InGameHud/mobile_controls/shooter")
+onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/mobile_controls/Virtual joystick")
+onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_controls/pause")
+onready var mobile_ui_controls = get_parent().get_node("InGameHud/mobile_controls/directions")
 func _ready():
 	#$menu_music.play()
+	mobile_ui_controls.show()
 	set_current_selection(0)
 
 # warning-ignore:unused_argument
@@ -23,7 +27,7 @@ func _process(delta):
 			current_selector -= 1
 			$select.play()
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("shoot"):
+		elif Input.is_action_just_pressed("ui_accept"):
 			$choosen.play()
 			selection_handler(current_selector)
 
@@ -57,9 +61,14 @@ func set_current_selection(_current_selection):
 
 
 func _on_Timer_timeout():
+	
 	get_parent().get_node("InGameHud").show()
 	get_parent().get_node("InGameHud/pilot_hud/CanvasLayer").show()
 	get_parent().get_node("player").game_started = true
+	mobile_in_game_control_joystick.show()
+	mobile_in_game_control_shooter.show()
+	mobile_pause_button.show()
+	mobile_ui_controls.hide()
 	queue_free()
 
 
