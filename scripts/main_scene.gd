@@ -38,8 +38,7 @@ func _on_ShipHealth_body_entered(body):
 			var particles = KillParticles.instance()
 			particles.transform.origin = transform.origin
 			main.add_child(particles)
-		
-			print('ship health status : '+ str($InGameHud.health))
+
 		else:
 			$InGameHud.shield_health -= 30
 			
@@ -71,6 +70,8 @@ func _on_ShipHealth_body_entered(body):
 		
 func check_health():
 	if $InGameHud.health <= 0 :
+		mainScript.deaths += 1
+		mainScript.save_data()
 		$GameOver.game_over = true
 		$GameOver.show()
 		$GameOver/score.show()
@@ -88,7 +89,6 @@ func restart_game():
 
 
 func _on_Main_tree_exited():
-	
 	mainScript.update_highscore = 0
 
 

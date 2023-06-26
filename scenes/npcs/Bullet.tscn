@@ -47,14 +47,12 @@ autostart = true
 stream = ExtResource( 3 )
 volume_db = -15.156
 mix_target = 1
-bus = "SoundFX"
 
 [node name="BulletSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 2 )
 unit_db = 16.0
 max_db = 6.0
 autoplay = true
-bus = "SoundFX"
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 [connection signal="timeout" from="LightTimer" to="." method="_on_LightTimer_timeout"]

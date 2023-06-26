@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/audio/music/Zombie Hyperdrive.ogg" type="AudioStream" id=11]
-[ext_resource path="res://assets/images/panda_with_moon.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/dan_odin.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFontData" id=13]
 font_path = "res://assets/fonts/American Captain.otf"
@@ -307,32 +307,28 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -136.0
-margin_top = -168.0
+margin_top = -159.0
 margin_right = 137.0
-margin_bottom = -103.0
+margin_bottom = -128.0
 theme = SubResource( 21 )
 custom_fonts/font = SubResource( 22 )
-text = "DanDaPanda 
-Games"
+text = "Dan Odin Games"
 align = 1
 
 [node name="Sprite" type="Sprite" parent="studio"]
-position = Vector2( 136, -48 )
-scale = Vector2( 0.0556032, 0.0556032 )
+position = Vector2( 132, -55 )
+scale = Vector2( 0.187006, 0.187006 )
 texture = ExtResource( 12 )
 
 [node name="choosen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-bus = "SoundFX"
 
 [node name="select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
-bus = "SoundFX"
 
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -10.214
-bus = "Music"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.85

@@ -1,20 +1,161 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/stats.gd" type="Script" id=2]
 [ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sprites/stats_screen/player_stats_profile_icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/stats_screen/chip_icon.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/ranks/novice.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/button_textures/highscores.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/stats_screen/kills_stats_icon.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/stats_screen/death_stat_icon.png" type="Texture" id=9]
+[ext_resource path="res://assets/audio/music/Zombie Hyperdrive.ogg" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/American Captain.otf"
 
 [sub_resource type="DynamicFont" id=2]
-size = 102
+size = 85
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=36]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=37]
+font_data = SubResource( 36 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=8]
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 3 )
+
+[sub_resource type="Theme" id=38]
+default_font = SubResource( 8 )
+Button/fonts/font = SubResource( 37 )
+CheckBox/fonts/font = SubResource( 8 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 8 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 8 )
+Fonts/fonts/large = SubResource( 8 )
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = SubResource( 8 )
+ItemList/fonts/font = SubResource( 8 )
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = SubResource( 8 )
+LinkButton/fonts/font = SubResource( 8 )
+MenuButton/fonts/font = SubResource( 8 )
+OptionButton/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font_separator = SubResource( 8 )
+ProgressBar/fonts/font = SubResource( 8 )
+RichTextLabel/fonts/bold_font = SubResource( 8 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
+RichTextLabel/fonts/italics_font = SubResource( 8 )
+RichTextLabel/fonts/mono_font = SubResource( 8 )
+RichTextLabel/fonts/normal_font = SubResource( 8 )
+TabContainer/fonts/font = SubResource( 8 )
+Tabs/fonts/font = SubResource( 8 )
+TextEdit/fonts/font = SubResource( 8 )
+ToolButton/fonts/font = SubResource( 8 )
+TooltipLabel/fonts/font = SubResource( 8 )
+Tree/fonts/font = SubResource( 8 )
+Tree/fonts/title_button_font = SubResource( 8 )
+WindowDialog/fonts/title_font = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=39]
+size = 81
+font_data = SubResource( 1 )
+
+[sub_resource type="Theme" id=42]
+default_font = SubResource( 8 )
+Button/fonts/font = SubResource( 37 )
+CheckBox/fonts/font = SubResource( 8 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 8 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 8 )
+Fonts/fonts/large = SubResource( 8 )
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = SubResource( 8 )
+ItemList/fonts/font = SubResource( 8 )
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = SubResource( 8 )
+LinkButton/fonts/font = SubResource( 8 )
+MenuButton/fonts/font = SubResource( 8 )
+OptionButton/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font_separator = SubResource( 8 )
+ProgressBar/fonts/font = SubResource( 8 )
+RichTextLabel/fonts/bold_font = SubResource( 8 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
+RichTextLabel/fonts/italics_font = SubResource( 8 )
+RichTextLabel/fonts/mono_font = SubResource( 8 )
+RichTextLabel/fonts/normal_font = SubResource( 8 )
+TabContainer/fonts/font = SubResource( 8 )
+Tabs/fonts/font = SubResource( 8 )
+TextEdit/fonts/font = SubResource( 8 )
+ToolButton/fonts/font = SubResource( 8 )
+TooltipLabel/fonts/font = SubResource( 8 )
+Tree/fonts/font = SubResource( 8 )
+Tree/fonts/title_button_font = SubResource( 8 )
+WindowDialog/fonts/title_font = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=43]
+size = 69
 font_data = SubResource( 1 )
 
 [sub_resource type="DynamicFontData" id=30]
 font_path = "res://assets/fonts/American Captain.otf"
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=40]
 size = 60
 font_data = SubResource( 30 )
 
@@ -27,7 +168,7 @@ font_data = SubResource( 31 )
 
 [sub_resource type="StyleBoxEmpty" id=29]
 
-[sub_resource type="StyleBoxEmpty" id=3]
+[sub_resource type="StyleBoxEmpty" id=41]
 
 [sub_resource type="Theme" id=32]
 default_font = SubResource( 28 )
@@ -38,11 +179,11 @@ Label/constants/line_spacing = 0
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 0
-Label/fonts/font = SubResource( 5 )
+Label/fonts/font = SubResource( 40 )
 Label/styles/normal = null
 LineEdit/fonts/font = SubResource( 28 )
 LineEdit/styles/focus = SubResource( 29 )
-LineEdit/styles/normal = SubResource( 3 )
+LineEdit/styles/normal = SubResource( 41 )
 LineEdit/styles/read_only = null
 
 [sub_resource type="Theme" id=33]
@@ -54,11 +195,11 @@ Label/constants/line_spacing = 0
 Label/constants/shadow_as_outline = 0
 Label/constants/shadow_offset_x = 0
 Label/constants/shadow_offset_y = 0
-Label/fonts/font = SubResource( 5 )
+Label/fonts/font = SubResource( 40 )
 Label/styles/normal = null
 LineEdit/fonts/font = SubResource( 28 )
 LineEdit/styles/focus = SubResource( 29 )
-LineEdit/styles/normal = SubResource( 3 )
+LineEdit/styles/normal = SubResource( 41 )
 LineEdit/styles/read_only = null
 
 [sub_resource type="DynamicFontData" id=34]
@@ -78,63 +219,279 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.0392157, 0, 0.0980392, 0.933333 )
 
-[node name="container_h1" type="HBoxContainer" parent="."]
+[node name="profile_top" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 0.459375
-alignment = 1
+
+[node name="player_icon" type="TextureRect" parent="profile_top"]
+anchor_left = 0.26087
+anchor_top = 0.351108
+anchor_right = 0.354783
+anchor_bottom = 0.688172
+texture = ExtResource( 4 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="title_text" type="Label" parent="container_h1"]
-margin_left = 868.0
-margin_top = 242.0
-margin_right = 1052.0
-margin_bottom = 345.0
+[node name="selector" type="Label" parent="profile_top/player_icon"]
+visible = false
+anchor_left = -3.43287
+anchor_top = 0.333333
+anchor_right = -2.31178
+anchor_bottom = 0.78125
+margin_left = 701.5
+margin_top = -8.0
+margin_right = 746.344
+margin_bottom = -8.0
 theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 2 )
-text = "STATS"
+text = "[                       ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="container_h2" type="HBoxContainer" parent="."]
+[node name="player_name" type="Label" parent="profile_top"]
+anchor_left = 0.368696
+anchor_top = 0.365153
+anchor_right = 0.424783
+anchor_bottom = 0.516129
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "MIKE"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="chip_icon" type="TextureRect" parent="profile_top"]
+anchor_left = 0.361739
+anchor_top = 0.51964
+anchor_right = 0.393043
+anchor_bottom = 0.688172
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="selector" type="Label" parent="profile_top/chip_icon"]
+visible = false
+anchor_left = 0.111111
+anchor_top = 0.166667
+anchor_right = 1.04167
+anchor_bottom = 1.0625
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "[   ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="chip_amount" type="Label" parent="profile_top"]
+anchor_left = 0.396522
+anchor_top = 0.547729
+anchor_right = 0.431304
+anchor_bottom = 0.691683
+theme = SubResource( 38 )
+custom_fonts/font = SubResource( 39 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="rank_icon" type="TextureRect" parent="profile_top"]
+anchor_left = 0.566957
+anchor_top = 0.337064
+anchor_right = 0.678261
+anchor_bottom = 0.674128
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="selector" type="Label" parent="profile_top/rank_icon"]
+visible = false
+anchor_left = -0.0625
+anchor_top = 0.333333
+anchor_right = 1.05859
+anchor_bottom = 0.78125
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "[                       ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="RANK" type="Label" parent="profile_top"]
+anchor_left = 0.692174
+anchor_top = 0.344086
+anchor_right = 0.755652
+anchor_bottom = 0.495063
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "RANK"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="player_rank" type="Label" parent="profile_top"]
+anchor_left = 0.693043
+anchor_top = 0.505596
+anchor_right = 0.75913
+anchor_bottom = 0.628484
+theme = SubResource( 42 )
+custom_fonts/font = SubResource( 43 )
+text = "NOVICE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="profile_mid" type="Control" parent="."]
 anchor_top = 0.371875
 anchor_right = 1.0
 anchor_bottom = 0.628125
-alignment = 1
+margin_top = -0.125
+margin_bottom = 165.125
+
+[node name="best_score" type="Label" parent="profile_mid"]
+anchor_left = 0.447391
+anchor_top = 0.122738
+anchor_right = 0.674348
+anchor_bottom = 0.393391
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "BEST SCORE  321223"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="best_score" type="Label" parent="container_h2"]
-margin_left = 648.0
-margin_top = 112.0
-margin_right = 1272.0
-margin_bottom = 215.0
+[node name="chart_icon" type="TextureRect" parent="profile_mid"]
+anchor_left = 0.385652
+anchor_top = 0.0724638
+anchor_right = 0.432174
+anchor_bottom = 0.248447
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="selector" type="Label" parent="profile_mid/chart_icon"]
+visible = false
+anchor_left = -0.364488
+anchor_top = 0.188235
+anchor_right = 1.28972
+anchor_bottom = 1.2
 theme = ExtResource( 1 )
 custom_fonts/font = SubResource( 2 )
-text = "BEST SCORE: 321223"
+text = "[             ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="kills" type="Label" parent="profile_mid"]
+anchor_left = 0.447391
+anchor_top = 0.42065
+anchor_right = 0.591304
+anchor_bottom = 0.585086
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "KILLS -  420"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="kills_icon" type="TextureRect" parent="profile_mid"]
+anchor_left = 0.384783
+anchor_top = 0.374741
+anchor_right = 0.433913
+anchor_bottom = 0.608696
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="selector" type="Label" parent="profile_mid/kills_icon"]
+visible = false
+anchor_left = -0.256638
+anchor_top = 0.265487
+anchor_right = 1.21239
+anchor_bottom = 1.02655
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "[            ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="deaths" type="Label" parent="profile_mid"]
+anchor_left = 0.447391
+anchor_top = 0.736138
+anchor_right = 0.591304
+anchor_bottom = 0.900574
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "DEATHS -  69"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="deaths_icon" type="TextureRect" parent="profile_mid"]
+anchor_left = 0.386087
+anchor_top = 0.701863
+anchor_right = 0.432609
+anchor_bottom = 0.908903
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="selector" type="Label" parent="profile_mid/deaths_icon"]
+visible = false
+anchor_left = -0.299066
+anchor_top = 0.24
+anchor_right = 1.25234
+anchor_bottom = 1.1
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "[            ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="container_h3" type="HBoxContainer" parent="."]
-anchor_top = 0.707031
+anchor_top = 0.741935
 anchor_right = 1.0
 anchor_bottom = 1.0
 alignment = 1
+
+[node name="close" type="Label" parent="container_h3"]
+margin_left = 1070.0
+margin_top = 117.0
+margin_right = 1229.0
+margin_bottom = 203.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "close"
+
+[node name="selector" type="Label" parent="container_h3/close"]
+anchor_left = -0.289308
+anchor_top = -0.0581395
+anchor_right = 1.30818
+anchor_bottom = 0.94186
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "[                    ]"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="close" type="Label" parent="container_h3"]
-margin_left = 832.0
-margin_top = 136.0
-margin_right = 1088.0
-margin_bottom = 239.0
-theme = ExtResource( 1 )
-custom_fonts/font = SubResource( 2 )
-text = "[ close ]"
-
-[node name="choosen" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-
-[node name="best_score_text2" type="Label" parent="."]
+[node name="dev_score" type="Label" parent="."]
+visible = false
 anchor_left = 0.337
 anchor_top = 0.628
 anchor_right = 0.337
@@ -147,7 +504,8 @@ rect_rotation = 0.0495354
 theme = SubResource( 32 )
 text = "DEV Score:"
 
-[node name="best_score2" type="Label" parent="."]
+[node name="dev_score_num" type="Label" parent="."]
+visible = false
 anchor_left = 0.501042
 anchor_top = 0.607813
 anchor_right = 0.57548
@@ -159,3 +517,13 @@ rect_rotation = 0.0495354
 theme = SubResource( 33 )
 custom_fonts/font = SubResource( 35 )
 text = "2184"
+
+[node name="choosen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="menu_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.214
