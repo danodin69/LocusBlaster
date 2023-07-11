@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/Blender Imports/Wing Blue.material" type="Material" id=1]
 [ext_resource path="res://assets/Blender Imports/Base Gray.material" type="Material" id=2]
@@ -59,8 +59,10 @@ surfaces/3 = {
 "vertex_count": 16
 }
 
+[sub_resource type="BoxShape" id=3]
+
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 1.5001, 1.80206, 3.47137 )
+extents = Vector3( 2.74552, 1.86511, 6.14831 )
 
 [node name="player" type="KinematicBody" groups=["Player"]]
 script = ExtResource( 5 )
@@ -87,8 +89,13 @@ texture = ExtResource( 7 )
 
 [node name="Particles" parent="." instance=ExtResource( 8 )]
 
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.964542 )
+shape = SubResource( 3 )
+
 [node name="ShipHealth" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.06145 )
 
 [node name="CollisionShape" type="CollisionShape" parent="ShipHealth"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.54126 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.63452 )
 shape = SubResource( 2 )

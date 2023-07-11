@@ -1,15 +1,20 @@
 extends Spatial
 
+#IN-GAME STATS 
 var update_highscore : int 
 var update_kill_count : int
 var update_death_count : int
 var update_chips_count : int = 3
 
+
+#SOME UI/GAME BEHAVIOR CONTROLS
 var game_paused : bool 
 
 var is_game_restarted : bool = false
 var on_main_menu_called : bool = false
 
+
+#GAME MEMORY VARS FOR IN-GAME STATS/ITEM[1] 
 
 var best_score : int 
 var kills : int
@@ -23,10 +28,24 @@ const FILE_PATH : String = 'user://x639dkx.xxi'
 
 func _ready():
 	load_data()
-	print('BEST SCORE: DEFAULT IS : '+ str(best_score))
+	print('BEST SCORE: '+ str(best_score))
+	print('KILLS: '+ str(kills))
+	print('DEATHS: '+ str(deaths))
+	print('CHIPS: '+ str(chips))
 
 # warning-ignore:unused_argument
+
+
+
 func _process(delta):
+	update_stats()
+	
+		
+
+
+
+func update_stats():
+	#MEMORY UPDATER
 	if update_highscore > best_score:
 		best_score = update_highscore
 		set_best_score(best_score)
@@ -37,10 +56,12 @@ func _process(delta):
 	if update_death_count > deaths:
 		deaths = update_death_count
 		set_death_count(deaths)
+	#-----END-----
+	
+	
 
 
-
-#BEST SCORE LOAD AND SAVE FUNCTIONS
+#GAME DATA SAVE/LOAD FUNCTION
 
 func load_data():
 	var FILE = File.new()
@@ -78,3 +99,4 @@ func set_death_count(value: int):
 func set_chips_count(value:int):
 	chips = value
 	save_data()
+#-----END-----

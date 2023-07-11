@@ -1,5 +1,3 @@
-
-
 extends KinematicBody
 
 var velocity = Vector3()
@@ -38,17 +36,17 @@ func _physics_process(delta):
 #Destroy enemies on collison
 func _on_Area_body_entered(body):
 	if body.is_in_group("Enemies"):
-		mainScript.update_highscore += 3
-		mainScript.kills += 1
-		mainScript.save_data()
-		print(mainScript.update_highscore)
-		var particles = KillParticles.instance()
-		main.add_child(particles)
-		particles.transform.origin = transform.origin
-		body.queue_free()
+#		mainScript.update_highscore += 3
+#		mainScript.kills += 1
+#		mainScript.save_data()
+#		var particles = KillParticles.instance()
+#		main.add_child(particles)
+#		particles.transform.origin = transform.origin
+#		body.queue_free()
 		explodeSound.play()
 		visible = false
 		$Area/CollisionShape.disabled = true
+		
 		
 		
 func _on_LightTimer_timeout():

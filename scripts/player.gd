@@ -39,8 +39,8 @@ func is_game_started(var is_started : bool, var delta):
 		rotation_degrees.y = -velocity.x / 2
 # warning-ignore:return_value_discarded
 		move_and_slide(velocity)
-		transform.origin.x = clamp(transform.origin.x, -15, 15)
-		transform.origin.y = clamp(transform.origin.y, -10, 10)
+		transform.origin.x = clamp(transform.origin.x, -30, 30)
+		transform.origin.y = clamp(transform.origin.y, -20, 20)
 
 		#shooting
 		if Input.is_action_pressed("shoot") and cooldown <= 0:

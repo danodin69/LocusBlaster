@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends AudioStreamPlayer
 
 
 var stream_player = AudioStreamPlayer2D.new()

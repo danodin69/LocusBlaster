@@ -19,6 +19,7 @@ var current_selector = 0
 onready var selector : Array = [$profile_top/player_icon/selector, $profile_top/chip_icon/selector, $profile_top/rank_icon/selector, $profile_mid/chart_icon/selector, $profile_mid/kills_icon/selector, $profile_mid/deaths_icon/selector, $container_h3/close/selector]
 
 
+# warning-ignore:unused_argument
 func _process(delta):
 	best_score.text = "BEST SCORE -  " +str(mainScript.best_score)
 	chips.text = str(mainScript.chips)

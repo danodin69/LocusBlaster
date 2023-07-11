@@ -240,7 +240,6 @@ texture = ExtResource( 7 )
 [node name="pilot_hud" parent="." instance=ExtResource( 3 )]
 
 [node name="focus" parent="pilot_hud/CanvasLayer" index="0"]
-visible = true
 texture = ExtResource( 15 )
 
 [node name="health" parent="pilot_hud/CanvasLayer" index="1"]

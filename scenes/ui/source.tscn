@@ -25,6 +25,7 @@ var current_selector = 0
 var is_source_screen : bool = false
 
 
+# warning-ignore:unused_argument
 func _process(delta):
 	
 	if is_source_screen == true:
@@ -87,6 +88,7 @@ func set_current_selection(_current_selection):
 
 
 func open_link(link):
+# warning-ignore:return_value_discarded
 	OS.shell_open(link)
 
 
@@ -520,8 +522,6 @@ text = "[                ]"
 
 [node name="choosen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-bus = "SoundFX"
 
 [node name="select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-bus = "SoundFX"

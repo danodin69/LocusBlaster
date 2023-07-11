@@ -18,7 +18,6 @@ func _on_Guided_body_entered(body):
 	if body.is_in_group('Enemies'):
 		if !isShieldOn :
 			$InGameHud.health -=10
-			print($InGameHud.health)
 		else:
 			$InGameHud.shield_health -= 30
 
@@ -39,6 +38,7 @@ func _on_ShipHealth_body_entered(body):
 			particles.transform.origin = transform.origin
 			main.add_child(particles)
 
+
 		else:
 			$InGameHud.shield_health -= 30
 			
@@ -46,11 +46,11 @@ func _on_ShipHealth_body_entered(body):
 		isShieldOn = true
 		$sounds/shield_powerup.play()
 		$InGameHud.shield_health += 30
+		body.queue_free()
 		var particles = power_up_particles.instance()
 		particles.transform.origin = transform.origin
 		main.add_child(particles)
-		
-		print('SHIELD POWER UP COLLECTED')
+
 	"""
 	Dan: Little loophole here that i won't patch!
 		 the repair gives extra hidden health even after
@@ -60,12 +60,11 @@ func _on_ShipHealth_body_entered(body):
 		
 		$sounds/health_powerup.play()
 		$InGameHud.health += 10
-		
+		body.queue_free()
 		var particles = power_up_particles.instance()
 		particles.transform.origin = transform.origin
 		main.add_child(particles)
 		
-		print('HEALTH POWER UP COLLECTED')
 		
 		
 func check_health():

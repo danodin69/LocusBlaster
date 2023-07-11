@@ -140,11 +140,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.3149 )
 [node name="StarParticles" parent="player" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -231.685 )
 
+[node name="Camera" type="Camera" parent="player"]
+transform = Transform( 1, 0, 0, 0, 0.98427, 0.176672, 0, -0.176672, 0.98427, 0, 2.81489, 18.3149 )
+far = 300.0
+
 [node name="EnemySpawner" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -300 )
-
-[node name="Camera" type="Camera" parent="."]
-far = 300.0
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.345381, 0.938463, 0, -0.938463, 0.345381, 0, 11.6345, -15.1063 )
@@ -363,9 +364,10 @@ expand = true
 
 [node name="sounds" type="Node2D" parent="."]
 
-[node name="gameplay" type="AudioStreamPlayer2D" parent="sounds"]
-volume_db = 4.2
+[node name="gameplay" type="AudioStreamPlayer" parent="sounds"]
+volume_db = 3.5
 autoplay = true
+bus = "Music"
 script = ExtResource( 19 )
 
 [node name="game_over" type="AudioStreamPlayer" parent="sounds"]
@@ -377,11 +379,13 @@ volume_db = -1.01
 pause_mode = 2
 stream = SubResource( 24 )
 volume_db = -1.01
+bus = "SoundFX"
 
 [node name="health_powerup" type="AudioStreamPlayer" parent="sounds"]
 pause_mode = 2
 stream = SubResource( 25 )
 volume_db = -1.01
+bus = "SoundFX"
 
 [connection signal="tree_entered" from="." to="." method="_on_Main_tree_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_Main_tree_exited"]

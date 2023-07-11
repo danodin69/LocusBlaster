@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/Blender Imports/Base.material" type="Material" id=1]
 [ext_resource path="res://assets/Blender Imports/Wing.material" type="Material" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scripts/enemy.gd" type="Script" id=4]
 [ext_resource path="res://scenes/particles/AfterburnParticles.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/power ups/shield_power_up.png" type="Texture" id=6]
+[ext_resource path="res://assets/audio/effects/laserLarge_000.ogg" type="AudioStream" id=7]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "EnemyMesh"
@@ -47,10 +48,27 @@ surfaces/2 = {
 }
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 1.98814, 1.70537, 1.33083 )
+extents = Vector3( 1, 1, 0.001 )
 
 [sub_resource type="BoxShape" id=3]
-extents = Vector3( 2.56783, 1.06794, 1.64154 )
+extents = Vector3( 0.603438, 0.886509, 0.161173 )
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.584158, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.683168, 0.683168, 0.683168, 1, 0.582031, 0.125046, 0.125046, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray( 0, 0.00990099, 0.029703, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.316327, 0.316327, 0.316327, 1, 1, 1, 1, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture2D" id=7]
+gradient = SubResource( 6 )
+width = 61
+height = 20
+fill_to = Vector2( 0.425926, 0 )
 
 [node name="enemy" type="KinematicBody" groups=["Enemies"]]
 transform = Transform( -1.99966, 0, 0.0370337, 0, 2, 0, -0.0370337, 0, -1.99966, 0, 0, 0 )
@@ -61,19 +79,39 @@ transform = Transform( -1, 5.50763e-09, 0, -8.74228e-08, -0.063, 0, 0, 0, 1, 0, 
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0761169, 0, 4.34098 )
 shape = SubResource( 2 )
 
 [node name="Particles" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0250329, 1.70716 )
 
 [node name="Area" type="Area" parent="."]
+transform = Transform( 6, 0, 4.47035e-08, 0, 3, 0, -4.47035e-08, 0, 6, 1.86265e-09, 0.0131016, 0.397142 )
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0, 0, -0.319275 )
 shape = SubResource( 3 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0434096, 0, -2.34393 )
 visible = false
 texture = ExtResource( 6 )
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+visible = false
+margin_left = -2.0
+margin_top = 2.0
+margin_right = 437.0
+margin_bottom = 42.0
+texture_under = SubResource( 5 )
+texture_over = SubResource( 7 )
+nine_patch_stretch = true
+
+[node name="EnemyExplode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -15.156
+mix_target = 1
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
