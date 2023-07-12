@@ -34,6 +34,7 @@ func _process(delta):
 func selection_handler(_current_selection):
 	if _current_selection == 0:
 		#get_tree().change_scene("res://Main.tscn")
+		
 		$Timer.start()
 		
 	elif _current_selection == 1:
@@ -61,9 +62,8 @@ func set_current_selection(_current_selection):
 
 
 func _on_Timer_timeout():
-	
+	get_parent().get_node("pilot_hud").visible = true
 	get_parent().get_node("InGameHud").show()
-	get_parent().get_node("InGameHud/pilot_hud/CanvasLayer").show()
 	get_parent().get_node("player").game_started = true
 	mobile_in_game_control_joystick.show()
 	mobile_in_game_control_shooter.show()

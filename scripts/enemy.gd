@@ -29,9 +29,9 @@ func difficulty_meter():
 
 	var speed_medium = rand_range(50, 150)
 	
-	var speed_hard = rand_range(70, 180)
+	var speed_hard = rand_range(70, 140)
 	
-	var speed_extreme = rand_range(90, 210)
+	var speed_extreme = rand_range(90, 190)
 	
 	var level1 = mainScript.update_highscore > 110 && mainScript.update_highscore < 520
 	var level2 = mainScript.update_highscore > 550 && mainScript.update_highscore < 850
@@ -78,7 +78,7 @@ func _on_Area_body_entered(body):
 	if body.is_in_group("bullet_player"):
 		
 		body.queue_free()
-		health -= 30
+		health -= 50
 		if health <= 0:
 			var particles = KillParticles.instance()
 			particles.transform.origin = transform.origin

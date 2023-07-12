@@ -1,27 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://assets/ui/HUD/pilot_hud_deco.png" type="Texture" id=1]
-[ext_resource path="res://assets/ui/HUD/life_bar.png" type="Texture" id=2]
-[ext_resource path="res://assets/ui/HUD/life_bar_rim.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/HUD/pilot_hud_deco_improved.png" type="Texture" id=1]
 
-[node name="pilot_hud" type="Node2D"]
+[node name="pilot_hud" type="CanvasLayer"]
+visible = false
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="focus" type="TextureRect" parent="CanvasLayer"]
+[node name="focus" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
-
-[node name="health" type="TextureProgress" parent="CanvasLayer"]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -498.0
-margin_top = 19.0
-margin_right = -79.0
-margin_bottom = 48.0
-value = 55.0
-texture_over = ExtResource( 3 )
-texture_progress = ExtResource( 2 )
-nine_patch_stretch = true
+__meta__ = {
+"_editor_description_": ""
+}

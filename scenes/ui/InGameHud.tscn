@@ -1,8 +1,7 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/in_game_hud.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/HUD/heart_life.png" type="Texture" id=2]
-[ext_resource path="res://scenes/ui/pilot_hud.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/ui/HUD/life_bar.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/HUD/life_bar_rim.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/HUD/shield_inner.png" type="Texture" id=6]
@@ -14,7 +13,6 @@
 [ext_resource path="res://assets/ui/HUD/shoot_pressed.png" type="Texture" id=12]
 [ext_resource path="res://assets/ui/HUD/pausebutton_pressed.png" type="Texture" id=13]
 [ext_resource path="res://assets/ui/HUD/pause_button.png" type="Texture" id=14]
-[ext_resource path="res://assets/ui/HUD/pilot_hud_deco_improved.png" type="Texture" id=15]
 [ext_resource path="res://misc/joystick/virtual_joystick.tscn" type="PackedScene" id=16]
 
 [sub_resource type="DynamicFontData" id=14]
@@ -237,14 +235,6 @@ position = Vector2( 14, 26.1666 )
 scale = Vector2( 0.0833333, 0.0833333 )
 texture = ExtResource( 7 )
 
-[node name="pilot_hud" parent="." instance=ExtResource( 3 )]
-
-[node name="focus" parent="pilot_hud/CanvasLayer" index="0"]
-texture = ExtResource( 15 )
-
-[node name="health" parent="pilot_hud/CanvasLayer" index="1"]
-visible = false
-
 [node name="mobile_controls" type="CanvasLayer" parent="."]
 
 [node name="directions" type="Control" parent="mobile_controls"]
@@ -361,5 +351,3 @@ action_left = "move_left"
 action_right = "move_right"
 action_up = "move_up"
 action_down = "move_down"
-
-[editable path="pilot_hud"]

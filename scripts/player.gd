@@ -2,8 +2,8 @@ extends KinematicBody
 
 
 var game_started : bool = false
-const MAXSPEED = 30
-const ACCELERATION = 0.75
+const MAXSPEED = 60
+const ACCELERATION = 1
 var inputVector = Vector3()
 var velocity = Vector3()
 var cooldown = 0
@@ -39,8 +39,8 @@ func is_game_started(var is_started : bool, var delta):
 		rotation_degrees.y = -velocity.x / 2
 # warning-ignore:return_value_discarded
 		move_and_slide(velocity)
-		transform.origin.x = clamp(transform.origin.x, -30, 30)
-		transform.origin.y = clamp(transform.origin.y, -20, 20)
+		transform.origin.x = clamp(transform.origin.x, -35, 35)
+		transform.origin.y = clamp(transform.origin.y, -25, 25)
 
 		#shooting
 		if Input.is_action_pressed("shoot") and cooldown <= 0:

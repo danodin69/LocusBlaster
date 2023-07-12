@@ -7,7 +7,7 @@ func spawn():
 	if get_parent().get_node("player").game_started == true:
 		var enemy = Enemy.instance()
 		main.add_child(enemy)
-		enemy.transform.origin = transform.origin + Vector3(rand_range(-15,15), rand_range(-15,15), 0)
+		enemy.transform.origin = transform.origin + Vector3(rand_range(-10,15), rand_range(-10,13), 0)
 
 func _on_Timer_timeout():
 	
