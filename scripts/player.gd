@@ -1,3 +1,5 @@
+class_name PlayerShip
+
 extends KinematicBody
 
 
@@ -18,8 +20,9 @@ onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/m
 onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_controls/pause")
 onready var mobile_ui_controls = get_parent().get_node("InGameHud/mobile_controls/directions")
 
+var rank = Rank.new()
+
 func _physics_process(delta):
-	
 	is_game_started(game_started, delta)
 
 func is_game_started(var is_started : bool, var delta):

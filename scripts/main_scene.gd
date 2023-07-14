@@ -98,7 +98,7 @@ func _on_Main_tree_entered():
 		$player.game_started = true
 		$InGameHud.show()
 		$main_menu.queue_free()
-		$InGameHud/pilot_hud/CanvasLayer.show()
+		$pilot_hud/focus.show()
 		
 	elif mainScript.on_main_menu_called == true:
 		get_tree().paused = false

@@ -20,14 +20,20 @@ var best_score : int
 var kills : int
 var deaths : int
 var chips : int = update_chips_count
+var player_rank : String
+
+#Rank System 
+var rank : Rank = Rank.new()
 
 
 
-const FILE_PATH : String = 'user://x639dkx.xxi'
+const FILE_PATH : String = 'user://x639dkx.xxx'
 #game_data
 
 func _ready():
 	load_data()
+	rank.manager()
+	print('PLAYER RANK:', player_rank)
 	print('BEST SCORE: '+ str(best_score))
 	print('KILLS: '+ str(kills))
 	print('DEATHS: '+ str(deaths))
@@ -37,9 +43,11 @@ func _ready():
 
 
 
+# warning-ignore:unused_argument
+
 func _process(delta):
 	update_stats()
-	
+	rank.manager()
 		
 
 
@@ -67,17 +75,21 @@ func load_data():
 	var FILE = File.new()
 	if !FILE.file_exists(FILE_PATH): return
 	FILE.open(FILE_PATH, FILE.READ)
-
+	
+	player_rank = FILE.get_var()
 	best_score = FILE.get_var()
 	kills = FILE.get_var()
 	deaths = FILE.get_var()
 	chips = FILE.get_var()
+	
 
 	FILE.close()
 
 func save_data():
 	var FILE = File.new()
 	FILE.open(FILE_PATH, FILE.WRITE)
+	
+	FILE.store_var(player_rank)
 	FILE.store_var(best_score)
 	FILE.store_var(kills)
 	FILE.store_var(deaths)
@@ -99,4 +111,9 @@ func set_death_count(value: int):
 func set_chips_count(value:int):
 	chips = value
 	save_data()
+
+func set_player_rank(value: String):
+	player_rank = value
+	save_data()
+	
 #-----END-----

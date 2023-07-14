@@ -8,7 +8,10 @@ var speed = rand_range(initial_low_speed, initial_high_speed)
 onready var main = get_tree().current_scene
 var KillParticles = load("res://scenes/particles/KillParticles.tscn")
 
+var rank = mainScript.rank
 onready var explodeSound = $EnemyExplode
+
+#
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	difficulty_meter()
@@ -69,6 +72,7 @@ func difficulty_meter():
 	
 		
 func _on_Area_body_entered(body):
+
 	if body.is_in_group("Player"):
 		var particles = KillParticles.instance()
 		particles.transform.origin = transform.origin
@@ -76,10 +80,11 @@ func _on_Area_body_entered(body):
 		queue_free()
 	
 	if body.is_in_group("bullet_player"):
-		
 		body.queue_free()
-		health -= 50
+		health -= rank.allowed_bullet_damage
 		if health <= 0:
+			rank.kills_per_game += 1
+			print("KPG: ",rank.kills_per_game)
 			var particles = KillParticles.instance()
 			particles.transform.origin = transform.origin
 			main.add_child(particles)

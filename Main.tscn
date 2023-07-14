@@ -320,6 +320,10 @@ stream = ExtResource( 16 )
 pause_mode = 2
 visible = false
 
+[node name="notify" parent="GameOver" index="6"]
+margin_top = 352.0
+margin_bottom = 423.0
+
 [node name="settings" parent="." instance=ExtResource( 14 )]
 pause_mode = 2
 mouse_filter = 1
@@ -359,7 +363,6 @@ expand = true
 [node name="gameplay" type="AudioStreamPlayer" parent="sounds"]
 volume_db = 3.5
 autoplay = true
-bus = "Music"
 script = ExtResource( 19 )
 
 [node name="game_over" type="AudioStreamPlayer" parent="sounds"]
@@ -371,13 +374,11 @@ volume_db = -1.01
 pause_mode = 2
 stream = SubResource( 24 )
 volume_db = -1.01
-bus = "SoundFX"
 
 [node name="health_powerup" type="AudioStreamPlayer" parent="sounds"]
 pause_mode = 2
 stream = SubResource( 25 )
 volume_db = -1.01
-bus = "SoundFX"
 
 [connection signal="tree_entered" from="." to="." method="_on_Main_tree_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_Main_tree_exited"]

@@ -283,9 +283,7 @@ anims/splash! = SubResource( 1 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 volume_db = 5.347
-bus = "splash"
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer" parent="."]
 stream = SubResource( 3 )
 volume_db = 5.347
-bus = "splash"

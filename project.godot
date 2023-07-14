@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody",
+"class": "PlayerShip",
+"language": "GDScript",
+"path": "res://scripts/player.gd"
+}, {
+"base": "Node",
+"class": "Rank",
+"language": "GDScript",
+"path": "res://scripts/rank_system.gd"
+}, {
 "base": "Control",
 "class": "VirtualJoystick",
 "language": "GDScript",
 "path": "res://misc/joystick/virtual_joystick.gd"
 } ]
 _global_script_class_icons={
+"PlayerShip": "",
+"Rank": "",
 "VirtualJoystick": ""
 }
 
