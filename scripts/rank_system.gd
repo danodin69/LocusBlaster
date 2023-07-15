@@ -8,6 +8,12 @@ var novice : bool = false
 var hero : bool = false
 var captain_locus : bool = false
 
+
+#RANKS TEXTURE
+
+
+
+
 #SHIP LIMITATIONS PER RANK
 
 var allowed_bullet_damage : int
@@ -21,39 +27,24 @@ var boss_kills : int
 
 	
 func manager():
-	
 	var rank : String = mainScript.player_rank
 	if rank == "":
 		mainScript.set_player_rank("zero")
-		print("Player Rank Set: ",mainScript.player_rank)
+		print("Player Rank Set: ", mainScript.player_rank)
 		
 	match rank:
 		"zero":
-			zero = true
+			start_rank_zero_objective()
 			
 		"novice":
-			novice = true
+			start_rank_novice_objective()
 			
 		"hero":
-			hero = true
+			start_rank_hero_objective()
 			
 		"captain_locus":
-			captain_locus = true
-
+			start_rank_captain_locus_objective()
 			
-	if zero == true:
-		start_rank_zero_objective()
-		
-	elif novice == true:
-		start_rank_novice_objective()
-		
-	elif hero == true :
-		start_rank_hero_objective()
-		
-	elif captain_locus == true:
-		start_rank_captain_locus_objective()
-		
-
 func start_rank_zero_objective():
 	"""
 	  Rank Zero 
@@ -68,8 +59,9 @@ func start_rank_zero_objective():
 	- KILL 50 ENEMIES IN ONE FLIGHT
 
 """
+	zero = true
 	
-	allowed_bullet_damage = 25
+	allowed_bullet_damage = 15
 	allowed_maximum_shield = 1
 	is_ship_repair_allowed = false
 	if kills_per_game >= 10:
@@ -81,10 +73,26 @@ func start_rank_zero_objective():
 
 	
 func start_rank_novice_objective():
-	
-	novice = true
+	"""
+	  Rank Novice
+	| Attributes |
 
-	allowed_bullet_damage = 33
+	- 3 BULLETS KILLS ONE ENEMY
+	- MAXIMUM OF TWO SHIELDS
+	- SHIP REPAIR CAPABILITIES
+
+	| Promotion |
+
+	- KILL 666 ENEMIES IN ONE FLIGHT
+
+"""
+	novice = true
+	
+		
+	allowed_bullet_damage = 21
+	allowed_maximum_shield = 2
+	is_ship_repair_allowed = true
+	
 	if kills_per_game >= 50:
 		kills_per_game = 0
 		novice = false
@@ -93,17 +101,40 @@ func start_rank_novice_objective():
 		print(">>>PROMOTED TO HERO")
 	
 func start_rank_hero_objective():
-	hero = true
+	"""
+	  Rank Hero
+	| Attributes |
 
+	- 2 BULLETS KILLS ONE ENEMY
+	- MAXIMUM OF TWO SHIELDS
+	- SHIP REPAIR CAPABILITIES
+
+	| Promotion |
+
+	- KILL 666 ENEMIES IN ONE FLIGHT
+
+"""
+	hero = true
+	
+	
+	
 	allowed_bullet_damage = 50
-	if kills_per_game >= 3333 && boss_kills >= 3:
+	allowed_maximum_shield = 2
+	is_ship_repair_allowed = true
+	
+	if kills_per_game >= 10 && boss_kills >= 3:
 		kills_per_game = 0
 		hero = false
 		mainScript.set_player_rank("captain_locus")
 		print(">>>PROMOTED TO CAPTAIN LOCUS")
 		
 func start_rank_captain_locus_objective():
-	captain_locus = true
+	
 
+	
+	
+	captain_locus = true
+	is_ship_repair_allowed = true
+	allowed_maximum_shield = 3
 	allowed_bullet_damage = 100
 

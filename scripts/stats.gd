@@ -8,8 +8,14 @@ onready var kills = $profile_mid/kills
 onready var deaths = $profile_mid/deaths
 onready var mobile_control_dialog = get_parent().get_node("InGameHud/mobile_controls/directions/accept_dialog")
 
+#RANK ICONS
+var zero_texture : = load("res://assets/sprites/ranks/zero.png")
+var novice_texture :  = load("res://assets/sprites/ranks/novice.png")
+var hero_texture :  =  load("res://assets/sprites/ranks/hero.png")
+var captain_locus_texture : =load( "res://assets/sprites/ranks/captain_locus.png")
 
-
+onready var player_rank_icon = $profile_top/rank_icon
+onready var player_rank_text = $profile_top/player_rank
 #SELECTORS AND SELECTORS VARS
 
 var current_selector = 0
@@ -21,10 +27,13 @@ onready var selector : Array = [$profile_top/player_icon/selector, $profile_top/
 
 # warning-ignore:unused_argument
 func _process(delta):
+	set_player_rank_ui()
+	
 	best_score.text = "BEST SCORE -  " +str(mainScript.best_score)
 	chips.text = str(mainScript.chips)
 	kills.text = "KILLS - " +str(mainScript.kills)
 	deaths.text = "DEATHS - "+str(mainScript.deaths)
+	
 	if is_stats_screen == true:
 		mobile_control_dialog.show()
 		$".".show()
@@ -95,5 +104,26 @@ func set_current_selection(_current_selection):
 	elif _current_selection == 6:
 		selector[0].show()
 		
+func set_player_rank_ui():
+	
+	var rank : String = mainScript.player_rank
+		
+	match rank:
+		"zero":
+			player_rank_icon.texture = zero_texture
+			player_rank_text.text = "ZERO"
+			
+		"novice":
+			player_rank_icon.texture = novice_texture
+			player_rank_text.text = "NOVICE"
+			
+		"hero":
+			player_rank_icon.texture = hero_texture
+			player_rank_text.text = "HERO"
+			
+		"captain_locus":
+			player_rank_icon.texture = captain_locus_texture
+			player_rank_text.text = "CAPTAIN LOCUS"
+
 
 
