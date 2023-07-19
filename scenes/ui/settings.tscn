@@ -273,8 +273,6 @@ color = Color( 0.0470588, 0.027451, 0.0627451, 0.882353 )
 
 [node name="select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-bus = "SoundFX"
 
 [node name="choosen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-bus = "SoundFX"

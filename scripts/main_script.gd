@@ -27,6 +27,8 @@ var rank : Rank = Rank.new()
 
 
 
+var is_player_promoted : bool = false
+
 const FILE_PATH : String = 'user://x639dkx.xxx'
 #game_data
 
@@ -48,7 +50,6 @@ func _ready():
 func _process(delta):
 	update_stats()
 	rank.manager()
-		
 
 
 

@@ -1,4 +1,5 @@
 extends Control
+
 var game_started : bool = false
 var out_of_focus : bool = false
 onready var selector1 = $play/selector
@@ -69,6 +70,7 @@ func _on_Timer_timeout():
 	mobile_in_game_control_shooter.show()
 	mobile_pause_button.show()
 	mobile_ui_controls.hide()
+	get_parent().show_objective_dialogue()
 	queue_free()
 
 

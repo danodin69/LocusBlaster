@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Control",
+"class": "Dialogue_System",
+"language": "GDScript",
+"path": "res://scripts/dialogue_system.gd"
+}, {
 "base": "KinematicBody",
 "class": "PlayerShip",
 "language": "GDScript",
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://misc/joystick/virtual_joystick.gd"
 } ]
 _global_script_class_icons={
+"Dialogue_System": "",
 "PlayerShip": "",
 "Rank": "",
 "VirtualJoystick": ""
@@ -48,6 +54,7 @@ default_bus_layout=""
 [autoload]
 
 mainScript="*res://scripts/main_script.gd"
+RankSystem="*res://scripts/rank_system.gd"
 
 [display]
 

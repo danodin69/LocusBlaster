@@ -14,6 +14,7 @@ func _process(delta):
 	change_music()
 
 
+
 func _on_Guided_body_entered(body):
 	if body.is_in_group('Enemies'):
 		if !isShieldOn :
@@ -111,3 +112,21 @@ func _on_gameplay_finished():
 func change_music():
 	if Input.is_action_just_pressed("music_knob"):
 		$sounds/gameplay.play_random_song()
+
+
+func pause():
+	if $player.game_started ==true:
+		get_tree().paused = true
+
+func continue_game():
+	get_tree().paused = false
+	
+func show_objective_dialogue():
+	$dialogue_system.rank_objective_dialogue()
+
+func show_promo_dialogue():
+	$dialogue_system.rank_promotion_dialogue()
+
+
+
+	

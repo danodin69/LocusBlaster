@@ -2,14 +2,11 @@ class_name Rank
 
 extends Node
 
-#RANKS
+#RANKS OBJECTIVES COMPLETION
 var zero : bool = false
 var novice : bool = false
 var hero : bool = false
 var captain_locus : bool = false
-
-
-#RANKS TEXTURE
 
 
 
@@ -25,9 +22,20 @@ var is_ship_repair_allowed : bool
 var kills_per_game : int
 var boss_kills : int 
 
+
+#RANKS OBJECTIVES
+var zero_obj : String = "SHIP POWER\n- LOW BULLET DAMAGE\n- MAXIMUM OF ONE SHIELD\n- SHIP REPAIR DISABLED\n\nMAIN OBJECTIVE\n- DESTROY 50 ENEMY SHIPS IN ONE FLIGHT"
+
+var novice_obj : String = "SHIP POWER\n- LOW BULLET DAMAGE\n- MAXIMUM OF TWO SHIELDS\n- SHIP REPAIR ACTIVE\n\nMAIN OBJECTIVE\n- DESTROY 150 ENEMY SHIPS IN ONE FLIGHT\n- DESTROY 3 SPINNER SHIP"
+
+var hero_obj : String = "SHIP POWER\n- MEDIUM BULLET DAMAGE\n- MAXIMUM OF TWO SHIELDs\n- SHIP REPAIR ACTIVE\n\nMAIN OBJECTIVE\n- DESTROY 500 ENEMY SHIPS IN ONE FLIGHT\n- Destroy 3 BOSS SHPS\n- DESTROY 10 SPINNER SHIP\n- DESTROY 10 DODGER SHIPS"
+
+var captain_obj : String = "SHIP POWER\n- MAXMUM BULLET DAMAGE\n- MAXIMUM OF ONE SHIELD\n- NO SHIP REPAIR\n\nMAIN OBJECTIVE\n- BLAST FOREVER"
+
 	
 func manager():
 	var rank : String = mainScript.player_rank
+#	rank = ""
 	if rank == "":
 		mainScript.set_player_rank("zero")
 		print("Player Rank Set: ", mainScript.player_rank)
@@ -59,16 +67,21 @@ func start_rank_zero_objective():
 	- KILL 50 ENEMIES IN ONE FLIGHT
 
 """
-	zero = true
 	
 	allowed_bullet_damage = 15
 	allowed_maximum_shield = 1
 	is_ship_repair_allowed = false
+	
 	if kills_per_game >= 10:
-		zero = false
+		
 		kills_per_game = 0
 		mainScript.set_player_rank("novice")
-		start_rank_novice_objective()
+		novice = true
+		
+		mainScript.is_player_promoted = true
+		print("promo: ",mainScript.is_player_promoted)
+		
+		
 		print(">>>PROMOTED TO NOVICE")
 
 	
@@ -86,18 +99,20 @@ func start_rank_novice_objective():
 	- KILL 666 ENEMIES IN ONE FLIGHT
 
 """
-	novice = true
+
 	
 		
 	allowed_bullet_damage = 21
 	allowed_maximum_shield = 2
 	is_ship_repair_allowed = true
 	
-	if kills_per_game >= 50:
+	if kills_per_game >= 150:
 		kills_per_game = 0
+		
 		novice = false
+		
 		mainScript.set_player_rank("hero")
-		start_rank_hero_objective()
+		hero = true
 		print(">>>PROMOTED TO HERO")
 	
 func start_rank_hero_objective():
@@ -114,11 +129,11 @@ func start_rank_hero_objective():
 	- KILL 666 ENEMIES IN ONE FLIGHT
 
 """
-	hero = true
+
 	
 	
 	
-	allowed_bullet_damage = 50
+	allowed_bullet_damage = 500
 	allowed_maximum_shield = 2
 	is_ship_repair_allowed = true
 	
@@ -126,13 +141,10 @@ func start_rank_hero_objective():
 		kills_per_game = 0
 		hero = false
 		mainScript.set_player_rank("captain_locus")
+		captain_locus = true
 		print(">>>PROMOTED TO CAPTAIN LOCUS")
 		
 func start_rank_captain_locus_objective():
-	
-
-	
-	
 	captain_locus = true
 	is_ship_repair_allowed = true
 	allowed_maximum_shield = 3
