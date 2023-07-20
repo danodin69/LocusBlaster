@@ -106,13 +106,15 @@ func start_rank_novice_objective():
 	allowed_maximum_shield = 2
 	is_ship_repair_allowed = true
 	
-	if kills_per_game >= 150:
+	if kills_per_game >= 20:
 		kills_per_game = 0
 		
 		novice = false
 		
 		mainScript.set_player_rank("hero")
 		hero = true
+		
+		mainScript.is_player_promoted = true
 		print(">>>PROMOTED TO HERO")
 	
 func start_rank_hero_objective():
@@ -133,15 +135,18 @@ func start_rank_hero_objective():
 	
 	
 	
-	allowed_bullet_damage = 500
+	allowed_bullet_damage = 41
 	allowed_maximum_shield = 2
 	is_ship_repair_allowed = true
 	
-	if kills_per_game >= 10 && boss_kills >= 3:
+	if kills_per_game >= 30 :
+#		&& boss_kills >= 3
 		kills_per_game = 0
 		hero = false
 		mainScript.set_player_rank("captain_locus")
 		captain_locus = true
+		
+		mainScript.is_player_promoted = true
 		print(">>>PROMOTED TO CAPTAIN LOCUS")
 		
 func start_rank_captain_locus_objective():

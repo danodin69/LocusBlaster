@@ -4,7 +4,7 @@ extends Spatial
 var update_highscore : int 
 var update_kill_count : int
 var update_death_count : int
-var update_chips_count : int = 3
+var update_chips_count : int 
 
 
 #SOME UI/GAME BEHAVIOR CONTROLS
@@ -65,6 +65,10 @@ func update_stats():
 	if update_death_count > deaths:
 		deaths = update_death_count
 		set_death_count(deaths)
+	if update_chips_count > 0 :
+		chips = update_chips_count
+		set_chips_count(chips)
+
 	#-----END-----
 	
 	

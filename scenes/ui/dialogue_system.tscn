@@ -1,40 +1,46 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scripts/dialogue_system.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/HUD/rect_design.png" type="Texture" id=2]
 [ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=3]
 [ext_resource path="res://assets/fonts/American Captain.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/sprites/ranks/zero.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/stats_screen/chip_icon.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/watch_ads_icon.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/give_up_icon.png" type="Texture" id=8]
+[ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=9]
+[ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/effects/explosionCrunch_003.ogg" type="AudioStream" id=11]
 
-[sub_resource type="DynamicFontData" id=9]
+[sub_resource type="DynamicFontData" id=41]
 font_path = "res://assets/fonts/American Captain.otf"
 
-[sub_resource type="DynamicFont" id=2]
-font_data = SubResource( 9 )
+[sub_resource type="DynamicFont" id=31]
+font_data = SubResource( 41 )
 
-[sub_resource type="DynamicFontData" id=7]
+[sub_resource type="DynamicFontData" id=42]
 font_path = "res://assets/fonts/American Captain.otf"
 
-[sub_resource type="DynamicFont" id=8]
-font_data = SubResource( 7 )
+[sub_resource type="DynamicFont" id=33]
+font_data = SubResource( 42 )
 
-[sub_resource type="DynamicFontData" id=5]
+[sub_resource type="DynamicFontData" id=43]
 font_path = "res://assets/fonts/American Captain.otf"
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=35]
 size = 18
-font_data = SubResource( 5 )
+font_data = SubResource( 43 )
 
-[sub_resource type="DynamicFontData" id=3]
+[sub_resource type="DynamicFontData" id=44]
 font_path = "res://assets/fonts/American Captain.otf"
 
-[sub_resource type="DynamicFont" id=4]
-font_data = SubResource( 3 )
+[sub_resource type="DynamicFont" id=37]
+font_data = SubResource( 44 )
 
 [sub_resource type="Theme" id=22]
-default_font = SubResource( 8 )
-Button/fonts/font = SubResource( 2 )
-CheckBox/fonts/font = SubResource( 8 )
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
 CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -43,7 +49,7 @@ CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 0
-CheckButton/fonts/font = SubResource( 8 )
+CheckButton/fonts/font = SubResource( 33 )
 CheckButton/icons/off = null
 CheckButton/icons/off_disabled = null
 CheckButton/icons/on = null
@@ -54,32 +60,32 @@ CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = null
 CheckButton/styles/pressed = null
-ColorPickerButton/fonts/font = SubResource( 8 )
-Fonts/fonts/large = SubResource( 8 )
-Fonts/fonts/normal = SubResource( 6 )
-GraphNode/fonts/title_font = SubResource( 8 )
-ItemList/fonts/font = SubResource( 8 )
-Label/fonts/font = SubResource( 4 )
-LineEdit/fonts/font = SubResource( 8 )
-LinkButton/fonts/font = SubResource( 8 )
-MenuButton/fonts/font = SubResource( 8 )
-OptionButton/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font_separator = SubResource( 8 )
-ProgressBar/fonts/font = SubResource( 8 )
-RichTextLabel/fonts/bold_font = SubResource( 8 )
-RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
-RichTextLabel/fonts/italics_font = SubResource( 8 )
-RichTextLabel/fonts/mono_font = SubResource( 8 )
-RichTextLabel/fonts/normal_font = SubResource( 8 )
-TabContainer/fonts/font = SubResource( 8 )
-Tabs/fonts/font = SubResource( 8 )
-TextEdit/fonts/font = SubResource( 8 )
-ToolButton/fonts/font = SubResource( 8 )
-TooltipLabel/fonts/font = SubResource( 8 )
-Tree/fonts/font = SubResource( 8 )
-Tree/fonts/title_button_font = SubResource( 8 )
-WindowDialog/fonts/title_font = SubResource( 8 )
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
 
 [sub_resource type="DynamicFont" id=23]
 size = 51
@@ -154,9 +160,9 @@ size = 66
 font_data = ExtResource( 4 )
 
 [sub_resource type="Theme" id=10]
-default_font = SubResource( 8 )
-Button/fonts/font = SubResource( 2 )
-CheckBox/fonts/font = SubResource( 8 )
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
 CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -165,7 +171,7 @@ CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 0
-CheckButton/fonts/font = SubResource( 8 )
+CheckButton/fonts/font = SubResource( 33 )
 CheckButton/icons/off = null
 CheckButton/icons/off_disabled = null
 CheckButton/icons/on = null
@@ -176,41 +182,41 @@ CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = null
 CheckButton/styles/pressed = null
-ColorPickerButton/fonts/font = SubResource( 8 )
-Fonts/fonts/large = SubResource( 8 )
-Fonts/fonts/normal = SubResource( 6 )
-GraphNode/fonts/title_font = SubResource( 8 )
-ItemList/fonts/font = SubResource( 8 )
-Label/fonts/font = SubResource( 4 )
-LineEdit/fonts/font = SubResource( 8 )
-LinkButton/fonts/font = SubResource( 8 )
-MenuButton/fonts/font = SubResource( 8 )
-OptionButton/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font_separator = SubResource( 8 )
-ProgressBar/fonts/font = SubResource( 8 )
-RichTextLabel/fonts/bold_font = SubResource( 8 )
-RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
-RichTextLabel/fonts/italics_font = SubResource( 8 )
-RichTextLabel/fonts/mono_font = SubResource( 8 )
-RichTextLabel/fonts/normal_font = SubResource( 8 )
-TabContainer/fonts/font = SubResource( 8 )
-Tabs/fonts/font = SubResource( 8 )
-TextEdit/fonts/font = SubResource( 8 )
-ToolButton/fonts/font = SubResource( 8 )
-TooltipLabel/fonts/font = SubResource( 8 )
-Tree/fonts/font = SubResource( 8 )
-Tree/fonts/title_button_font = SubResource( 8 )
-WindowDialog/fonts/title_font = SubResource( 8 )
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 75
 font_data = ExtResource( 4 )
 
 [sub_resource type="Theme" id=14]
-default_font = SubResource( 8 )
-Button/fonts/font = SubResource( 2 )
-CheckBox/fonts/font = SubResource( 8 )
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
 CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -219,7 +225,7 @@ CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 0
-CheckButton/fonts/font = SubResource( 8 )
+CheckButton/fonts/font = SubResource( 33 )
 CheckButton/icons/off = null
 CheckButton/icons/off_disabled = null
 CheckButton/icons/on = null
@@ -230,32 +236,32 @@ CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = null
 CheckButton/styles/pressed = null
-ColorPickerButton/fonts/font = SubResource( 8 )
-Fonts/fonts/large = SubResource( 8 )
-Fonts/fonts/normal = SubResource( 6 )
-GraphNode/fonts/title_font = SubResource( 8 )
-ItemList/fonts/font = SubResource( 8 )
-Label/fonts/font = SubResource( 4 )
-LineEdit/fonts/font = SubResource( 8 )
-LinkButton/fonts/font = SubResource( 8 )
-MenuButton/fonts/font = SubResource( 8 )
-OptionButton/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font_separator = SubResource( 8 )
-ProgressBar/fonts/font = SubResource( 8 )
-RichTextLabel/fonts/bold_font = SubResource( 8 )
-RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
-RichTextLabel/fonts/italics_font = SubResource( 8 )
-RichTextLabel/fonts/mono_font = SubResource( 8 )
-RichTextLabel/fonts/normal_font = SubResource( 8 )
-TabContainer/fonts/font = SubResource( 8 )
-Tabs/fonts/font = SubResource( 8 )
-TextEdit/fonts/font = SubResource( 8 )
-ToolButton/fonts/font = SubResource( 8 )
-TooltipLabel/fonts/font = SubResource( 8 )
-Tree/fonts/font = SubResource( 8 )
-Tree/fonts/title_button_font = SubResource( 8 )
-WindowDialog/fonts/title_font = SubResource( 8 )
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
 
 [sub_resource type="DynamicFont" id=15]
 size = 90
@@ -264,9 +270,9 @@ outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
 font_data = ExtResource( 4 )
 
 [sub_resource type="Theme" id=16]
-default_font = SubResource( 8 )
-Button/fonts/font = SubResource( 2 )
-CheckBox/fonts/font = SubResource( 8 )
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
 CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -275,7 +281,7 @@ CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 0
-CheckButton/fonts/font = SubResource( 8 )
+CheckButton/fonts/font = SubResource( 33 )
 CheckButton/icons/off = null
 CheckButton/icons/off_disabled = null
 CheckButton/icons/on = null
@@ -286,41 +292,41 @@ CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = null
 CheckButton/styles/pressed = null
-ColorPickerButton/fonts/font = SubResource( 8 )
-Fonts/fonts/large = SubResource( 8 )
-Fonts/fonts/normal = SubResource( 6 )
-GraphNode/fonts/title_font = SubResource( 8 )
-ItemList/fonts/font = SubResource( 8 )
-Label/fonts/font = SubResource( 4 )
-LineEdit/fonts/font = SubResource( 8 )
-LinkButton/fonts/font = SubResource( 8 )
-MenuButton/fonts/font = SubResource( 8 )
-OptionButton/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font_separator = SubResource( 8 )
-ProgressBar/fonts/font = SubResource( 8 )
-RichTextLabel/fonts/bold_font = SubResource( 8 )
-RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
-RichTextLabel/fonts/italics_font = SubResource( 8 )
-RichTextLabel/fonts/mono_font = SubResource( 8 )
-RichTextLabel/fonts/normal_font = SubResource( 8 )
-TabContainer/fonts/font = SubResource( 8 )
-Tabs/fonts/font = SubResource( 8 )
-TextEdit/fonts/font = SubResource( 8 )
-ToolButton/fonts/font = SubResource( 8 )
-TooltipLabel/fonts/font = SubResource( 8 )
-Tree/fonts/font = SubResource( 8 )
-Tree/fonts/title_button_font = SubResource( 8 )
-WindowDialog/fonts/title_font = SubResource( 8 )
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
 
 [sub_resource type="DynamicFont" id=17]
 size = 120
 font_data = ExtResource( 4 )
 
 [sub_resource type="Theme" id=18]
-default_font = SubResource( 8 )
-Button/fonts/font = SubResource( 2 )
-CheckBox/fonts/font = SubResource( 8 )
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
 CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -329,7 +335,7 @@ CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 0
-CheckButton/fonts/font = SubResource( 8 )
+CheckButton/fonts/font = SubResource( 33 )
 CheckButton/icons/off = null
 CheckButton/icons/off_disabled = null
 CheckButton/icons/on = null
@@ -340,41 +346,41 @@ CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = null
 CheckButton/styles/pressed = null
-ColorPickerButton/fonts/font = SubResource( 8 )
-Fonts/fonts/large = SubResource( 8 )
-Fonts/fonts/normal = SubResource( 6 )
-GraphNode/fonts/title_font = SubResource( 8 )
-ItemList/fonts/font = SubResource( 8 )
-Label/fonts/font = SubResource( 4 )
-LineEdit/fonts/font = SubResource( 8 )
-LinkButton/fonts/font = SubResource( 8 )
-MenuButton/fonts/font = SubResource( 8 )
-OptionButton/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font_separator = SubResource( 8 )
-ProgressBar/fonts/font = SubResource( 8 )
-RichTextLabel/fonts/bold_font = SubResource( 8 )
-RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
-RichTextLabel/fonts/italics_font = SubResource( 8 )
-RichTextLabel/fonts/mono_font = SubResource( 8 )
-RichTextLabel/fonts/normal_font = SubResource( 8 )
-TabContainer/fonts/font = SubResource( 8 )
-Tabs/fonts/font = SubResource( 8 )
-TextEdit/fonts/font = SubResource( 8 )
-ToolButton/fonts/font = SubResource( 8 )
-TooltipLabel/fonts/font = SubResource( 8 )
-Tree/fonts/font = SubResource( 8 )
-Tree/fonts/title_button_font = SubResource( 8 )
-WindowDialog/fonts/title_font = SubResource( 8 )
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
 
 [sub_resource type="DynamicFont" id=19]
 size = 75
 font_data = ExtResource( 4 )
 
 [sub_resource type="Theme" id=20]
-default_font = SubResource( 8 )
-Button/fonts/font = SubResource( 2 )
-CheckBox/fonts/font = SubResource( 8 )
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
 CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
@@ -383,7 +389,7 @@ CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
 CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 0
-CheckButton/fonts/font = SubResource( 8 )
+CheckButton/fonts/font = SubResource( 33 )
 CheckButton/icons/off = null
 CheckButton/icons/off_disabled = null
 CheckButton/icons/on = null
@@ -394,38 +400,377 @@ CheckButton/styles/hover = null
 CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = null
 CheckButton/styles/pressed = null
-ColorPickerButton/fonts/font = SubResource( 8 )
-Fonts/fonts/large = SubResource( 8 )
-Fonts/fonts/normal = SubResource( 6 )
-GraphNode/fonts/title_font = SubResource( 8 )
-ItemList/fonts/font = SubResource( 8 )
-Label/fonts/font = SubResource( 4 )
-LineEdit/fonts/font = SubResource( 8 )
-LinkButton/fonts/font = SubResource( 8 )
-MenuButton/fonts/font = SubResource( 8 )
-OptionButton/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font = SubResource( 8 )
-PopupMenu/fonts/font_separator = SubResource( 8 )
-ProgressBar/fonts/font = SubResource( 8 )
-RichTextLabel/fonts/bold_font = SubResource( 8 )
-RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
-RichTextLabel/fonts/italics_font = SubResource( 8 )
-RichTextLabel/fonts/mono_font = SubResource( 8 )
-RichTextLabel/fonts/normal_font = SubResource( 8 )
-TabContainer/fonts/font = SubResource( 8 )
-Tabs/fonts/font = SubResource( 8 )
-TextEdit/fonts/font = SubResource( 8 )
-ToolButton/fonts/font = SubResource( 8 )
-TooltipLabel/fonts/font = SubResource( 8 )
-Tree/fonts/font = SubResource( 8 )
-Tree/fonts/title_button_font = SubResource( 8 )
-WindowDialog/fonts/title_font = SubResource( 8 )
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
 
 [sub_resource type="DynamicFont" id=21]
 size = 90
 outline_size = 4
 outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
 font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=38]
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 33 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
+
+[sub_resource type="DynamicFont" id=39]
+size = 150
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=28]
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 33 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
+
+[sub_resource type="DynamicFont" id=29]
+size = 50
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=30]
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 33 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
+
+[sub_resource type="DynamicFont" id=40]
+size = 80
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=45]
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 33 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
+
+[sub_resource type="DynamicFont" id=46]
+size = 222
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=47]
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 33 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
+
+[sub_resource type="DynamicFont" id=48]
+size = 222
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=49]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "3" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "timer"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( -0.1, 1.5, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "3", "2", "1", "BLAST!" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_revive"
+} ]
+}
 
 [node name="dialogue_system" type="Control"]
 pause_mode = 2
@@ -508,7 +853,6 @@ margin_left = -820.0
 margin_top = -420.0
 margin_right = 820.0
 margin_bottom = 420.0
-texture = ExtResource( 2 )
 expand = true
 
 [node name="left_side" type="Control" parent="rank_objective/TextureRect"]
@@ -685,6 +1029,278 @@ margin_bottom = -21.0
 theme = SubResource( 20 )
 custom_fonts/font = SubResource( 21 )
 text = "[  ACCEPT  ]"
+
+[node name="continue_options" type="PopupDialog" parent="."]
+pause_mode = 2
+self_modulate = Color( 0.180392, 0.184314, 0.2, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="continue_options"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -886.0
+margin_top = -448.0
+margin_right = 898.0
+margin_bottom = 448.0
+expand = true
+
+[node name="selectors" type="Control" parent="continue_options/TextureRect"]
+anchor_top = 0.263393
+anchor_right = 1.01794
+anchor_bottom = 0.763393
+margin_right = 0.00012207
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="selector_1" type="Label" parent="continue_options/TextureRect/selectors"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 120.0
+margin_top = -24.0
+margin_right = 465.0
+margin_bottom = 127.0
+theme = SubResource( 38 )
+custom_fonts/font = SubResource( 39 )
+text = "[               ]"
+
+[node name="selector_2" type="Label" parent="continue_options/TextureRect/selectors"]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 720.0
+margin_top = -16.0
+margin_right = 1065.0
+margin_bottom = 135.0
+theme = SubResource( 38 )
+custom_fonts/font = SubResource( 39 )
+text = "[               ]"
+
+[node name="selector_3" type="Label" parent="continue_options/TextureRect/selectors"]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 1272.0
+margin_top = -32.0
+margin_right = 1617.0
+margin_bottom = 119.0
+theme = SubResource( 38 )
+custom_fonts/font = SubResource( 39 )
+text = "[               ]"
+
+[node name="top_center" type="Control" parent="continue_options/TextureRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -312.0
+margin_right = 312.0
+margin_bottom = 248.0
+
+[node name="top_label" type="Label" parent="continue_options/TextureRect/top_center"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -265.0
+margin_right = 265.0
+margin_bottom = 120.0
+theme = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+text = "IT IS NOT OVER"
+
+[node name="top_label2" type="Label" parent="continue_options/TextureRect/top_center"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -284.0
+margin_top = 120.0
+margin_right = 286.0
+margin_bottom = 240.0
+theme = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+text = "DO NOT GIVE UP"
+
+[node name="accept" type="Label" parent="continue_options/TextureRect/top_center"]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -132.0
+margin_top = -112.0
+margin_right = 154.0
+margin_bottom = -21.0
+theme = SubResource( 20 )
+custom_fonts/font = SubResource( 21 )
+text = "[  ACCEPT  ]"
+
+[node name="chip" type="TextureButton" parent="continue_options/TextureRect"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 160.0
+margin_top = -108.0
+margin_right = 408.0
+margin_bottom = 180.0
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="chip_label" type="Label" parent="continue_options/TextureRect"]
+anchor_left = 0.130045
+anchor_top = 0.674107
+anchor_right = 0.216368
+anchor_bottom = 0.752232
+margin_left = -1.52588e-05
+theme = SubResource( 28 )
+custom_fonts/font = SubResource( 29 )
+text = "CHIPS ( 3 )"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="chip_label2" type="Label" parent="continue_options/TextureRect"]
+anchor_left = 0.452915
+anchor_top = 0.683036
+anchor_right = 0.551009
+anchor_bottom = 0.761161
+margin_left = -1.52588e-05
+theme = SubResource( 28 )
+custom_fonts/font = SubResource( 29 )
+text = "watch ads"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="chip_label3" type="Label" parent="continue_options/TextureRect"]
+anchor_left = 0.762332
+anchor_top = 0.683036
+anchor_right = 0.860426
+anchor_bottom = 0.761161
+margin_left = -1.52588e-05
+theme = SubResource( 28 )
+custom_fonts/font = SubResource( 29 )
+text = "give up"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="watch_ads" type="TextureButton" parent="continue_options/TextureRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -167.0
+margin_right = 144.0
+margin_bottom = 167.0
+texture_normal = ExtResource( 7 )
+expand = true
+
+[node name="give_up" type="TextureButton" parent="continue_options/TextureRect"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -496.0
+margin_top = -140.0
+margin_right = -184.0
+margin_bottom = 204.0
+texture_normal = ExtResource( 8 )
+expand = true
+
+[node name="power_ups" type="Control" parent="continue_options/TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -772.0
+margin_top = -204.0
+margin_right = 772.0
+
+[node name="chip_label" type="Label" parent="continue_options/TextureRect/power_ups"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -81.5
+margin_right = 385.0
+margin_bottom = 81.5
+theme = SubResource( 30 )
+custom_fonts/font = SubResource( 40 )
+text = "+ 50% health
++ 2   shields"
+
+[node name="ads_label" type="Label" parent="continue_options/TextureRect/power_ups"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -192.5
+margin_top = -81.5
+margin_right = 192.5
+margin_bottom = 81.5
+theme = SubResource( 30 )
+custom_fonts/font = SubResource( 40 )
+text = "+ full health
++ 3   shields"
+
+[node name="give_up_label" type="Label" parent="continue_options/TextureRect/power_ups"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -385.0
+margin_top = -81.5
+margin_bottom = 81.5
+theme = SubResource( 30 )
+custom_fonts/font = SubResource( 40 )
+text = "+ I'M WEAK
++ OWARI    DA"
+
+[node name="revive_timer" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.192157, 0, 0.32549, 1 )
+
+[node name="revive_in" type="Label" parent="revive_timer"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -438.0
+margin_top = 280.0
+margin_right = 447.0
+margin_bottom = 503.0
+theme = SubResource( 45 )
+custom_fonts/font = SubResource( 46 )
+text = "REVIVAL IN..."
+align = 1
+
+[node name="timer" type="Label" parent="revive_timer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -238.0
+margin_top = 4.0
+margin_right = 235.0
+margin_bottom = 227.0
+theme = SubResource( 47 )
+custom_fonts/font = SubResource( 48 )
+text = "3"
+align = 1
+
+[node name="revive_timer" type="AnimationPlayer" parent="revive_timer"]
+root_node = NodePath("../timer")
+anims/RESET = SubResource( 49 )
+anims/timer = SubResource( 50 )
+
+[node name="select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="choosen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="explode" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [connection signal="pressed" from="d_sys_out" to="." method="_on_d_sys_out_pressed"]
 [connection signal="pressed" from="d_sys_out_promo" to="." method="_on_d_sys_out_promo_pressed"]

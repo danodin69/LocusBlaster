@@ -5,6 +5,7 @@ var KillParticles : Resource = load("res://scenes/particles/KillParticles.tscn")
 var power_up_particles : Resource = load('res://scenes/particles/power_ups.tscn')
 onready var main = get_tree().current_scene
 
+var is_chip_used : bool = false
 
 
 # warning-ignore:unused_argument
@@ -12,6 +13,10 @@ func _process(delta):
 	check_health()
 	check_pause_input()
 	change_music()
+#
+func _ready():
+	mainScript.update_chips_count +=6
+	print("cc", mainScript.chips)
 
 
 
@@ -70,16 +75,10 @@ func _on_ShipHealth_body_entered(body):
 		
 func check_health():
 	if $InGameHud.health <= 0 :
-		mainScript.deaths += 1
-		mainScript.save_data()
-		$GameOver.game_over = true
-		$GameOver.show()
-		$GameOver/score.show()
-		$player.hide()
-		$player.game_started =false
-		$sounds/game_over.play()
+		$dialogue_system.continue_game_dialogue()
 		get_tree().paused = true
 		
+
 func restart_game():
 	get_tree().paused = false
 # warning-ignore:return_value_discarded
@@ -127,6 +126,32 @@ func show_objective_dialogue():
 func show_promo_dialogue():
 	$dialogue_system.rank_promotion_dialogue()
 
-
+func show_game_over_screen():
+	mainScript.deaths += 1
+	mainScript.save_data()
+	$GameOver.game_over = true
+	$GameOver.show()
+	$GameOver/score.show()
+	$player.hide()
+	$player.game_started =false
+	$sounds/game_over.play()
+	get_tree().paused = true
 
 	
+func revive_player():
+	if is_chip_used == true:
+		
+		mainScript.update_chips_count -= 1
+		mainScript.chips -=1
+
+		$InGameHud.health += 60
+		$InGameHud.shield_health = 60
+		
+		$dialogue_system.close_continue_options_dialogue()
+		
+		
+		
+
+	
+
+
