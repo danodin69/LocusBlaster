@@ -13,9 +13,8 @@ func _process(delta):
 	check_health()
 	check_pause_input()
 	change_music()
-#
+##
 func _ready():
-	mainScript.update_chips_count +=6
 	print("cc", mainScript.chips)
 
 
@@ -71,7 +70,14 @@ func _on_ShipHealth_body_entered(body):
 		particles.transform.origin = transform.origin
 		main.add_child(particles)
 		
-		
+	if body.is_in_group('chip'):
+		$sounds/chip_sound.play()
+		mainScript.update_chips_count += 1
+		print("cc", mainScript.chips)
+		body.queue_free()
+		var particles = power_up_particles.instance()
+		particles.transform.origin = transform.origin
+		main.add_child(particles)
 		
 func check_health():
 	if $InGameHud.health <= 0 :

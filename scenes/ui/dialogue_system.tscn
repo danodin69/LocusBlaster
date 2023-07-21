@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://scripts/dialogue_system.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/HUD/rect_design.png" type="Texture" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/audio/effects/explosionCrunch_003.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/audio/effects/forceField_003.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/audio/effects/laserLarge_000.ogg" type="AudioStream" id=13]
 
 [sub_resource type="DynamicFontData" id=41]
 font_path = "res://assets/fonts/American Captain.otf"
@@ -740,10 +742,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( -0.1, 1.5, 3, 4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 1, 1.5, 3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ "3", "2", "1", "BLAST!" ]
+"values": [ "3", "2", "1", "BLAST!", "3" ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("..:visible")
@@ -752,7 +754,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 5 ),
+"times": PoolRealArray( 0.1, 5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -770,6 +772,32 @@ tracks/2/keys = {
 "args": [  ],
 "method": "_revive"
 } ]
+}
+tracks/3/type = "audio"
+tracks/3/path = NodePath("../../counter")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": [ {
+"end_offset": 0.86,
+"start_offset": 0.0,
+"stream": ExtResource( 12 )
+}, {
+"end_offset": 0.85,
+"start_offset": 0.0,
+"stream": ExtResource( 12 )
+}, {
+"end_offset": 0.88,
+"start_offset": 0.0,
+"stream": ExtResource( 12 )
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 13 )
+} ],
+"times": PoolRealArray( 0.9, 1.7, 3, 4 )
 }
 
 [node name="dialogue_system" type="Control"]
@@ -1260,7 +1288,7 @@ text = "+ I'M WEAK
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.192157, 0, 0.32549, 1 )
+color = Color( 0.0431373, 0.00392157, 0.0705882, 1 )
 
 [node name="revive_in" type="Label" parent="revive_timer"]
 anchor_left = 0.5
@@ -1295,12 +1323,23 @@ anims/timer = SubResource( 50 )
 
 [node name="select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = 5.0
+bus = "SoundFX"
 
 [node name="choosen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+volume_db = 5.0
+bus = "SoundFX"
 
 [node name="explode" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+volume_db = 5.0
+bus = "SoundFX"
+
+[node name="counter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+volume_db = 5.0
+bus = "splash"
 
 [connection signal="pressed" from="d_sys_out" to="." method="_on_d_sys_out_pressed"]
 [connection signal="pressed" from="d_sys_out_promo" to="." method="_on_d_sys_out_promo_pressed"]

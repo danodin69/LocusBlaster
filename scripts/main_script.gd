@@ -40,8 +40,10 @@ func _ready():
 	print('KILLS: '+ str(kills))
 	print('DEATHS: '+ str(deaths))
 	print('CHIPS: '+ str(chips))
-
+	chips = 3
+	set_chips_count(chips)
 # warning-ignore:unused_argument
+
 
 
 
@@ -66,8 +68,9 @@ func update_stats():
 		deaths = update_death_count
 		set_death_count(deaths)
 	if update_chips_count > 0 :
-		chips = update_chips_count
+		chips += update_chips_count
 		set_chips_count(chips)
+		update_chips_count = 0
 
 	#-----END-----
 	

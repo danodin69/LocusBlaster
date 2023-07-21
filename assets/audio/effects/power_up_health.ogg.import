@@ -11,5 +11,5 @@ dest_files=[ "res://.import/power_up_health.ogg-25effdff27cd618cd37612b0aa586304
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

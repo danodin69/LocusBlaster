@@ -219,5 +219,5 @@ func start_revive_timer():
 func _revive():
 	$".".hide()
 	get_parent().revive_player()
-	get_parent().get_node("sounds/shield_powerup").play()
+	get_parent().get_node("sounds/health_powerup").play()
 	get_parent().continue_game()
