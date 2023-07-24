@@ -33,15 +33,17 @@ const FILE_PATH : String = 'user://x639dkx.xxx'
 #game_data
 
 func _ready():
+	audio_manager()
 	load_data()
 	rank.manager()
+	
 	print('PLAYER RANK:', player_rank)
 	print('BEST SCORE: '+ str(best_score))
 	print('KILLS: '+ str(kills))
 	print('DEATHS: '+ str(deaths))
 	print('CHIPS: '+ str(chips))
-	chips = 3
-	set_chips_count(chips)
+	
+#	set_chips_count(chips)
 # warning-ignore:unused_argument
 
 
@@ -54,6 +56,8 @@ func _process(delta):
 	rank.manager()
 
 
+func audio_manager():
+	AudioServer.set_bus_layout(load("res://default_bus_layout.tres"))
 
 func update_stats():
 	#MEMORY UPDATER
@@ -67,7 +71,7 @@ func update_stats():
 	if update_death_count > deaths:
 		deaths = update_death_count
 		set_death_count(deaths)
-	if update_chips_count > 0 :
+	if update_chips_count >= 1  :
 		chips += update_chips_count
 		set_chips_count(chips)
 		update_chips_count = 0

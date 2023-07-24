@@ -72,14 +72,14 @@ func is_game_paused(var isPaused : bool):
 			mobile_pause_button.hide()
 			mobile_in_game_control_joystick.hide()
 			mobile_in_game_control_shooter.hide()
-			if Input.is_action_just_pressed("ui_down") and current_selector < 2:
+			if Input.is_action_just_pressed("ui_right") and current_selector < 2:
 				$select.play()
 				current_selector += 1
 				set_current_selection(current_selector)
-			elif Input.is_action_just_pressed("ui_up") and current_selector > 0:
+			elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 				current_selector -= 1
 				$select.play()
 				set_current_selection(current_selector)
-			elif Input.is_action_just_pressed("ui_accept"):
+			elif Input.is_action_just_pressed("ui_up"):
 				$choosen.play()
 				selection_handler(current_selector)

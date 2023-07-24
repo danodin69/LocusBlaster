@@ -28,7 +28,7 @@ func _process(delta):
 			current_selector -= 1
 			$select.play()
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("ui_accept"):
+		elif Input.is_action_just_pressed("ui_up"):
 			$choosen.play()
 			selection_handler(current_selector)
 
@@ -46,6 +46,8 @@ func selection_handler(_current_selection):
 		print("settings")
 	elif _current_selection == 3:
 		get_parent().get_node("source_canvas/source").is_source_screen = true
+		
+		
 func set_current_selection(_current_selection):
 	selector1.hide()
 	selector2.hide()

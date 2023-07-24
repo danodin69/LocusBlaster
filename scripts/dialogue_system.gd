@@ -169,7 +169,7 @@ func handle_continue_options_input():
 			current_selector -= 1
 			$select.play()
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("enter"):
+		elif Input.is_action_just_pressed("ui_down"):
 			$choosen.play()
 			
 			

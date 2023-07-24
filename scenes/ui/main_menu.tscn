@@ -333,7 +333,19 @@ volume_db = -10.214
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.85
 
+[node name="stats_screen" type="Timer" parent="."]
+wait_time = 1.2
+
+[node name="settings_screen" type="Timer" parent="."]
+wait_time = 1.2
+
+[node name="source_screen" type="Timer" parent="."]
+wait_time = 1.2
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="highscores" to="." method="_on_highscores_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="stats_screen" to="." method="_on_stats_screen_timeout"]
+[connection signal="timeout" from="settings_screen" to="." method="_on_settings_screen_timeout"]
+[connection signal="timeout" from="source_screen" to="." method="_on_source_screen_timeout"]

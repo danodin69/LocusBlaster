@@ -73,7 +73,7 @@ func _on_ShipHealth_body_entered(body):
 	if body.is_in_group('chip'):
 		$sounds/chip_sound.play()
 		mainScript.update_chips_count += 1
-		print("cc", mainScript.chips)
+		
 		body.queue_free()
 		var particles = power_up_particles.instance()
 		particles.transform.origin = transform.origin
@@ -104,7 +104,7 @@ func _on_Main_tree_entered():
 		$player.game_started = true
 		$InGameHud.show()
 		$main_menu.queue_free()
-		$pilot_hud/focus.show()
+		$pilot_hud.show()
 		
 	elif mainScript.on_main_menu_called == true:
 		get_tree().paused = false

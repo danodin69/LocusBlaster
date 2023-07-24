@@ -1324,22 +1324,18 @@ anims/timer = SubResource( 50 )
 [node name="select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 volume_db = 5.0
-bus = "SoundFX"
 
 [node name="choosen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = 5.0
-bus = "SoundFX"
 
 [node name="explode" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = 5.0
-bus = "SoundFX"
 
 [node name="counter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 volume_db = 5.0
-bus = "splash"
 
 [connection signal="pressed" from="d_sys_out" to="." method="_on_d_sys_out_pressed"]
 [connection signal="pressed" from="d_sys_out_promo" to="." method="_on_d_sys_out_promo_pressed"]

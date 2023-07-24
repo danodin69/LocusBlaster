@@ -39,15 +39,15 @@ func _process(delta):
 		$".".show()
 		get_parent().get_node("main_menu").out_of_focus = true
 		
-		if Input.is_action_just_pressed("ui_up") and current_selector < 6:
+		if Input.is_action_just_pressed("ui_left") and current_selector < 6:
 			$select.play()
 			current_selector += 1
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("ui_down") and current_selector > 0:
+		elif Input.is_action_just_pressed("ui_right") and current_selector > 0:
 			current_selector -= 1
 			$select.play()
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("enter"):
+		elif Input.is_action_just_pressed("ui_down"):
 			$choosen.play()
 			
 			selection_handler(current_selector)

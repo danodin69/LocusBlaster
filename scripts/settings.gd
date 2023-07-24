@@ -37,15 +37,15 @@ func handle_main_menu_input():
 		mobile_control_dialog.show()
 		get_parent().get_node("main_menu").out_of_focus = true
 		$PopupPanel.show()
-		if Input.is_action_just_pressed("ui_down") and current_selector < 2:
+		if Input.is_action_just_pressed("ui_right") and current_selector < 2:
 			$select.play()
 			current_selector += 1
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("ui_up") and current_selector > 0:
+		elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 			current_selector -= 1
 			$select.play()
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("enter"):
+		elif Input.is_action_just_pressed("ui_down"):
 			$choosen.play()
 			
 			
@@ -73,15 +73,15 @@ func handle_pause_menu_input():
 		mobile_control_dialog.show()
 		get_parent().get_node("pause_HUD").out_of_focus = true
 		$PopupPanel.show()
-		if Input.is_action_just_pressed("ui_down") and current_selector < 2:
+		if Input.is_action_just_pressed("ui_right") and current_selector < 2:
 			$select.play()
 			current_selector += 1
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("ui_up") and current_selector > 0:
+		elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 			current_selector -= 1
 			$select.play()
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("enter"):
+		elif Input.is_action_just_pressed("ui_down"):
 
 			$choosen.play()
 			

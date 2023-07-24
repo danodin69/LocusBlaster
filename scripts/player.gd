@@ -32,8 +32,8 @@ func is_game_started(var is_started : bool, var delta):
 		mobile_ui_controls.hide()
 		mobile_pause_button.show()
 		
-		inputVector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-		inputVector.y = Input.get_action_strength("move_up") - Input.get_action_strength("move_down")
+		inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		inputVector.y = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
 		inputVector = inputVector.normalized()
 		velocity.x = move_toward(velocity.x, inputVector.x * MAXSPEED, ACCELERATION)
 		velocity.y = move_toward(velocity.y, inputVector.y * MAXSPEED, ACCELERATION)

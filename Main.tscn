@@ -387,25 +387,21 @@ script = ExtResource( 19 )
 pause_mode = 2
 stream = ExtResource( 21 )
 volume_db = -1.01
-bus = "Music"
 
 [node name="shield_powerup" type="AudioStreamPlayer" parent="sounds"]
 pause_mode = 2
 stream = SubResource( 24 )
 volume_db = 5.743
-bus = "SoundFX"
 
 [node name="health_powerup" type="AudioStreamPlayer" parent="sounds"]
 pause_mode = 2
 stream = ExtResource( 27 )
 volume_db = 5.0
-bus = "SoundFX"
 
 [node name="chip_sound" type="AudioStreamPlayer" parent="sounds"]
 pause_mode = 2
 stream = ExtResource( 26 )
 volume_db = 5.0
-bus = "SoundFX"
 
 [node name="dialogue_system" parent="." instance=ExtResource( 24 )]
 
