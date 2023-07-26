@@ -65,7 +65,7 @@ func set_current_selection(_current_selection):
 
 
 func _on_Timer_timeout():
-	get_parent().get_node("pilot_hud").visible = true
+	get_parent().get_node("pilot_hud").show()
 	get_parent().get_node("InGameHud").show()
 	get_parent().get_node("player").game_started = true
 	mobile_in_game_control_joystick.show()

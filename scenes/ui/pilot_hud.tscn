@@ -1,9 +1,143 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/ui/HUD/pilot_hud_deco_improved.png" type="Texture" id=1]
+[ext_resource path="res://assets/ui/HUD/rim_feed_back/main_#g27049.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/HUD/rim_feed_back/main_#g27079.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/HUD/rim_feed_back/main_#g27109.png" type="Texture" id=4]
+[ext_resource path="res://scenes/ui/pilot_hud.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("damage:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("shield:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("chips_nhealth:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "chips_health"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("chips_nhealth:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.03, 0.4, 0.6, 0.8, 1, 1.3, 1.7, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, true, false ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "reset"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "damage"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("damage:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 0.6, 0.9, 1, 1.3, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false, true, false, true, false ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "reset"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "shield"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("shield:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7, 1.2, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true, false ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "reset"
+} ]
+}
 
 [node name="pilot_hud" type="CanvasLayer"]
 visible = false
+script = ExtResource( 5 )
 
 [node name="focus" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -13,3 +147,48 @@ expand = true
 __meta__ = {
 "_editor_description_": ""
 }
+
+[node name="damage" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.0134783
+anchor_top = 0.0169355
+anchor_right = 0.990435
+anchor_bottom = 0.980645
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="shield" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.0134783
+anchor_top = 0.0169355
+anchor_right = 0.990435
+anchor_bottom = 0.980645
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="chips_nhealth" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.0134783
+anchor_top = 0.0169355
+anchor_right = 0.990435
+anchor_bottom = 0.980645
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="pilot_hud_anim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/chips_health = SubResource( 3 )
+anims/damage = SubResource( 2 )
+anims/shield = SubResource( 4 )

@@ -91,10 +91,12 @@ texture = ExtResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.964542 )
+visible = false
 shape = SubResource( 3 )
 
 [node name="ShipHealth" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.06145 )
+visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="ShipHealth"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.63452 )

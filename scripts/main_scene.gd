@@ -23,8 +23,11 @@ func _on_Guided_body_entered(body):
 	if body.is_in_group('Enemies'):
 		if !isShieldOn :
 			$InGameHud.health -=10
+			$pilot_hud/pilot_hud_anim.play("damage")
+			$player/Camera/player.play("shake_camera")
 		else:
 			$InGameHud.shield_health -= 30
+			
 
 func check_pause_input():
 	if Input.is_action_just_pressed("pause"):
@@ -39,18 +42,23 @@ func _on_ShipHealth_body_entered(body):
 	if body.is_in_group('Enemies'):
 		if !isShieldOn :
 			$InGameHud.health -=25
+			$pilot_hud/pilot_hud_anim.play("damage")
 			var particles = KillParticles.instance()
 			particles.transform.origin = transform.origin
 			main.add_child(particles)
+			$player/Camera/player.play("shake_camera")
+			
 
 
 		else:
+			
 			$InGameHud.shield_health -= 30
 			
 	if body.is_in_group('shield'):
 		isShieldOn = true
 		$sounds/shield_powerup.play()
 		$InGameHud.shield_health += 30
+		$pilot_hud/pilot_hud_anim.play("shield")
 		body.queue_free()
 		var particles = power_up_particles.instance()
 		particles.transform.origin = transform.origin
@@ -62,7 +70,7 @@ func _on_ShipHealth_body_entered(body):
 		 health is at 100% 
 	"""
 	if body.is_in_group('repair'):
-		
+		$pilot_hud/pilot_hud_anim.play("chips_health")
 		$sounds/health_powerup.play()
 		$InGameHud.health += 10
 		body.queue_free()
@@ -70,10 +78,11 @@ func _on_ShipHealth_body_entered(body):
 		particles.transform.origin = transform.origin
 		main.add_child(particles)
 		
+		
 	if body.is_in_group('chip'):
 		$sounds/chip_sound.play()
 		mainScript.update_chips_count += 1
-		
+		$pilot_hud/pilot_hud_anim.play("chips_health")
 		body.queue_free()
 		var particles = power_up_particles.instance()
 		particles.transform.origin = transform.origin
@@ -154,7 +163,7 @@ func revive_player():
 		$InGameHud.shield_health = 60
 		
 		$dialogue_system.close_continue_options_dialogue()
-		
+		$pilot_hud/pilot_hud_anim.play("chips_health")
 		
 		
 
