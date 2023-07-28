@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var main = get_tree().current_scene
+onready var main = get_tree().get_root()
 var shield = load("res://scenes/power_ups/shield_power_up.tscn")
 
 func spawn():

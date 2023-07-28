@@ -1,16 +1,13 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=1]
 [ext_resource path="res://scripts/stats.gd" type="Script" id=2]
-[ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=3]
 [ext_resource path="res://assets/sprites/stats_screen/player_stats_profile_icon.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/stats_screen/chip_icon.png" type="Texture" id=5]
 [ext_resource path="res://assets/sprites/ranks/novice.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/button_textures/highscores.png" type="Texture" id=7]
 [ext_resource path="res://assets/sprites/stats_screen/kills_stats_icon.png" type="Texture" id=8]
 [ext_resource path="res://assets/sprites/stats_screen/death_stat_icon.png" type="Texture" id=9]
-[ext_resource path="res://assets/audio/music/Zombie Hyperdrive.ogg" type="AudioStream" id=10]
-[ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://assets/fonts/American Captain.otf"
@@ -524,13 +521,3 @@ rect_rotation = 0.0495354
 theme = SubResource( 33 )
 custom_fonts/font = SubResource( 35 )
 text = "2184"
-
-[node name="choosen" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-
-[node name="select" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
-
-[node name="menu_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-volume_db = -10.214

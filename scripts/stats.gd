@@ -40,15 +40,15 @@ func _process(delta):
 		get_parent().get_node("main_menu").out_of_focus = true
 		
 		if Input.is_action_just_pressed("ui_left") and current_selector < 6:
-			$select.play()
+			sound_system.sound_fx[4].play()
 			current_selector += 1
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_right") and current_selector > 0:
 			current_selector -= 1
-			$select.play()
+			sound_system.sound_fx[4].play()
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_down"):
-			$choosen.play()
+			sound_system.sound_fx[3].play()
 			
 			selection_handler(current_selector)
 			
@@ -66,7 +66,6 @@ func selection_handler(_current_selection):
 	if _current_selection == 0:
 		mobile_control_dialog.hide()
 		$".".hide()
-		$choosen.play()
 		get_parent().get_node("main_menu").out_of_focus = false
 		is_stats_screen = false
 		

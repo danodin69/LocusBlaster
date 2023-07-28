@@ -31,15 +31,15 @@ func is_game_over(var isGameOver : bool):
 		mobile_ui_controls.show()
 		mobile_pause_button.hide()
 		if Input.is_action_just_pressed("ui_right") and current_selector < 1:
-			$select.play()
+			sound_system.sound_fx[4].play()
 			current_selector += 1
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 			current_selector -= 1
-			$select.play()
+			sound_system.sound_fx[4].play()
 			set_current_selection(current_selector)
-		elif Input.is_action_just_pressed("ui_accept"):
-			$choosen.play()
+		elif Input.is_action_just_pressed("ui_up"):
+			sound_system.sound_fx[3].play()
 			selection_handler(current_selector)
 			
 func selection_handler(_current_selection):
@@ -56,8 +56,9 @@ func selection_handler(_current_selection):
 		
 	elif _current_selection == 1:
 		mainScript.on_main_menu_called = true
+		Loader.load_scene("res://Main.tscn")
 		
-		get_parent().restart_game()
+#		get_parent().restart_game()
 		
 		print("MENU")
 	

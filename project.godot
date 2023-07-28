@@ -55,6 +55,8 @@ default_bus_layout=""
 
 mainScript="*res://scripts/main_script.gd"
 RankSystem="*res://scripts/rank_system.gd"
+Loader="*res://scenes/ui/loading_screen.tscn"
+sound_system="*res://scenes/sound/sound_system.tscn"
 
 [display]
 

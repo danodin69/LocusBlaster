@@ -74,7 +74,7 @@ tracks/5/path = NodePath("AudioStreamPlayer2D:playing")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
-tracks/5/enabled = true
+tracks/5/enabled = false
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -164,10 +164,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 4.5, 4.6 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 4.5, 4.6, 6.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ false, true, false ]
 }
 tracks/6/type = "method"
 tracks/6/path = NodePath(".")
@@ -208,7 +208,7 @@ script = ExtResource( 6 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0431373, 0.0431373, 0.0980392, 1 )
+color = Color( 0.00392157, 0, 0.0509804, 1 )
 
 [node name="rose" type="Control" parent="."]
 visible = false

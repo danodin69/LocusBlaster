@@ -12,7 +12,7 @@ var cooldown = 0
 const COOLDOWN = 8
 
 onready var guns = [$Gun0, $Gun1]
-onready var main = get_tree().current_scene
+onready var main = get_tree().get_root()
 var Bullet = load("res://scenes/npcs/Bullet.tscn")
 
 onready var mobile_in_game_control_shooter = get_parent().get_node("InGameHud/mobile_controls/shooter")
@@ -20,7 +20,6 @@ onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/m
 onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_controls/pause")
 onready var mobile_ui_controls = get_parent().get_node("InGameHud/mobile_controls/directions")
 
-var rank = Rank.new()
 
 func _physics_process(delta):
 	is_game_started(game_started, delta)

@@ -3,7 +3,9 @@ extends Spatial
 var isShieldOn : bool
 var KillParticles : Resource = load("res://scenes/particles/KillParticles.tscn")
 var power_up_particles : Resource = load('res://scenes/particles/power_ups.tscn')
-onready var main = get_tree().current_scene
+
+onready var main = get_tree().get_root()
+
 
 var is_chip_used : bool = false
 
@@ -14,9 +16,11 @@ func _process(delta):
 	check_pause_input()
 	change_music()
 ##
-func _ready():
-	print("cc", mainScript.chips)
 
+func _ready():
+	preload("res://scenes/npcs/EnemySpawner.tscn")
+	preload("res://scenes/npcs/Bullet.tscn")
+	preload("res://scenes/npcs/enemy.tscn")
 
 
 func _on_Guided_body_entered(body):
@@ -56,7 +60,7 @@ func _on_ShipHealth_body_entered(body):
 			
 	if body.is_in_group('shield'):
 		isShieldOn = true
-		$sounds/shield_powerup.play()
+		sound_system.sound_fx[0].play()
 		$InGameHud.shield_health += 30
 		$pilot_hud/pilot_hud_anim.play("shield")
 		body.queue_free()
@@ -71,7 +75,7 @@ func _on_ShipHealth_body_entered(body):
 	"""
 	if body.is_in_group('repair'):
 		$pilot_hud/pilot_hud_anim.play("chips_health")
-		$sounds/health_powerup.play()
+		sound_system.sound_fx[1].play()
 		$InGameHud.health += 10
 		body.queue_free()
 		var particles = power_up_particles.instance()
@@ -80,7 +84,7 @@ func _on_ShipHealth_body_entered(body):
 		
 		
 	if body.is_in_group('chip'):
-		$sounds/chip_sound.play()
+		sound_system.sound_fx[2].play()
 		mainScript.update_chips_count += 1
 		$pilot_hud/pilot_hud_anim.play("chips_health")
 		body.queue_free()
@@ -107,6 +111,9 @@ func _on_Main_tree_exited():
 
 
 func _on_Main_tree_entered():
+	
+	sound_system.get_node("gameplay").play_random_song()
+	
 	if mainScript.is_game_restarted == true:
 		get_tree().paused = false
 		mainScript.is_game_restarted = false
@@ -121,11 +128,11 @@ func _on_Main_tree_entered():
 
 
 func _on_gameplay_finished():
-	$sounds/gameplay.play_random_song()
+	sound_system.get_node("gameplay").play_random_song()
 
 func change_music():
 	if Input.is_action_just_pressed("music_knob"):
-		$sounds/gameplay.play_random_song()
+		sound_system.get_node("gameplay").play_random_song()
 
 
 func pause():
@@ -148,7 +155,7 @@ func show_game_over_screen():
 	$GameOver/score.show()
 	$player.hide()
 	$player.game_started =false
-	$sounds/game_over.play()
+	sound_system.music[1].play()
 	get_tree().paused = true
 
 	

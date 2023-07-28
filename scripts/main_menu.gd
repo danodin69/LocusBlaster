@@ -21,15 +21,15 @@ func _ready():
 func _process(delta):
 	if out_of_focus == false:
 		if Input.is_action_just_pressed("ui_right") and current_selector < 3:
-			$select.play()
+			sound_system.sound_fx[4].play()
 			current_selector += 1
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 			current_selector -= 1
-			$select.play()
+			sound_system.sound_fx[4].play()
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_up"):
-			$choosen.play()
+			sound_system.sound_fx[3].play()
 			selection_handler(current_selector)
 
 func selection_handler(_current_selection):

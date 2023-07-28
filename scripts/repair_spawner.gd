@@ -1,6 +1,6 @@
 extends Spatial
 
-onready var main = get_tree().current_scene
+onready var main = get_tree().get_root()
 var repair = load("res://scenes/power_ups/repair_power_up.tscn")
 
 func spawn():

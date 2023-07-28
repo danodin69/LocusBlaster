@@ -38,15 +38,15 @@ func handle_main_menu_input():
 		get_parent().get_node("main_menu").out_of_focus = true
 		$PopupPanel.show()
 		if Input.is_action_just_pressed("ui_right") and current_selector < 2:
-			$select.play()
+			sound_system.sound_fx[4].play()
 			current_selector += 1
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 			current_selector -= 1
-			$select.play()
+			sound_system.sound_fx[4].play()
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_down"):
-			$choosen.play()
+			sound_system.sound_fx[3].play()
 			
 			
 			
@@ -74,16 +74,16 @@ func handle_pause_menu_input():
 		get_parent().get_node("pause_HUD").out_of_focus = true
 		$PopupPanel.show()
 		if Input.is_action_just_pressed("ui_right") and current_selector < 2:
-			$select.play()
+			sound_system.sound_fx[4].play()
 			current_selector += 1
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 			current_selector -= 1
-			$select.play()
+			sound_system.sound_fx[4].play()
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_down"):
 
-			$choosen.play()
+			sound_system.sound_fx[3].play()
 			
 			
 			

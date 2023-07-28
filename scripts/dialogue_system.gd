@@ -120,7 +120,7 @@ func rank_promotion_dialogue():
 	get_parent().pause()
 
 func continue_game_dialogue():
-	$explode.play()
+	sound_system.sound_fx[5].play()
 	$".".show()
 	is_continue_dialogue_active = true
 	continue_options_dialogue.show()
@@ -142,7 +142,7 @@ func input_manager():
 func _on_d_sys_out_pressed():
 	get_parent().continue_game()
 	obj_dialogue.hide()
-	
+	sound_system.sound_fx[3].play()
 	promotion_dialogue.hide()
 	$".".hide()
 
@@ -157,20 +157,20 @@ func _on_d_sys_out_promo_pressed():
 	
 	obj_dialogue.show()
 	promotion_dialogue.hide()
-	
+	sound_system.sound_fx[3].play()
 	
 func handle_continue_options_input():
 	if is_continue_dialogue_active == true:
 		if Input.is_action_just_pressed("ui_right") and current_selector < 2:
-			$select.play()
+			sound_system.sound_fx[4].play()
 			current_selector += 1
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 			current_selector -= 1
-			$select.play()
+			sound_system.sound_fx[4].play()
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_down"):
-			$choosen.play()
+			sound_system.sound_fx[3].play()
 			
 			
 			
@@ -219,5 +219,5 @@ func start_revive_timer():
 func _revive():
 	$".".hide()
 	get_parent().revive_player()
-	get_parent().get_node("sounds/health_powerup").play()
+	sound_system.sound_fx[1].play()
 	get_parent().continue_game()

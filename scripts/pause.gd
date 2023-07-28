@@ -73,13 +73,13 @@ func is_game_paused(var isPaused : bool):
 			mobile_in_game_control_joystick.hide()
 			mobile_in_game_control_shooter.hide()
 			if Input.is_action_just_pressed("ui_right") and current_selector < 2:
-				$select.play()
+				sound_system.sound_fx[4].play()
 				current_selector += 1
 				set_current_selection(current_selector)
 			elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 				current_selector -= 1
-				$select.play()
+				sound_system.sound_fx[4].play()
 				set_current_selection(current_selector)
 			elif Input.is_action_just_pressed("ui_up"):
-				$choosen.play()
+				sound_system.sound_fx[3].play()
 				selection_handler(current_selector)

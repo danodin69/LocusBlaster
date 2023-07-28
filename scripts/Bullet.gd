@@ -3,8 +3,7 @@ extends KinematicBody
 var velocity = Vector3()
 var KillParticles = load("res://scenes/particles/KillParticles.tscn")
 
-onready var main = get_tree().current_scene
-onready var explodeSound = $EnemyExplode
+onready var main = get_tree().get_root()
 
 
 
@@ -20,6 +19,7 @@ Dan: When one bullet spawns this code runs all over again
 """
 
 func _ready():
+	sound_system.sound_fx[7].play()
 	self.add_child(timer)
 	timer.connect("timeout", self, "queue_free")
 	timer.start()
@@ -43,7 +43,7 @@ func _on_Area_body_entered(body):
 #		main.add_child(particles)
 #		particles.transform.origin = transform.origin
 #		body.queue_free()
-		explodeSound.play()
+#		sound_system.sound_fx[5].play()
 		visible = false
 		$Area/CollisionShape.disabled = true
 		

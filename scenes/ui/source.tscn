@@ -1,10 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/images/signed_danodin.png" type="Texture" id=1]
 [ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=2]
 [ext_resource path="res://assets/fonts/American Captain.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=4]
-[ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=5]
 
 [sub_resource type="GDScript" id=14]
 script/source = "extends Control
@@ -32,19 +30,19 @@ func _process(delta):
 		get_parent().show()
 		get_parent().get_parent().get_node(\"main_menu\").out_of_focus = true
 		if Input.is_action_just_pressed(\"ui_right\") and current_selector < 4:
-			$select.play()
+			sound_system.sound_fx[4].play()
 			current_selector += 1
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed(\"ui_left\") and current_selector > 0:
 			current_selector -= 1
-			$select.play()
+			sound_system.sound_fx[4].play()
 			set_current_selection(current_selector)
 #		elif Input.is_action_just_pressed(\"shoot\"):
 #			$choosen.play()
 #			selection_handler(current_selector)
 		if Input.is_action_just_pressed(\"ui_down\"):
 			get_parent().hide()
-			$choosen.play()
+			sound_system.sound_fx[3].play()
 			get_parent().get_parent().get_node(\"main_menu\").out_of_focus = false
 			is_source_screen = false
 			selection_handler(current_selector)
@@ -519,9 +517,3 @@ margin_bottom = 27.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
 text = "[                ]"
-
-[node name="choosen" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-
-[node name="select" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )

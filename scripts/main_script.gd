@@ -39,7 +39,7 @@ func _ready():
 	audio_manager()
 	load_game_data()
 	rank.manager()
-	
+	print(pass_key)
 	
 # FOR RESETS ONLY , REMOVE IN FINAL VERSION !	
 #	player_data["kills"] = kills
@@ -47,7 +47,7 @@ func _ready():
 #	player_data["best_score"] = 2345
 #	player_data["chips"] = chips
 #	player_data["deaths"] = deaths
-#	player_data["pilot_name"] = pilot_name
+	player_data["pilot_name"] = ""
 #	save_game_data()
 	print(player_data)
 	

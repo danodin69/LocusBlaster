@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/loader.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/retro_bg.png" type="Texture" id=2]
+[ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=3]
+[ext_resource path="res://assets/themes/locus_basic_theme.tres" type="Theme" id=4]
+[ext_resource path="res://assets/fonts/American Captain.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://shaders/retro_effects/retro.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=14]
+size = 33
+outline_size = 1
+outline_color = Color( 0.913725, 0.196078, 0.85098, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.0117647, 0, 0.0666667, 1 )
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=17]
+size = 189
+font_data = SubResource( 13 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 53
+font_data = ExtResource( 5 )
+
+[node name="loader" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -644.0
+margin_top = -326.0
+margin_right = 644.0
+margin_bottom = -312.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 14 )
+custom_styles/fg = SubResource( 15 )
+custom_styles/bg = SubResource( 16 )
+
+[node name="title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -448.0
+margin_top = 456.0
+margin_right = 456.0
+margin_bottom = 646.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 17 )
+text = "LOCUS BLASTER"
+
+[node name="version" type="Label" parent="."]
+anchor_left = 0.636087
+anchor_top = 0.432258
+anchor_right = 0.697826
+anchor_bottom = 0.483065
+margin_top = 88.0001
+margin_bottom = 88.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 18 )
+text = "beta 2.0"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="retro_shader" parent="." instance=ExtResource( 6 )]
+
+[node name="CanvasLayer" parent="retro_shader" index="0"]
+visible = false
+
+[node name="TextureRect" parent="retro_shader/CanvasLayer" index="0"]
+anchor_top = -0.0741935
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[editable path="retro_shader"]

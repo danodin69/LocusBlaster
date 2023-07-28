@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://assets/ui/button_textures/play_pressed.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/button_textures/play_button.png" type="Texture" id=2]
@@ -8,17 +8,15 @@
 [ext_resource path="res://assets/ui/button_textures/highscores.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/button_textures/settings_pressed.png" type="Texture" id=7]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=8]
-[ext_resource path="res://assets/audio/effects/select.wav" type="AudioStream" id=9]
-[ext_resource path="res://assets/audio/effects/choose.wav" type="AudioStream" id=10]
 [ext_resource path="res://assets/audio/music/Zombie Hyperdrive.ogg" type="AudioStream" id=11]
 [ext_resource path="res://assets/images/dan_odin.png" type="Texture" id=12]
 
-[sub_resource type="DynamicFontData" id=13]
+[sub_resource type="DynamicFontData" id=23]
 font_path = "res://assets/fonts/American Captain.otf"
 
 [sub_resource type="DynamicFont" id=2]
 size = 189
-font_data = SubResource( 13 )
+font_data = SubResource( 23 )
 
 [sub_resource type="DynamicFontData" id=7]
 font_path = "res://assets/fonts/American Captain.otf"
@@ -162,6 +160,9 @@ Tree/fonts/font = null
 Tree/fonts/title_button_font = null
 WindowDialog/fonts/title_font = null
 
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://assets/fonts/American Captain.otf"
+
 [sub_resource type="DynamicFont" id=22]
 size = 30
 font_data = SubResource( 13 )
@@ -299,7 +300,7 @@ margin_right = -112.0
 margin_bottom = -121.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "V 0.1.2"
+text = "V 0.2.0"
 
 [node name="studio" type="Label" parent="."]
 anchor_left = 0.5
@@ -319,12 +320,6 @@ align = 1
 position = Vector2( 132, -55 )
 scale = Vector2( 0.187006, 0.187006 )
 texture = ExtResource( 12 )
-
-[node name="choosen" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 10 )
-
-[node name="select" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
 
 [node name="menu_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )

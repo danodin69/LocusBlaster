@@ -42,7 +42,6 @@ autostart = true
 [node name="explosion" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 volume_db = 2.701
-bus = "splash"
 __meta__ = {
 "_editor_description_": ""
 }

@@ -11,7 +11,7 @@ const tracks = [
 
 func _ready():
 #	self.add_child(stream_player)
-	play_random_song()
+	pass
 	
 func play_random_song():
 	var randomise_track = randi() % tracks.size()

@@ -5,11 +5,10 @@ var initial_low_speed = 20
 var initial_high_speed = 50
 
 var speed = rand_range(initial_low_speed, initial_high_speed)
-onready var main = get_tree().current_scene
+onready var main = get_tree().get_root()
 var KillParticles = load("res://scenes/particles/KillParticles.tscn")
 
 var rank = mainScript.rank
-onready var explodeSound = $EnemyExplode
 
 #
 # warning-ignore:unused_argument

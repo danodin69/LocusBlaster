@@ -1,8 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/Bullet.gd" type="Script" id=1]
-[ext_resource path="res://assets/audio/effects/laserSmall_000.ogg" type="AudioStream" id=2]
-[ext_resource path="res://assets/audio/effects/laserLarge_000.ogg" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -40,18 +38,6 @@ omni_range = 8.5
 wait_time = 0.2
 one_shot = true
 autostart = true
-
-[node name="EnemyExplode" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-volume_db = -15.156
-mix_target = 1
-
-[node name="BulletSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource( 2 )
-unit_db = 30.0
-max_db = 6.0
-autoplay = true
-bus = "SoundFX"
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00281107 )
