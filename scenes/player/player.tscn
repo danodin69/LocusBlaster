@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/Blender Imports/Wing Blue.material" type="Material" id=1]
 [ext_resource path="res://assets/Blender Imports/Base Gray.material" type="Material" id=2]
@@ -59,9 +59,24 @@ surfaces/3 = {
 "vertex_count": 16
 }
 
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.0901961, 0.34902, 0.6, 1 )
+emission_enabled = true
+emission = Color( 0.976471, 0.901961, 0.894118, 1 )
+emission_energy = 4.11
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="CubeMesh" id=6]
+material = SubResource( 5 )
+size = Vector3( 0.5, 0.5, 0.5 )
+
+[sub_resource type="Curve" id=2]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.340909 ), 0.0, 0.0, 0, 0 ]
+
 [sub_resource type="BoxShape" id=3]
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 2.74552, 1.86511, 6.14831 )
 
 [node name="player" type="KinematicBody" groups=["Player"]]
@@ -87,7 +102,19 @@ transform = Transform( 7, 0, 0, 0, 7, 0, 0, 0, 5, 0, 0, -250 )
 billboard = 1
 texture = ExtResource( 7 )
 
-[node name="Particles" parent="." instance=ExtResource( 8 )]
+[node name="Particles" type="CPUParticles" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.207298, 2.04383 )
+amount = 12
+lifetime = 0.1
+randomness = 0.72
+mesh = SubResource( 6 )
+emission_shape = 1
+emission_sphere_radius = 0.3
+direction = Vector3( 0, 0, 1 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 91.95
+scale_amount_curve = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.964542 )
@@ -100,4 +127,4 @@ visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="ShipHealth"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.63452 )
-shape = SubResource( 2 )
+shape = SubResource( 7 )

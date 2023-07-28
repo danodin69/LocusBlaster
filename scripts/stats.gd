@@ -2,6 +2,7 @@ extends Control
 
 
 var is_stats_screen : bool = false
+
 onready var best_score  = $profile_mid/best_score
 onready var chips  = $profile_top/chip_amount
 onready var kills = $profile_mid/kills
@@ -14,6 +15,7 @@ var novice_texture :  = load("res://assets/sprites/ranks/novice.png")
 var hero_texture :  =  load("res://assets/sprites/ranks/hero.png")
 var captain_locus_texture : =load( "res://assets/sprites/ranks/captain_locus.png")
 
+onready var pilot_name = $profile_top/player_name
 onready var player_rank_icon = $profile_top/rank_icon
 onready var player_rank_text = $profile_top/player_rank
 #SELECTORS AND SELECTORS VARS
@@ -27,12 +29,10 @@ onready var selector : Array = [$profile_top/player_icon/selector, $profile_top/
 
 # warning-ignore:unused_argument
 func _process(delta):
-	set_player_rank_ui()
 	
-	best_score.text = "BEST SCORE -  " +str(mainScript.best_score)
-	chips.text = str(mainScript.chips)
-	kills.text = "KILLS - " +str(mainScript.kills)
-	deaths.text = "DEATHS - "+str(mainScript.deaths)
+	set_stats_screen_ui()
+	
+
 	
 	if is_stats_screen == true:
 		mobile_control_dialog.show()
@@ -103,10 +103,21 @@ func set_current_selection(_current_selection):
 		selector[1].show()
 	elif _current_selection == 6:
 		selector[0].show()
-		
+
+
+
+func set_stats_screen_ui():
+	pilot_name.text = str(mainScript.player_data["pilot_name"])
+	best_score.text = "BEST SCORE -  " +str(mainScript.player_data["best_score"])
+	chips.text = str(mainScript.player_data["chips"])
+	kills.text = "KILLS - " +str(mainScript.player_data["kills"])
+	deaths.text = "DEATHS - "+str(mainScript.player_data["deaths"])
+	
+	set_player_rank_ui()
+
 func set_player_rank_ui():
 	
-	var rank : String = mainScript.player_rank
+	var rank : String = mainScript.player_data["player_rank"]
 		
 	match rank:
 		"zero":

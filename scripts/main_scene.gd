@@ -142,8 +142,7 @@ func show_promo_dialogue():
 	$dialogue_system.rank_promotion_dialogue()
 
 func show_game_over_screen():
-	mainScript.deaths += 1
-	mainScript.save_data()
+	mainScript.update_death_count += 1
 	$GameOver.game_over = true
 	$GameOver.show()
 	$GameOver/score.show()
@@ -156,8 +155,7 @@ func show_game_over_screen():
 func revive_player():
 	if is_chip_used == true:
 		
-		mainScript.update_chips_count -= 1
-		mainScript.chips -=1
+		mainScript.player_data["chips"] -= 1
 
 		$InGameHud.health += 60
 		$InGameHud.shield_health = 60

@@ -64,7 +64,7 @@ func _process(delta):
 func manager(value = false):
 	var is_Promoted : bool = value
 	
-	var rank : String = mainScript.player_rank
+	var rank : String = mainScript.player_data["player_rank"]
 		
 	match rank:
 		"zero":
@@ -180,7 +180,7 @@ func handle_continue_options_input():
 
 func selection_handler(_current_selection):
 	if _current_selection == 0:
-		if mainScript.chips > 0:
+		if mainScript.player_data["chips"] > 0:
 			get_parent().is_chip_used = true
 			start_revive_timer()
 		
@@ -208,7 +208,7 @@ func set_current_selection(_current_selection):
 
 
 func update_chip_count():
-	chip_count.text = str("CHIPS(",mainScript.chips,")")
+	chip_count.text = str("CHIPS(",mainScript.player_data["chips"],")")
 
 func start_revive_timer():
 	close_continue_options_dialogue()

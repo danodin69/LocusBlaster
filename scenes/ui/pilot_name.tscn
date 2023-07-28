@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/themes/locus_basic_theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=2]
+[ext_resource path="res://assets/fonts/American Captain.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://shaders/retro_effects/retro.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/pilot_name_data.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_bottom = 8
+border_color = Color( 1, 1, 1, 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.334565
+anchor_top = 0.240323
+anchor_right = 0.666304
+anchor_bottom = 0.320968
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 2 )
+text = "ENTER YOUR PILOT NAME"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="LineEdit" type="LineEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -290.0
+margin_top = 72.0
+margin_right = 293.0
+margin_bottom = 171.0
+theme = ExtResource( 1 )
+custom_colors/cursor_color = Color( 1, 1, 1, 1 )
+custom_styles/normal = SubResource( 1 )
+align = 1
+max_length = 6
+placeholder_text = "START TYPING"
+caret_blink = true
+
+[node name="retro_shader" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[editable path="retro_shader"]

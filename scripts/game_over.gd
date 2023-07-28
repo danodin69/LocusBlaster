@@ -19,7 +19,7 @@ func _ready():
 # warning-ignore:unused_argument
 func _process(delta):
 	is_game_over(game_over)
-	best_score_text.text = str(mainScript.best_score)
+	best_score_text.text = str(mainScript.player_data["best_score"])
 	
 		
 

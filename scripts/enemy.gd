@@ -89,7 +89,10 @@ func _on_Area_body_entered(body):
 			particles.transform.origin = transform.origin
 			main.add_child(particles)
 			mainScript.update_highscore += 3
-			mainScript.kills += 1
+#			mainScript.kills += 1
+			mainScript.update_kill_count += 1
+#			mainScript.player_data["kills"] += 1
+#			mainScript.save_game_data()
 			mainScript.save_data()
 			
 			queue_free()

@@ -34,11 +34,11 @@ var captain_obj : String = "SHIP POWER\n- MAXMUM BULLET DAMAGE\n- MAXIMUM OF ONE
 
 	
 func manager():
-	var rank : String = mainScript.player_rank
+	var rank : String = mainScript.player_data["player_rank"]
 #	rank = ""
 	if rank == "":
 		mainScript.set_player_rank("zero")
-		print("Player Rank Set: ", mainScript.player_rank)
+		print("Player Rank Set: ", mainScript.player_data["player_rank"])
 		
 	match rank:
 		"zero":
