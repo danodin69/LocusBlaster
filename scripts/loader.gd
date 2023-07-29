@@ -52,12 +52,13 @@ func _thread_done(resource):
 	var new_scene = resource.instance()
 	# Free current scene.
 	get_tree().current_scene.free()
-	get_tree().current_scene = null
+#	get_tree().current_scene = null
 	# Add new one to root.
 	get_tree().root.add_child(new_scene)
 	# Set as current scene.
-	get_tree().change_scene_to(new_scene)
-#	get_tree().current_scene = new_scene
+	get_tree().current_scene = new_scene
+#	get_tree().change_scene_to(new_scene)
+	
 	
 	$retro_shader/CanvasLayer.visible = false
 	progress.visible = false

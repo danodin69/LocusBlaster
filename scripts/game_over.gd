@@ -25,11 +25,18 @@ func _process(delta):
 
 
 func is_game_over(var isGameOver : bool):
+	
 	if isGameOver == true:
+		
+		
+		
 		mobile_in_game_control_joystick.hide()
 		mobile_in_game_control_shooter.hide()
 		mobile_ui_controls.show()
 		mobile_pause_button.hide()
+		
+		
+		
 		if Input.is_action_just_pressed("ui_right") and current_selector < 1:
 			sound_system.sound_fx[4].play()
 			current_selector += 1
@@ -40,6 +47,9 @@ func is_game_over(var isGameOver : bool):
 			set_current_selection(current_selector)
 		elif Input.is_action_just_pressed("ui_up"):
 			sound_system.sound_fx[3].play()
+			
+			sound_system.music[1].stop()
+
 			selection_handler(current_selector)
 			
 func selection_handler(_current_selection):
@@ -55,10 +65,12 @@ func selection_handler(_current_selection):
 		print("RESTART")
 		
 	elif _current_selection == 1:
+		
+		
 		mainScript.on_main_menu_called = true
 		Loader.load_scene("res://Main.tscn")
+		get_parent().restart_game()
 		
-#		get_parent().restart_game()
 		
 		print("MENU")
 	

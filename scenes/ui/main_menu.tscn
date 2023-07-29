@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://assets/ui/button_textures/play_pressed.png" type="Texture" id=1]
 [ext_resource path="res://assets/ui/button_textures/play_button.png" type="Texture" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://assets/ui/button_textures/highscores.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/button_textures/settings_pressed.png" type="Texture" id=7]
 [ext_resource path="res://scripts/main_menu.gd" type="Script" id=8]
-[ext_resource path="res://assets/audio/music/Zombie Hyperdrive.ogg" type="AudioStream" id=11]
 [ext_resource path="res://assets/images/dan_odin.png" type="Texture" id=12]
 
 [sub_resource type="DynamicFontData" id=23]
@@ -321,26 +320,10 @@ position = Vector2( 132, -55 )
 scale = Vector2( 0.187006, 0.187006 )
 texture = ExtResource( 12 )
 
-[node name="menu_music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 11 )
-volume_db = -10.214
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.85
-
-[node name="stats_screen" type="Timer" parent="."]
-wait_time = 1.2
-
-[node name="settings_screen" type="Timer" parent="."]
-wait_time = 1.2
-
-[node name="source_screen" type="Timer" parent="."]
-wait_time = 1.2
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="highscores" to="." method="_on_highscores_pressed"]
 [connection signal="pressed" from="settings" to="." method="_on_settings_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="stats_screen" to="." method="_on_stats_screen_timeout"]
-[connection signal="timeout" from="settings_screen" to="." method="_on_settings_screen_timeout"]
-[connection signal="timeout" from="source_screen" to="." method="_on_source_screen_timeout"]

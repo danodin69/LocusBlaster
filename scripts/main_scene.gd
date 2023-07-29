@@ -17,10 +17,6 @@ func _process(delta):
 	change_music()
 ##
 
-func _ready():
-	preload("res://scenes/npcs/EnemySpawner.tscn")
-	preload("res://scenes/npcs/Bullet.tscn")
-	preload("res://scenes/npcs/enemy.tscn")
 
 
 func _on_Guided_body_entered(body):
@@ -94,12 +90,31 @@ func _on_ShipHealth_body_entered(body):
 		
 func check_health():
 	if $InGameHud.health <= 0 :
+		destroy_all_enemies()
 		$dialogue_system.continue_game_dialogue()
 		get_tree().paused = true
 		
 
+
+func destroy_all_enemies():
+	#Enemies Kill Themselves >:] 
+	
+	var enemies = get_tree().get_nodes_in_group("Enemies")
+	
+	for enemy in enemies:
+		enemy.queue_free()
+		
+		var particles = KillParticles.instance()
+		particles.transform.origin = transform.origin
+		main.add_child(particles)
+
+		
+
 func restart_game():
+	destroy_all_enemies()
+	
 	get_tree().paused = false
+	
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Main.tscn")
 	
@@ -149,13 +164,17 @@ func show_promo_dialogue():
 	$dialogue_system.rank_promotion_dialogue()
 
 func show_game_over_screen():
+	
 	mainScript.update_death_count += 1
+	
 	$GameOver.game_over = true
+	
+	sound_system.music[1].play()
+		
 	$GameOver.show()
 	$GameOver/score.show()
 	$player.hide()
 	$player.game_started =false
-	sound_system.music[1].play()
 	get_tree().paused = true
 
 	

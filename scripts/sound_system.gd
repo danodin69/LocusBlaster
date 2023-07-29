@@ -8,6 +8,13 @@ onready var voice_over #TO IMPLEMENT
 
 func _ready():
 	
+	start_audio_manager()
+
+	
+	
+func start_audio_manager():
+	
+	AudioServer.set_bus_layout(load("res://default_bus_layout.tres"))
 	$gameplay.bus = "Music"
 	$game_over.bus = "Music"
 	$shield_powerup.bus = "SoundFX"

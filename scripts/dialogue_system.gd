@@ -55,14 +55,15 @@ onready var chip_count = $continue_options/TextureRect/chip_label
 # TODO : REMEMBER TO MAKE ENTER KEY WORK ONLY BASED ON CONDITION THAT THE DIALOGUE SYSTEM IS IN USE
 
 
-func _process(delta):
+func _process(_delta):
 	manager(mainScript.is_player_promoted)
 	input_manager()
 	update_chip_count()
 	
 
 func manager(value = false):
-	var is_Promoted : bool = value
+	
+	var _is_Promoted : bool = value
 	
 	var rank : String = mainScript.player_data["player_rank"]
 		

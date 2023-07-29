@@ -1,7 +1,7 @@
 extends Spatial
 
 #IN-GAME STATS 
-var update_highscore : float 
+var update_highscore : int
 var update_kill_count : int
 var update_death_count : int
 var update_chips_count : int 
@@ -36,7 +36,7 @@ const NEW_FILE_PATH : String = 'res://x369x.odngw'
 #game_data
 
 func _ready():
-	audio_manager()
+
 	load_game_data()
 	rank.manager()
 	print(pass_key)
@@ -47,7 +47,7 @@ func _ready():
 #	player_data["best_score"] = 2345
 #	player_data["chips"] = chips
 #	player_data["deaths"] = deaths
-	player_data["pilot_name"] = ""
+#	player_data["pilot_name"] = ""
 #	save_game_data()
 	print(player_data)
 	
@@ -66,8 +66,7 @@ func _process(delta):
 	rank.manager()
 
 
-func audio_manager():
-	AudioServer.set_bus_layout(load("res://default_bus_layout.tres"))
+
 
 func update_stats():
 	#MEMORY UPDATER
