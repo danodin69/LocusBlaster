@@ -70,6 +70,7 @@ func selection_handler_main_menu(_current_selection):
 
 func handle_pause_menu_input():
 	if is_settings_dialog_pause == true:
+		get_parent().toggle_accept_button_mobile(true)
 		mobile_control_dialog.show()
 		get_parent().get_node("pause_HUD").out_of_focus = true
 		$PopupPanel.show()
@@ -103,6 +104,7 @@ func selection_handler_pause_menu(_current_selection):
 		is_settings_dialog_pause = false
 		_current_selection = 0
 		mobile_control_dialog.hide()
+		get_parent().toggle_accept_button_mobile(false)
 		
 func set_current_selection(_current_selection):
 	selector1.hide()
@@ -130,10 +132,10 @@ func toggle_music_button():
 	m = m * -1
 	print(m)
 	if m == 1:
-		music_switch.text = "  OFF"
+		music_switch.text = "   ON"
 		AudioServer.set_bus_mute(1,false)		
 	elif m == -1: 
-		music_switch.text = "   ON"
+		music_switch.text = "  OFF"
 		AudioServer.set_bus_mute(1,true)
 	
 
@@ -146,9 +148,9 @@ func toggle_effects_button():
 	e = e * -1
 	print(e)
 	if e == 1:
-		sound_switch.text = "  OFF"
+		sound_switch.text = "   ON"
 		AudioServer.set_bus_mute(2,false)		
 	elif e == -1: 
-		sound_switch.text = "   ON"
+		sound_switch.text = "  OFF"
 		AudioServer.set_bus_mute(2,true)
 

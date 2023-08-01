@@ -24,14 +24,22 @@ var boss_kills : int
 
 
 #RANKS OBJECTIVES
-var zero_obj : String = "SHIP POWER\n- LOW BULLET DAMAGE\n- MAXIMUM OF ONE SHIELD\n- SHIP REPAIR DISABLED\n\nMAIN OBJECTIVE\n- DESTROY 50 ENEMY SHIPS IN ONE FLIGHT"
+var zero_obj : String = "SHIP POWER\n- VERY LOW BULLET DAMAGE\n\nMAIN OBJECTIVE\n- DESTROY 50 ENEMY SHIPS IN ONE FLIGHT"
 
-var novice_obj : String = "SHIP POWER\n- LOW BULLET DAMAGE\n- MAXIMUM OF TWO SHIELDS\n- SHIP REPAIR ACTIVE\n\nMAIN OBJECTIVE\n- DESTROY 150 ENEMY SHIPS IN ONE FLIGHT\n- DESTROY 3 SPINNER SHIP"
+var novice_obj : String = "SHIP POWER\n- LOW BULLET DAMAGE\n\nMAIN OBJECTIVE\n- DESTROY 350 ENEMY SHIPS IN ONE FLIGHT"
 
-var hero_obj : String = "SHIP POWER\n- MEDIUM BULLET DAMAGE\n- MAXIMUM OF TWO SHIELDs\n- SHIP REPAIR ACTIVE\n\nMAIN OBJECTIVE\n- DESTROY 500 ENEMY SHIPS IN ONE FLIGHT\n- Destroy 3 BOSS SHPS\n- DESTROY 10 SPINNER SHIP\n- DESTROY 10 DODGER SHIPS"
+var hero_obj : String = "SHIP POWER\n- MEDIUM BULLET DAMAGE\n\nMAIN OBJECTIVE\n- DESTROY 1000 ENEMY SHIPS IN ONE FLIGHT"
 
-var captain_obj : String = "SHIP POWER\n- MAXMUM BULLET DAMAGE\n- MAXIMUM OF ONE SHIELD\n- NO SHIP REPAIR\n\nMAIN OBJECTIVE\n- BLAST FOREVER"
+var captain_obj : String = "SHIP POWER\n- MAXMUM BULLET DAMAGE\n\nMAIN OBJECTIVE\n- BLAST FOREVER"
 
+
+#var zero_obj : String = "SHIP POWER\n- LOW BULLET DAMAGE\n- MAXIMUM OF ONE SHIELD\n- SHIP REPAIR DISABLED\n\nMAIN OBJECTIVE\n- DESTROY 50 ENEMY SHIPS IN ONE FLIGHT"
+#
+#var novice_obj : String = "SHIP POWER\n- LOW BULLET DAMAGE\n- MAXIMUM OF TWO SHIELDS\n- SHIP REPAIR ACTIVE\n\nMAIN OBJECTIVE\n- DESTROY 150 ENEMY SHIPS IN ONE FLIGHT\n- DESTROY 3 SPINNER SHIP"
+#
+#var hero_obj : String = "SHIP POWER\n- MEDIUM BULLET DAMAGE\n- MAXIMUM OF TWO SHIELDs\n- SHIP REPAIR ACTIVE\n\nMAIN OBJECTIVE\n- DESTROY 500 ENEMY SHIPS IN ONE FLIGHT\n- Destroy 3 BOSS SHPS\n- DESTROY 10 SPINNER SHIP\n- DESTROY 10 DODGER SHIPS"
+#
+#var captain_obj : String = "SHIP POWER\n- MAXMUM BULLET DAMAGE\n- MAXIMUM OF ONE SHIELD\n- NO SHIP REPAIR\n\nMAIN OBJECTIVE\n- BLAST FOREVER"
 	
 func manager():
 	var rank : String = mainScript.player_data["player_rank"]
@@ -72,7 +80,7 @@ func start_rank_zero_objective():
 	allowed_maximum_shield = 1
 	is_ship_repair_allowed = false
 	
-	if kills_per_game >= 10:
+	if kills_per_game >= 50:
 		
 		kills_per_game = 0
 		mainScript.set_player_rank("novice")
@@ -106,7 +114,7 @@ func start_rank_novice_objective():
 	allowed_maximum_shield = 2
 	is_ship_repair_allowed = true
 	
-	if kills_per_game >= 20:
+	if kills_per_game >= 350:
 		kills_per_game = 0
 		
 		novice = false
@@ -139,7 +147,7 @@ func start_rank_hero_objective():
 	allowed_maximum_shield = 2
 	is_ship_repair_allowed = true
 	
-	if kills_per_game >= 30 :
+	if kills_per_game >= 1000 :
 #		&& boss_kills >= 3
 		kills_per_game = 0
 		hero = false

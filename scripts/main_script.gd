@@ -32,7 +32,7 @@ var is_player_promoted : bool = false
 
 
 const FILE_PATH : String = 'user://x639dkx.xxx'
-const NEW_FILE_PATH : String = 'res://x369x.odngw'
+const NEW_FILE_PATH : String = 'user://x369x.odngw'
 #game_data
 
 func _ready():

@@ -159,16 +159,16 @@ shape = SubResource( 23 )
 environment = SubResource( 2 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -18.3149 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.8637 )
 
 [node name="StarParticles" parent="player" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -231.685 )
 
 [node name="Camera" type="Camera" parent="player"]
-transform = Transform( 1, 0, 0, 0, 0.98427, 0.176672, 0, -0.176672, 0.98427, 0, 3.28031, 18.2134 )
+transform = Transform( 1, 0, 0, 0, 0.989513, 0.144442, 0, -0.144442, 0.989513, 0, 3.28031, 18.2134 )
 keep_aspect = 0
-fov = 90.0
-near = 3.3
+fov = 80.0
+near = 3.0
 far = 300.0
 
 [node name="player" type="AnimationPlayer" parent="player/Camera"]
@@ -205,27 +205,30 @@ position = Vector2( 1148.5, 709 )
 scale = Vector2( 0.99739, 0.998586 )
 texture = ExtResource( 22 )
 
-[node name="source_canvas" type="CanvasLayer" parent="."]
+[node name="source_canvas" type="Control" parent="."]
 visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="source" parent="source_canvas" instance=ExtResource( 15 )]
 
 [node name="InGameHud" parent="." instance=ExtResource( 8 )]
 mouse_filter = 2
 
-[node name="mobile_controls" parent="InGameHud" index="6"]
-visible = false
+[node name="directions" parent="InGameHud/mobile_controls" index="0"]
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
-[node name="accept" parent="InGameHud/mobile_controls/directions" index="4"]
+[node name="accept" parent="InGameHud/mobile_controls/directions" index="3"]
 normal = SubResource( 26 )
 pressed = SubResource( 27 )
 
-[node name="accept_dialog" parent="InGameHud/mobile_controls/directions" index="5"]
+[node name="accept_dialog" parent="InGameHud/mobile_controls/directions" index="4"]
 normal = SubResource( 28 )
 pressed = SubResource( 29 )
 
 [node name="pause" parent="InGameHud/mobile_controls" index="2"]
-visible = false
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -379,7 +382,6 @@ mouse_filter = 2
 visible = false
 
 [node name="main_menu" type="Control" parent="touch_map"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 

@@ -1,19 +1,29 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scripts/in_game_hud.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/HUD/heart_life.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g15002.png" type="Texture" id=3]
 [ext_resource path="res://assets/ui/HUD/life_bar.png" type="Texture" id=4]
 [ext_resource path="res://assets/ui/HUD/life_bar_rim.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/HUD/shield_inner.png" type="Texture" id=6]
 [ext_resource path="res://assets/ui/HUD/shield_outer.png" type="Texture" id=7]
 [ext_resource path="res://assets/ui/HUD/shield_display_improved.png" type="Texture" id=8]
-[ext_resource path="res://assets/ui/HUD/arrow_button.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19060.png" type="Texture" id=9]
 [ext_resource path="res://assets/ui/HUD/arrow_button_pressed.png" type="Texture" id=10]
-[ext_resource path="res://assets/ui/HUD/shoot_button.png" type="Texture" id=11]
-[ext_resource path="res://assets/ui/HUD/shoot_pressed.png" type="Texture" id=12]
+[ext_resource path="res://misc/dpad/textures/d_pad_locus_touch.png" type="Texture" id=11]
+[ext_resource path="res://misc/dpad/textures/d_pad_locus_touch_norm.png" type="Texture" id=12]
 [ext_resource path="res://assets/ui/HUD/pausebutton_pressed.png" type="Texture" id=13]
-[ext_resource path="res://assets/ui/HUD/pause_button.png" type="Texture" id=14]
-[ext_resource path="res://misc/joystick/virtual_joystick.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/ui/HUD/pause_button_#g24401.png" type="Texture" id=14]
+[ext_resource path="res://misc/joystick/textures/joystick_locus_knob.png" type="Texture" id=15]
+[ext_resource path="res://misc/joystick/textures/joystick_locus_outline.png" type="Texture" id=16]
+[ext_resource path="res://misc/joystick/virtual_joystick.gd" type="Script" id=17]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#path12640-7.png" type="Texture" id=18]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19082.png" type="Texture" id=19]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19066.png" type="Texture" id=20]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#circle19078.png" type="Texture" id=21]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#path12638-6.png" type="Texture" id=22]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/next_#g31777.png" type="Texture" id=23]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/next_#g31765.png" type="Texture" id=24]
 
 [sub_resource type="DynamicFontData" id=14]
 font_path = "res://assets/fonts/American Captain.otf"
@@ -107,6 +117,7 @@ texture = ExtResource( 8 )
 expand = true
 
 [node name="highscore_counter" type="Label" parent="."]
+modulate = Color( 0.898039, 0.94902, 0.992157, 1 )
 anchor_left = 0.0958333
 anchor_top = 0.0945313
 anchor_right = 0.216667
@@ -120,8 +131,8 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
+wait_time = 5.0
+one_shot = true
 
 [node name="health_guage_hearts" type="VBoxContainer" parent="."]
 visible = false
@@ -133,11 +144,13 @@ margin_right = 212.0
 margin_bottom = 198.0
 
 [node name="AnimatedSprite" type="Sprite" parent="health_guage_hearts"]
+visible = false
 position = Vector2( 32, 48 )
 scale = Vector2( 0.727127, 0.609415 )
 texture = ExtResource( 2 )
 
 [node name="AnimatedSprite2" type="Sprite" parent="health_guage_hearts"]
+visible = false
 position = Vector2( 200, 48 )
 scale = Vector2( 0.727127, 0.609415 )
 texture = ExtResource( 2 )
@@ -238,62 +251,87 @@ texture = ExtResource( 7 )
 [node name="mobile_controls" type="CanvasLayer" parent="."]
 
 [node name="directions" type="Control" parent="mobile_controls"]
-anchor_left = -0.00416667
-anchor_top = 0.2125
-anchor_right = 0.408333
-anchor_bottom = 1.00625
-margin_left = -32.0
-margin_top = -528.0
-margin_right = -32.0
-margin_bottom = -528.0
-__meta__ = {
-"_edit_use_anchors_": true
-}
+modulate = Color( 0.968627, 0.776471, 0.956863, 0.462745 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -380.0
+margin_top = -416.0
+margin_bottom = 416.0
+
+[node name="rect" type="TextureRect" parent="mobile_controls/directions"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.0
+margin_top = -300.0
+margin_right = 69.0
+margin_bottom = 300.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="right" type="TouchScreenButton" parent="mobile_controls/directions/rect"]
+position = Vector2( 47, 72 )
+scale = Vector2( 0.1264, 0.1264 )
+normal = ExtResource( 18 )
+pressed = ExtResource( 20 )
+passby_press = true
+action = "ui_right"
+
+[node name="left" type="TouchScreenButton" parent="mobile_controls/directions/rect"]
+position = Vector2( 47, 256 )
+scale = Vector2( 0.1264, 0.1264 )
+normal = ExtResource( 22 )
+pressed = ExtResource( 9 )
+passby_press = true
+action = "ui_left"
+
+[node name="accept" type="TouchScreenButton" parent="mobile_controls/directions/rect"]
+position = Vector2( 40, 440 )
+scale = Vector2( 0.111758, 0.111758 )
+normal = ExtResource( 21 )
+pressed = ExtResource( 19 )
+passby_press = true
+action = "ui_up"
+
+[node name="accept_dialogue" type="TouchScreenButton" parent="mobile_controls/directions/rect"]
+visible = false
+position = Vector2( 40, 440 )
+scale = Vector2( 0.111758, 0.111758 )
+normal = ExtResource( 21 )
+pressed = ExtResource( 19 )
+passby_press = true
+action = "ui_down"
 
 [node name="arrow_up" type="TouchScreenButton" parent="mobile_controls/directions"]
-position = Vector2( 312.001, 304 )
+visible = false
+position = Vector2( 328, 40 )
 scale = Vector2( 0.632302, 0.696063 )
-normal = ExtResource( 9 )
-pressed = ExtResource( 10 )
+normal = ExtResource( 10 )
 passby_press = true
 action = "ui_up"
 
 [node name="arrow_down" type="TouchScreenButton" parent="mobile_controls/directions"]
-position = Vector2( 504, 952 )
+visible = false
+position = Vector2( 597, 687 )
 rotation = -3.14159
 scale = Vector2( 0.632302, 0.696063 )
-normal = ExtResource( 9 )
-pressed = ExtResource( 10 )
+normal = ExtResource( 10 )
 passby_press = true
 action = "ui_down"
 
-[node name="arrow_right" type="TouchScreenButton" parent="mobile_controls/directions"]
-position = Vector2( 744.001, 544 )
-rotation = 1.5708
-scale = Vector2( 0.632, 0.696 )
-normal = ExtResource( 9 )
-pressed = ExtResource( 10 )
-passby_press = true
-action = "ui_right"
-
-[node name="arrow_left" type="TouchScreenButton" parent="mobile_controls/directions"]
-position = Vector2( 64.0007, 720 )
-rotation = -1.5708
-scale = Vector2( 0.632, 0.696 )
-normal = ExtResource( 9 )
-pressed = ExtResource( 10 )
-passby_press = true
-action = "ui_left"
-
 [node name="accept" type="TouchScreenButton" parent="mobile_controls/directions"]
+visible = false
 modulate = Color( 1, 1, 1, 0.0509804 )
-position = Vector2( 312, 720 )
+position = Vector2( 312, 455 )
 rotation = -1.5708
 scale = Vector2( 0.417886, 0.42651 )
 normal = SubResource( 23 )
 pressed = SubResource( 24 )
 passby_press = true
-action = "ui_accept"
+action = "ui_up"
 
 [node name="accept_dialog" type="TouchScreenButton" parent="mobile_controls/directions"]
 visible = false
@@ -308,6 +346,7 @@ action = "enter"
 
 [node name="shooter" type="Control" parent="mobile_controls"]
 visible = false
+modulate = Color( 0.894118, 0.670588, 0.882353, 0.705882 )
 anchor_left = 0.595833
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -316,13 +355,14 @@ __meta__ = {
 }
 
 [node name="shoot" type="TouchScreenButton" parent="mobile_controls/shooter"]
-position = Vector2( 144.001, 584 )
-scale = Vector2( 0.604613, 0.604613 )
-normal = ExtResource( 11 )
-pressed = ExtResource( 12 )
+position = Vector2( 285.584, 336 )
+scale = Vector2( 0.874418, 0.874418 )
+normal = ExtResource( 16 )
 action = "shoot"
 
 [node name="pause" type="Control" parent="mobile_controls"]
+visible = false
+modulate = Color( 0.894118, 0.670588, 0.882353, 0.705882 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -331,23 +371,126 @@ margin_left = -240.0
 margin_top = -240.0
 
 [node name="pause" type="TouchScreenButton" parent="mobile_controls/pause"]
-position = Vector2( 96, 96 )
-scale = Vector2( 0.37414, 0.575541 )
+modulate = Color( 0.721569, 0.560784, 0.709804, 1 )
+position = Vector2( 80, 64 )
+rotation = 0.261799
+scale = Vector2( 1.27778, 1.72308 )
 normal = ExtResource( 14 )
 pressed = ExtResource( 13 )
 action = "pause"
 
-[node name="Virtual joystick" parent="mobile_controls" instance=ExtResource( 16 )]
+[node name="dpad" type="Control" parent="mobile_controls"]
 visible = false
-anchor_left = 0.0958333
-anchor_top = 0.4375
-anchor_right = 0.342708
-anchor_bottom = 0.795313
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -391.5
+margin_right = 851.0
+margin_bottom = 391.5
+
+[node name="up" type="TouchScreenButton" parent="mobile_controls/dpad"]
+position = Vector2( 512, 35.5 )
+scale = Vector2( 0.870871, 0.907285 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 11 )
+passby_press = true
+action = "ui_up"
+
+[node name="down" type="TouchScreenButton" parent="mobile_controls/dpad"]
+position = Vector2( 512, 475.5 )
+scale = Vector2( 0.870871, 0.907285 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 11 )
+passby_press = true
+action = "ui_down"
+
+[node name="left" type="TouchScreenButton" parent="mobile_controls/dpad"]
+position = Vector2( 208, 275.5 )
+scale = Vector2( 0.870871, 0.907285 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 11 )
+passby_press = true
+action = "ui_left"
+
+[node name="right" type="TouchScreenButton" parent="mobile_controls/dpad"]
+position = Vector2( 819, 275.5 )
+scale = Vector2( 0.870871, 0.907285 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 11 )
+passby_press = true
+action = "ui_right"
+
+[node name="virtual_joystick" type="Control" parent="mobile_controls"]
+visible = false
+modulate = Color( 0.894118, 0.670588, 0.882353, 0.705882 )
+anchor_left = -0.00130435
+anchor_top = 0.155645
+anchor_right = 0.438261
+anchor_bottom = 0.875806
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+pressed_color = Color( 0.980392, 0.921569, 0.980392, 1 )
+deadzone_size = 1.0
+clampzone_size = 70.0
+visibility_mode = 1
 action_left = "move_left"
 action_right = "move_right"
 action_up = "move_up"
 action_down = "move_down"
+
+[node name="Base" type="TextureRect" parent="mobile_controls/virtual_joystick"]
+anchor_left = 0.5
+anchor_top = 0.554
+anchor_right = 0.5
+anchor_bottom = 0.554
+margin_left = -207.0
+margin_top = -220.722
+margin_right = 207.0
+margin_bottom = 198.278
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 100, 100 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 16 )
+expand = true
+stretch_mode = 6
+
+[node name="Tip" type="TextureRect" parent="mobile_controls/virtual_joystick/Base"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -106.0
+margin_top = -106.0
+margin_right = 106.0
+margin_bottom = 106.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 106.5, 103.5 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+
+[node name="music_changer" type="Control" parent="mobile_controls"]
+visible = false
+modulate = Color( 0.894118, 0.670588, 0.882353, 0.705882 )
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -224.0
+margin_right = 280.0
+
+[node name="change_music" type="TouchScreenButton" parent="mobile_controls/music_changer"]
+modulate = Color( 0.721569, 0.560784, 0.709804, 1 )
+position = Vector2( 94.5127, 88.3057 )
+rotation = -0.261799
+scale = Vector2( 0.216663, 0.251291 )
+normal = ExtResource( 23 )
+pressed = ExtResource( 24 )
+passby_press = true
+action = "music_knob"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

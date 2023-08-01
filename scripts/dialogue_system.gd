@@ -107,7 +107,10 @@ func manager(value = false):
 		print("value: false")
 
 func rank_objective_dialogue():
-	$".".show()
+	get_parent().turn_on_game_ui(false)
+	get_parent().toggle_accept_button_mobile(true)
+	self.show()
+	
 	obj_dialogue.show()
 	close_all_dialogues.show()
 	get_parent().pause()
@@ -115,30 +118,40 @@ func rank_objective_dialogue():
 
 
 func rank_promotion_dialogue():
-	$".".show()
+	get_parent().turn_on_game_ui(false)
+	get_parent().toggle_accept_button_mobile(true)
+	self.show()
+	
 	promotion_dialogue.show()
 	close_promo_dialogue.show()
 	get_parent().pause()
 
 func continue_game_dialogue():
+	get_parent().toggle_accept_button_mobile(true)
+	get_parent().turn_on_game_ui(false)
 	sound_system.sound_fx[5].play()
-	$".".show()
+	self.show()
 	is_continue_dialogue_active = true
 	continue_options_dialogue.show()
 	
 func close_continue_options_dialogue():
+	get_parent().toggle_accept_button_mobile(false)
 	is_continue_dialogue_active = false
 	continue_options_dialogue.hide()
-	$".".hide()
+	self.hide()
+	
 		
 func input_manager():
 	handle_continue_options_input()
 	
-	if Input.is_action_just_pressed("enter"):
+	if Input.is_action_just_pressed("enter") ||  Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_up"):
 		if obj_dialogue.visible == true:
 			_on_d_sys_out_pressed()
+			get_parent().toggle_accept_button_mobile(false)
 		elif promotion_dialogue.visible == true:
 			_on_d_sys_out_promo_pressed()
+			get_parent().toggle_accept_button_mobile(false)
+		
 
 func _on_d_sys_out_pressed():
 	get_parent().continue_game()
@@ -146,6 +159,7 @@ func _on_d_sys_out_pressed():
 	sound_system.sound_fx[3].play()
 	promotion_dialogue.hide()
 	$".".hide()
+	
 
 
 func _on_d_sys_out_promo_pressed():
@@ -162,6 +176,7 @@ func _on_d_sys_out_promo_pressed():
 	
 func handle_continue_options_input():
 	if is_continue_dialogue_active == true:
+		get_parent().toggle_accept_button_mobile(true)
 		if Input.is_action_just_pressed("ui_right") and current_selector < 2:
 			sound_system.sound_fx[4].play()
 			current_selector += 1
@@ -212,13 +227,17 @@ func update_chip_count():
 	chip_count.text = str("CHIPS(",mainScript.player_data["chips"],")")
 
 func start_revive_timer():
+	
 	close_continue_options_dialogue()
-	$".".show()
+	self.show()
 	$revive_timer.show()
 	$revive_timer/revive_timer.play("timer")
 
 func _revive():
-	$".".hide()
+	self.hide()
+	
 	get_parent().revive_player()
 	sound_system.sound_fx[1].play()
 	get_parent().continue_game()
+
+

@@ -15,24 +15,14 @@ onready var guns = [$Gun0, $Gun1]
 onready var main = get_tree().get_root()
 var Bullet = load("res://scenes/npcs/Bullet.tscn")
 
-onready var mobile_in_game_control_shooter = get_parent().get_node("InGameHud/mobile_controls/shooter")
-onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/mobile_controls/Virtual joystick")
-onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_controls/pause")
-onready var mobile_ui_controls = get_parent().get_node("InGameHud/mobile_controls/directions")
-
-
 func _physics_process(delta):
 	is_game_started(game_started, delta)
 
 func is_game_started(var is_started : bool, var delta):
 	if is_started == true:
-		mobile_in_game_control_joystick.show()
-		mobile_in_game_control_shooter.show()
-		mobile_ui_controls.hide()
-		mobile_pause_button.show()
 		
-		inputVector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-		inputVector.y = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
+		inputVector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+		inputVector.y = Input.get_action_strength("move_up") - Input.get_action_strength("move_down")
 		inputVector = inputVector.normalized()
 		velocity.x = move_toward(velocity.x, inputVector.x * MAXSPEED, ACCELERATION)
 		velocity.y = move_toward(velocity.y, inputVector.y * MAXSPEED, ACCELERATION)
@@ -46,13 +36,14 @@ func is_game_started(var is_started : bool, var delta):
 
 		#shooting
 		if Input.is_action_pressed("shoot") and cooldown <= 0:
+
 			cooldown = COOLDOWN * delta
 			for i in guns:
 				var bullet = Bullet.instance()
 				main.add_child(bullet)
 				bullet.transform = i.global_transform
 				bullet.velocity = bullet.transform.basis.z * -600
-				
+		
 		#cooldown
 		if cooldown > 0:
 			cooldown -= delta

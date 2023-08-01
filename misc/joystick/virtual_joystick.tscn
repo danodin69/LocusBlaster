@@ -4,22 +4,20 @@
 [ext_resource path="res://misc/joystick/textures/joystick_locus_outline.png" type="Texture" id=2]
 [ext_resource path="res://misc/joystick/virtual_joystick.gd" type="Script" id=3]
 
-[node name="Virtual joystick" type="Control"]
-modulate = Color( 1, 1, 1, 0.509804 )
-anchor_left = -0.116667
-anchor_top = 0.804688
-anchor_right = 0.130208
-anchor_bottom = 1.1625
-margin_left = 408.0
-margin_top = -470.0
-margin_right = 408.0
-margin_bottom = -470.0
+[node name="virtual_joystick" type="Control"]
+visible = false
+anchor_left = -0.00130435
+anchor_top = 0.155645
+anchor_right = 0.462609
+anchor_bottom = 0.875806
+margin_bottom = -6.10352e-05
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
-pressed_color = Color( 1, 1, 1, 1 )
-joystick_mode = 1
+pressed_color = Color( 0.980392, 0.921569, 0.980392, 1 )
+deadzone_size = 1.0
+clampzone_size = 70.0
 visibility_mode = 1
 
 [node name="Base" type="TextureRect" parent="."]
@@ -27,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -100.0
-margin_right = 100.0
-margin_bottom = 100.0
+margin_left = -207.0
+margin_top = -209.5
+margin_right = 207.0
+margin_bottom = 209.5
 grow_horizontal = 2
 grow_vertical = 2
 rect_pivot_offset = Vector2( 100, 100 )
@@ -45,13 +43,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
+margin_left = -106.0
+margin_top = -106.0
+margin_right = 106.0
+margin_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_pivot_offset = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 106.5, 103.5 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture = ExtResource( 1 )

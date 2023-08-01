@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://scripts/dialogue_system.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/HUD/rect_design.png" type="Texture" id=2]
@@ -13,6 +13,11 @@
 [ext_resource path="res://assets/audio/effects/explosionCrunch_003.ogg" type="AudioStream" id=11]
 [ext_resource path="res://assets/audio/effects/forceField_003.ogg" type="AudioStream" id=12]
 [ext_resource path="res://assets/audio/effects/laserLarge_000.ogg" type="AudioStream" id=13]
+[ext_resource path="res://assets/images/retro_bg.png" type="Texture" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 66
+font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFontData" id=41]
 font_path = "res://assets/fonts/American Captain.otf"
@@ -38,128 +43,6 @@ font_path = "res://assets/fonts/American Captain.otf"
 
 [sub_resource type="DynamicFont" id=37]
 font_data = SubResource( 44 )
-
-[sub_resource type="Theme" id=22]
-default_font = SubResource( 33 )
-Button/fonts/font = SubResource( 31 )
-CheckBox/fonts/font = SubResource( 33 )
-CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
-CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
-CheckButton/constants/check_vadjust = 0
-CheckButton/constants/hseparation = 0
-CheckButton/fonts/font = SubResource( 33 )
-CheckButton/icons/off = null
-CheckButton/icons/off_disabled = null
-CheckButton/icons/on = null
-CheckButton/icons/on_disabled = null
-CheckButton/styles/disabled = null
-CheckButton/styles/focus = null
-CheckButton/styles/hover = null
-CheckButton/styles/hover_pressed = null
-CheckButton/styles/normal = null
-CheckButton/styles/pressed = null
-ColorPickerButton/fonts/font = SubResource( 33 )
-Fonts/fonts/large = SubResource( 33 )
-Fonts/fonts/normal = SubResource( 35 )
-GraphNode/fonts/title_font = SubResource( 33 )
-ItemList/fonts/font = SubResource( 33 )
-Label/fonts/font = SubResource( 37 )
-LineEdit/fonts/font = SubResource( 33 )
-LinkButton/fonts/font = SubResource( 33 )
-MenuButton/fonts/font = SubResource( 33 )
-OptionButton/fonts/font = SubResource( 33 )
-PopupMenu/fonts/font = SubResource( 33 )
-PopupMenu/fonts/font_separator = SubResource( 33 )
-ProgressBar/fonts/font = SubResource( 33 )
-RichTextLabel/fonts/bold_font = SubResource( 33 )
-RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
-RichTextLabel/fonts/italics_font = SubResource( 33 )
-RichTextLabel/fonts/mono_font = SubResource( 33 )
-RichTextLabel/fonts/normal_font = SubResource( 33 )
-TabContainer/fonts/font = SubResource( 33 )
-Tabs/fonts/font = SubResource( 33 )
-TextEdit/fonts/font = SubResource( 33 )
-ToolButton/fonts/font = SubResource( 33 )
-TooltipLabel/fonts/font = SubResource( 33 )
-Tree/fonts/font = SubResource( 33 )
-Tree/fonts/title_button_font = SubResource( 33 )
-WindowDialog/fonts/title_font = SubResource( 33 )
-
-[sub_resource type="DynamicFont" id=23]
-size = 51
-font_data = ExtResource( 4 )
-
-[sub_resource type="Animation" id=24]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=25]
-resource_name = "continue"
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="Animation" id=26]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=27]
-resource_name = "continue"
-length = 2.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Label:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.1, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="DynamicFont" id=1]
-size = 66
-font_data = ExtResource( 4 )
 
 [sub_resource type="Theme" id=10]
 default_font = SubResource( 33 )
@@ -213,6 +96,60 @@ WindowDialog/fonts/title_font = SubResource( 33 )
 
 [sub_resource type="DynamicFont" id=11]
 size = 75
+font_data = ExtResource( 4 )
+
+[sub_resource type="Theme" id=22]
+default_font = SubResource( 33 )
+Button/fonts/font = SubResource( 31 )
+CheckBox/fonts/font = SubResource( 33 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 33 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 33 )
+Fonts/fonts/large = SubResource( 33 )
+Fonts/fonts/normal = SubResource( 35 )
+GraphNode/fonts/title_font = SubResource( 33 )
+ItemList/fonts/font = SubResource( 33 )
+Label/fonts/font = SubResource( 37 )
+LineEdit/fonts/font = SubResource( 33 )
+LinkButton/fonts/font = SubResource( 33 )
+MenuButton/fonts/font = SubResource( 33 )
+OptionButton/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font = SubResource( 33 )
+PopupMenu/fonts/font_separator = SubResource( 33 )
+ProgressBar/fonts/font = SubResource( 33 )
+RichTextLabel/fonts/bold_font = SubResource( 33 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 33 )
+RichTextLabel/fonts/italics_font = SubResource( 33 )
+RichTextLabel/fonts/mono_font = SubResource( 33 )
+RichTextLabel/fonts/normal_font = SubResource( 33 )
+TabContainer/fonts/font = SubResource( 33 )
+Tabs/fonts/font = SubResource( 33 )
+TextEdit/fonts/font = SubResource( 33 )
+ToolButton/fonts/font = SubResource( 33 )
+TooltipLabel/fonts/font = SubResource( 33 )
+Tree/fonts/font = SubResource( 33 )
+Tree/fonts/title_button_font = SubResource( 33 )
+WindowDialog/fonts/title_font = SubResource( 33 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 51
 font_data = ExtResource( 4 )
 
 [sub_resource type="Theme" id=14]
@@ -434,6 +371,70 @@ size = 90
 outline_size = 4
 outline_color = Color( 0.396078, 0.396078, 0.396078, 1 )
 font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../promotion/TextureRect/center/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "continue"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../promotion/TextureRect/center/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=26]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("../rank_objective/TextureRect/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "continue"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("../rank_objective/TextureRect/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
 
 [sub_resource type="Theme" id=38]
 default_font = SubResource( 33 )
@@ -807,70 +808,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
-[node name="d_sys_out" type="TextureButton" parent="."]
-pause_mode = 2
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Label" type="Label" parent="d_sys_out"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -206.0
-margin_top = -231.0
-margin_right = 221.0
-margin_bottom = -179.0
-theme = SubResource( 22 )
-custom_fonts/font = SubResource( 23 )
-text = "Press [enter] to continue"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="d_sys_out"]
-autoplay = "continue"
-anims/RESET = SubResource( 24 )
-anims/continue = SubResource( 25 )
-
-[node name="d_sys_out_promo" type="TextureButton" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Label" type="Label" parent="d_sys_out_promo"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -206.0
-margin_top = -231.0
-margin_right = 221.0
-margin_bottom = -179.0
-theme = SubResource( 22 )
-custom_fonts/font = SubResource( 23 )
-text = "Press [enter] to continue"
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="d_sys_out_promo"]
-autoplay = "continue"
-anims/RESET = SubResource( 26 )
-anims/continue = SubResource( 27 )
-
 [node name="rank_objective" type="PopupDialog" parent="."]
 pause_mode = 2
 self_modulate = Color( 0, 0.0313726, 0.133333, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -870.0
-margin_top = -476.0
-margin_right = 850.0
-margin_bottom = 452.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="rank_objective"]
 anchor_left = 0.5
@@ -881,6 +824,7 @@ margin_left = -820.0
 margin_top = -420.0
 margin_right = 820.0
 margin_bottom = 420.0
+mouse_filter = 2
 expand = true
 
 [node name="left_side" type="Control" parent="rank_objective/TextureRect"]
@@ -914,17 +858,19 @@ texture = ExtResource( 5 )
 expand = true
 
 [node name="rank_name" type="Label" parent="rank_objective/TextureRect/left_side"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 86.0
-margin_top = 520.0
-margin_right = 256.0
-margin_bottom = 596.0
+anchor_left = 0.50641
+anchor_top = 0.642157
+anchor_right = 1.04487
+anchor_bottom = 0.735294
+margin_right = 6.10352e-05
 theme = SubResource( 10 )
 custom_fonts/font = SubResource( 11 )
 text = "{RANK}"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="right_side" type="Control" parent="rank_objective/TextureRect"]
 anchor_left = 1.0
@@ -973,27 +919,33 @@ theme = SubResource( 14 )
 custom_fonts/font = SubResource( 15 )
 text = "[ BEGIN ]"
 
+[node name="Label" type="Label" parent="rank_objective/TextureRect"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -213.5
+margin_top = 22.0
+margin_right = 213.5
+margin_bottom = 74.0
+theme = SubResource( 22 )
+custom_fonts/font = SubResource( 23 )
+text = "Press [enter] to continue"
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="promotion" type="PopupDialog" parent="."]
 pause_mode = 2
-self_modulate = Color( 0, 0.0313726, 0.133333, 0.752941 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -870.0
-margin_top = -476.0
-margin_right = 850.0
-margin_bottom = 452.0
+self_modulate = Color( 0, 0.0313726, 0.133333, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="promotion"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -820.0
-margin_top = -420.0
-margin_right = 820.0
-margin_bottom = 420.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
 texture = ExtResource( 2 )
 expand = true
 
@@ -1019,28 +971,25 @@ custom_fonts/font = SubResource( 17 )
 text = "PROMOTION"
 
 [node name="rank_icon" type="TextureRect" parent="promotion/TextureRect/center"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -112.0
-margin_top = -72.0
-margin_right = 120.0
-margin_bottom = 120.0
+anchor_left = 0.320513
+anchor_top = 0.411765
+anchor_right = 0.692308
+anchor_bottom = 0.647059
 texture = ExtResource( 5 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="rank_name" type="Label" parent="promotion/TextureRect/center"]
-anchor_left = 0.378205
-anchor_top = 0.637255
-anchor_right = 0.650641
-anchor_bottom = 0.730392
-margin_left = 1.52588e-05
-margin_top = 40.0
-margin_bottom = 40.0002
+anchor_left = 0.227564
+anchor_top = 0.686275
+anchor_right = 0.790064
+anchor_bottom = 0.779412
 theme = SubResource( 18 )
 custom_fonts/font = SubResource( 19 )
 text = "{RANK}"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -1058,6 +1007,43 @@ margin_bottom = -21.0
 theme = SubResource( 20 )
 custom_fonts/font = SubResource( 21 )
 text = "[  ACCEPT  ]"
+
+[node name="Label" type="Label" parent="promotion/TextureRect/center"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -206.0
+margin_top = -19.0
+margin_right = 221.0
+margin_bottom = 33.0
+theme = SubResource( 22 )
+custom_fonts/font = SubResource( 23 )
+text = "Press [enter] to continue"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="d_sys_out" type="TextureButton" parent="."]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="d_sys_out"]
+autoplay = "continue"
+anims/RESET = SubResource( 24 )
+anims/continue = SubResource( 25 )
+
+[node name="d_sys_out_promo" type="TextureButton" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="d_sys_out_promo"]
+autoplay = "continue"
+anims/RESET = SubResource( 26 )
+anims/continue = SubResource( 27 )
 
 [node name="continue_options" type="PopupDialog" parent="."]
 pause_mode = 2
@@ -1285,19 +1271,20 @@ custom_fonts/font = SubResource( 40 )
 text = "+ I'M WEAK
 + OWARI    DA"
 
-[node name="revive_timer" type="ColorRect" parent="."]
+[node name="revive_timer" type="TextureRect" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0431373, 0.00392157, 0.0705882, 1 )
+texture = ExtResource( 14 )
+expand = true
 
 [node name="revive_in" type="Label" parent="revive_timer"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -438.0
-margin_top = 280.0
+margin_top = 293.0
 margin_right = 447.0
-margin_bottom = 503.0
+margin_bottom = 516.0
 theme = SubResource( 45 )
 custom_fonts/font = SubResource( 46 )
 text = "REVIVAL IN..."
@@ -1309,9 +1296,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -238.0
-margin_top = 4.0
+margin_top = -28.0
 margin_right = 235.0
-margin_bottom = 227.0
+margin_bottom = 195.0
 theme = SubResource( 47 )
 custom_fonts/font = SubResource( 48 )
 text = "3"
@@ -1335,7 +1322,7 @@ stream = ExtResource( 11 )
 volume_db = 5.0
 
 [node name="counter" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 13 )
 volume_db = 5.0
 
 [connection signal="pressed" from="d_sys_out" to="." method="_on_d_sys_out_pressed"]

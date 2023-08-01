@@ -65,12 +65,14 @@ size = 70
 font_data = SubResource( 13 )
 
 [node name="settings" type="Control"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = SubResource( 14 )
 script = ExtResource( 2 )
 
 [node name="PopupPanel" type="Popup" parent="."]
+visible = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -111,7 +113,7 @@ anchor_right = 0.880403
 anchor_bottom = 1.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "  OFF"
+text = "   ON"
 __meta__ = {
 "_editor_description_": ""
 }
@@ -146,7 +148,7 @@ anchor_right = 0.880403
 anchor_bottom = 1.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "  OFF"
+text = "   ON"
 __meta__ = {
 "_editor_description_": ""
 }

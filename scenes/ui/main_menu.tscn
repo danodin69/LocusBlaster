@@ -241,11 +241,11 @@ __meta__ = {
 
 [node name="settings" type="TextureButton" parent="."]
 anchor_left = 0.767
-anchor_top = 0.981
+anchor_top = 0.994
 anchor_right = 0.767
 anchor_bottom = 0.994
 margin_left = -64.64
-margin_top = -431.68
+margin_top = -447.8
 margin_right = 63.36
 margin_bottom = -312.32
 texture_normal = ExtResource( 5 )

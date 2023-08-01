@@ -1,11 +1,19 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://assets/themes/locus_basic_theme.tres" type="Theme" id=1]
 [ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=2]
 [ext_resource path="res://assets/fonts/American Captain.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://shaders/retro_effects/retro.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scripts/pilot_name_data.gd" type="Script" id=5]
-[ext_resource path="res://assets/images/retro_rim.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/retro_bg.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/crosshair2.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g15002.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19060.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#path12640-7.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19082.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19066.png" type="Texture" id=12]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#circle19078.png" type="Texture" id=13]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#path12638-6.png" type="Texture" id=14]
 
 [sub_resource type="DynamicFont" id=2]
 size = 100
@@ -15,6 +23,93 @@ font_data = ExtResource( 3 )
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 border_width_bottom = 8
 border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=10]
+font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=8]
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 3 )
+
+[sub_resource type="Theme" id=11]
+default_font = SubResource( 8 )
+Button/fonts/font = SubResource( 10 )
+CheckBox/fonts/font = SubResource( 8 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 8 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 8 )
+Fonts/fonts/large = SubResource( 8 )
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = SubResource( 8 )
+ItemList/fonts/font = SubResource( 8 )
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = SubResource( 8 )
+LinkButton/fonts/font = SubResource( 8 )
+MenuButton/fonts/font = SubResource( 8 )
+OptionButton/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font_separator = SubResource( 8 )
+ProgressBar/fonts/font = SubResource( 8 )
+RichTextLabel/fonts/bold_font = SubResource( 8 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
+RichTextLabel/fonts/italics_font = SubResource( 8 )
+RichTextLabel/fonts/mono_font = SubResource( 8 )
+RichTextLabel/fonts/normal_font = SubResource( 8 )
+TabContainer/fonts/font = SubResource( 8 )
+Tabs/fonts/font = SubResource( 8 )
+TextEdit/fonts/font = SubResource( 8 )
+ToolButton/fonts/font = SubResource( 8 )
+TooltipLabel/fonts/font = SubResource( 8 )
+Tree/fonts/font = SubResource( 8 )
+Tree/fonts/title_button_font = SubResource( 8 )
+WindowDialog/fonts/title_font = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="StreamTexture" id=13]
+flags = 4
+load_path = "res://.import/mob_ui_#circle19078.png-688176964bc748542fd24acfa69299d1.stex"
+
+[sub_resource type="StreamTexture" id=14]
+flags = 4
+load_path = "res://.import/mob_ui_#g19082.png-206db6531095570d276c9be49f8366f1.stex"
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -29,9 +124,9 @@ expand = true
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.334565
-anchor_top = 0.240323
+anchor_top = 0.175807
 anchor_right = 0.666304
-anchor_bottom = 0.320968
+anchor_bottom = 0.256452
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 2 )
 text = "ENTER YOUR PILOT NAME"
@@ -45,9 +140,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -290.0
-margin_top = 72.0
+margin_top = 24.0
 margin_right = 293.0
-margin_bottom = 171.0
+margin_bottom = 123.0
 theme = ExtResource( 1 )
 custom_colors/cursor_color = Color( 1, 1, 1, 1 )
 custom_styles/normal = SubResource( 1 )
@@ -57,7 +152,6 @@ placeholder_text = "START TYPING"
 caret_blink = true
 
 [node name="retro_shader" parent="." instance=ExtResource( 4 )]
-visible = false
 
 [node name="TextureRect" parent="retro_shader/CanvasLayer" index="0"]
 mouse_filter = 2
@@ -67,6 +161,82 @@ wait_time = 0.3
 one_shot = true
 autostart = true
 
+[node name="TextureButton" type="TextureButton" parent="."]
+visible = false
+anchor_left = 0.477826
+anchor_top = 0.704839
+anchor_right = 0.522174
+anchor_bottom = 0.785484
+margin_right = -0.00012207
+margin_bottom = -6.10352e-05
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="TextureButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -14.5
+margin_top = -12.5
+margin_right = 14.5
+margin_bottom = 18.5
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "GO"
+
+[node name="go" type="CanvasLayer" parent="."]
+
+[node name="rect" type="TextureRect" parent="go"]
+anchor_left = 0.466087
+anchor_top = 0.732258
+anchor_right = 0.539565
+anchor_bottom = 0.83629
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="right" type="TouchScreenButton" parent="go/rect"]
+visible = false
+position = Vector2( 47, 72 )
+scale = Vector2( 0.1264, 0.1264 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 12 )
+passby_press = true
+action = "ui_right"
+
+[node name="left" type="TouchScreenButton" parent="go/rect"]
+visible = false
+position = Vector2( 47, 256 )
+scale = Vector2( 0.1264, 0.1264 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 9 )
+passby_press = true
+action = "ui_left"
+
+[node name="accept" type="TouchScreenButton" parent="go/rect"]
+position = Vector2( 37, 25 )
+scale = Vector2( 0.111758, 0.111758 )
+normal = SubResource( 13 )
+pressed = SubResource( 14 )
+passby_press = true
+action = "enter"
+
+[node name="accept_dialogue" type="TouchScreenButton" parent="go/rect"]
+visible = false
+position = Vector2( 40, 440 )
+scale = Vector2( 0.111758, 0.111758 )
+normal = ExtResource( 13 )
+pressed = ExtResource( 11 )
+passby_press = true
+action = "ui_down"
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
 
 [editable path="retro_shader"]

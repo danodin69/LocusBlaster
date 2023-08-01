@@ -4,6 +4,12 @@ var isShieldOn : bool
 var KillParticles : Resource = load("res://scenes/particles/KillParticles.tscn")
 var power_up_particles : Resource = load('res://scenes/particles/power_ups.tscn')
 
+onready var mobile_in_game_control_shooter = $InGameHud/mobile_controls/shooter
+onready var mobile_in_game_control_joystick = $InGameHud/mobile_controls/virtual_joystick
+onready var mobile_pause_button = $InGameHud/mobile_controls/pause
+onready var mobile_ui_directions = $InGameHud/mobile_controls/directions
+
+
 onready var main = get_tree().get_root()
 
 
@@ -15,9 +21,22 @@ func _process(delta):
 	check_health()
 	check_pause_input()
 	change_music()
+
 ##
-
-
+func turn_on_game_ui(var turnOn = false):
+	if turnOn == true:
+		$InGameHud.show()
+		$InGameHud/mobile_controls/shooter.show()
+		$InGameHud/mobile_controls/virtual_joystick.show()
+		$InGameHud/mobile_controls/directions.hide()
+		$InGameHud/mobile_controls/pause.show()
+		$InGameHud/mobile_controls/music_changer.show()
+	else:
+		mobile_in_game_control_joystick.hide()
+		mobile_in_game_control_shooter.hide()
+		mobile_ui_directions.show()
+		mobile_pause_button.hide()
+		$InGameHud/mobile_controls/music_changer.hide()
 
 func _on_Guided_body_entered(body):
 	if body.is_in_group('Enemies'):
@@ -130,10 +149,12 @@ func _on_Main_tree_entered():
 	sound_system.get_node("gameplay").play_random_song()
 	
 	if mainScript.is_game_restarted == true:
+		turn_on_game_ui(true)
 		get_tree().paused = false
 		mainScript.is_game_restarted = false
 		$player.game_started = true
-		$InGameHud.show()
+		
+		
 		$main_menu.queue_free()
 		$pilot_hud.show()
 		
@@ -156,6 +177,7 @@ func pause():
 
 func continue_game():
 	get_tree().paused = false
+	turn_on_game_ui(true)
 	
 func show_objective_dialogue():
 	$dialogue_system.rank_objective_dialogue()
@@ -190,7 +212,8 @@ func revive_player():
 		$pilot_hud/pilot_hud_anim.play("chips_health")
 		
 		
-
+func toggle_accept_button_mobile(var val : bool):
+	get_node("InGameHud").is_a_dialogue_active = val
 	
 
 
