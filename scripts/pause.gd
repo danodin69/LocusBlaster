@@ -44,7 +44,7 @@ func selection_handler(_current_selection):
 		print("settings")
 	elif _current_selection == 2:
 		mainScript.on_main_menu_called = true
-		
+		mainScript.rank.kills_per_game = 0
 		get_parent().restart_game()
 		
 		print("MENU")

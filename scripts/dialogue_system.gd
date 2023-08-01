@@ -154,6 +154,7 @@ func input_manager():
 		
 
 func _on_d_sys_out_pressed():
+	get_parent().toggle_accept_button_mobile(false)
 	get_parent().continue_game()
 	obj_dialogue.hide()
 	sound_system.sound_fx[3].play()
@@ -164,7 +165,7 @@ func _on_d_sys_out_pressed():
 
 func _on_d_sys_out_promo_pressed():
 	mainScript.is_player_promoted = false
-	
+	get_parent().toggle_accept_button_mobile(false)
 	
 	close_promo_dialogue.hide()
 	

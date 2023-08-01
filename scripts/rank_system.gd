@@ -40,7 +40,8 @@ var captain_obj : String = "SHIP POWER\n- MAXMUM BULLET DAMAGE\n\nMAIN OBJECTIVE
 #var hero_obj : String = "SHIP POWER\n- MEDIUM BULLET DAMAGE\n- MAXIMUM OF TWO SHIELDs\n- SHIP REPAIR ACTIVE\n\nMAIN OBJECTIVE\n- DESTROY 500 ENEMY SHIPS IN ONE FLIGHT\n- Destroy 3 BOSS SHPS\n- DESTROY 10 SPINNER SHIP\n- DESTROY 10 DODGER SHIPS"
 #
 #var captain_obj : String = "SHIP POWER\n- MAXMUM BULLET DAMAGE\n- MAXIMUM OF ONE SHIELD\n- NO SHIP REPAIR\n\nMAIN OBJECTIVE\n- BLAST FOREVER"
-	
+
+
 func manager():
 	var rank : String = mainScript.player_data["player_rank"]
 #	rank = ""
