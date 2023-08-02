@@ -14,6 +14,7 @@ func _ready():
 	pass
 	
 func play_random_song():
+	randomize()
 	var randomise_track = randi() % tracks.size()
 	var audiostream = load('res://assets/audio/music/' + tracks[randomise_track])
 	set_stream(audiostream)
