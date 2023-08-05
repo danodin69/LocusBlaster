@@ -29,7 +29,7 @@ func is_game_over(var isGameOver : bool):
 	if isGameOver == true:
 		
 		
-		get_parent().turn_on_game_ui(false)
+		get_parent().toggle_pilot_controls(false)
 		
 		
 		
@@ -52,11 +52,11 @@ func selection_handler(_current_selection):
 	
 	if _current_selection == 0:
 		mainScript.is_game_restarted = true
+		
 		get_parent().restart_game()
-		mobile_in_game_control_joystick.show()
-		mobile_in_game_control_shooter.show()
-		mobile_ui_directions.hide()
-		mobile_pause_button.show()
+		
+		get_parent().toggle_pilot_controls(true)
+		
 		print("RESTART")
 		
 	elif _current_selection == 1:

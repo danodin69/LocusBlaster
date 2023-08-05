@@ -2,6 +2,8 @@ extends Control
 """
 Dan: I might have done some magic in this script
 	 in case future me comes back here
+	
+
 
 """
 var is_settings_dialog_menu : bool = false
@@ -18,11 +20,10 @@ var current_selector = 0
 var m : int = 1
 var e : int = 1
 
-onready var mobile_control_dialog = get_parent().get_node("InGameHud/mobile_controls/directions/accept_dialog")
+onready var mobile_control_dialog = get_parent().get_node("InGameHud/mobile_controls/directions/rect/accept_dialogue") #This node makes it possible to close dialogs
 
 func _ready():
 #	$PopupPanel.show()
-	AudioServer.set_bus_layout(load("res://default_bus_layout.tres"))
 	set_current_selection(0)
 
 # warning-ignore:unused_argument

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scripts/in_game_hud.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/HUD/heart_life.png" type="Texture" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://assets/ui/HUD/shield_outer.png" type="Texture" id=7]
 [ext_resource path="res://assets/ui/HUD/shield_display_improved.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19060.png" type="Texture" id=9]
-[ext_resource path="res://assets/ui/HUD/arrow_button_pressed.png" type="Texture" id=10]
 [ext_resource path="res://misc/dpad/textures/d_pad_locus_touch.png" type="Texture" id=11]
 [ext_resource path="res://misc/dpad/textures/d_pad_locus_touch_norm.png" type="Texture" id=12]
 [ext_resource path="res://assets/ui/HUD/pausebutton_pressed.png" type="Texture" id=13]
@@ -81,22 +80,6 @@ font_path = "res://assets/fonts/American Captain.otf"
 [sub_resource type="DynamicFont" id=22]
 size = 70
 font_data = SubResource( 21 )
-
-[sub_resource type="StreamTexture" id=23]
-flags = 4
-load_path = "res://.import/joystick_locus_outline.png-9f813b9b985b2912757fdfa8bf76f698.stex"
-
-[sub_resource type="StreamTexture" id=24]
-flags = 4
-load_path = "res://.import/arrow_button_pressed.png-967216cfb207a2240a271d249e0bc1a8.stex"
-
-[sub_resource type="StreamTexture" id=25]
-flags = 4
-load_path = "res://.import/joystick_locus_outline.png-9f813b9b985b2912757fdfa8bf76f698.stex"
-
-[sub_resource type="StreamTexture" id=26]
-flags = 4
-load_path = "res://.import/arrow_button_pressed.png-967216cfb207a2240a271d249e0bc1a8.stex"
 
 [node name="InGameHud" type="Control"]
 pause_mode = 2
@@ -304,45 +287,6 @@ normal = ExtResource( 21 )
 pressed = ExtResource( 19 )
 passby_press = true
 action = "ui_down"
-
-[node name="arrow_up" type="TouchScreenButton" parent="mobile_controls/directions"]
-visible = false
-position = Vector2( 328, 40 )
-scale = Vector2( 0.632302, 0.696063 )
-normal = ExtResource( 10 )
-passby_press = true
-action = "ui_up"
-
-[node name="arrow_down" type="TouchScreenButton" parent="mobile_controls/directions"]
-visible = false
-position = Vector2( 597, 687 )
-rotation = -3.14159
-scale = Vector2( 0.632302, 0.696063 )
-normal = ExtResource( 10 )
-passby_press = true
-action = "ui_down"
-
-[node name="accept" type="TouchScreenButton" parent="mobile_controls/directions"]
-visible = false
-modulate = Color( 1, 1, 1, 0.0509804 )
-position = Vector2( 312, 455 )
-rotation = -1.5708
-scale = Vector2( 0.417886, 0.42651 )
-normal = SubResource( 23 )
-pressed = SubResource( 24 )
-passby_press = true
-action = "ui_up"
-
-[node name="accept_dialog" type="TouchScreenButton" parent="mobile_controls/directions"]
-visible = false
-modulate = Color( 1, 1, 1, 0.0509804 )
-position = Vector2( 312, 720 )
-rotation = -1.5708
-scale = Vector2( 0.418, 0.427 )
-normal = SubResource( 25 )
-pressed = SubResource( 26 )
-passby_press = true
-action = "enter"
 
 [node name="shooter" type="Control" parent="mobile_controls"]
 visible = false

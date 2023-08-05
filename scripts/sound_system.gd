@@ -14,7 +14,8 @@ func _ready():
 	
 func start_audio_manager():
 	
-	AudioServer.set_bus_layout(load("res://default_bus_layout.tres"))
+	AudioServer.set_bus_layout(load("res://misc/audio_bus/default_bus_layout.tres"))
+	
 	$gameplay.bus = "Music"
 	$game_over.bus = "Music"
 	$shield_powerup.bus = "SoundFX"

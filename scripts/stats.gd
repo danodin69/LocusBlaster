@@ -7,7 +7,7 @@ onready var best_score  = $profile_mid/best_score
 onready var chips  = $profile_top/chip_amount
 onready var kills = $profile_mid/kills
 onready var deaths = $profile_mid/deaths
-onready var mobile_control_dialog = get_parent().get_node("InGameHud/mobile_controls/directions/accept_dialog")
+onready var mobile_control_dialog = get_parent().get_node("InGameHud/mobile_controls/directions/rect/accept_dialogue")
 
 #RANK ICONS
 var zero_texture : = load("res://assets/sprites/ranks/zero.png")

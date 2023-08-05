@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/npcs/EnemySpawner.tscn" type="PackedScene" id=2]
@@ -71,22 +71,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector3( 0, 3.28031, 18.2134 ), Vector3( -1.18385, 3.28031, 18.2134 ), Vector3( -0.71031, 3.28031, 18.2134 ), Vector3( 0.591923, 3.60587, 18.2134 ), Vector3( -1.18385, 3.28031, 18.2134 ), Vector3( -0.71031, 3.28031, 18.2134 ), Vector3( 0.591923, 3.60587, 18.2134 ), Vector3( -0.651119, 2.45162, 18.2134 ), Vector3( -0.71031, 1.94848, 18.2134 ), Vector3( 0, 3.28031, 18.2134 ) ]
 }
-
-[sub_resource type="StreamTexture" id=26]
-flags = 4
-load_path = "res://.import/joystick_locus_outline.png-9f813b9b985b2912757fdfa8bf76f698.stex"
-
-[sub_resource type="StreamTexture" id=27]
-flags = 4
-load_path = "res://.import/arrow_button_pressed.png-967216cfb207a2240a271d249e0bc1a8.stex"
-
-[sub_resource type="StreamTexture" id=28]
-flags = 4
-load_path = "res://.import/joystick_locus_outline.png-9f813b9b985b2912757fdfa8bf76f698.stex"
-
-[sub_resource type="StreamTexture" id=29]
-flags = 4
-load_path = "res://.import/arrow_button_pressed.png-967216cfb207a2240a271d249e0bc1a8.stex"
 
 [sub_resource type="DynamicFontData" id=7]
 font_path = "res://assets/fonts/American Captain.otf"
@@ -212,25 +196,6 @@ anchor_bottom = 1.0
 [node name="source" parent="source_canvas" instance=ExtResource( 15 )]
 
 [node name="InGameHud" parent="." instance=ExtResource( 8 )]
-mouse_filter = 2
-
-[node name="directions" parent="InGameHud/mobile_controls" index="0"]
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="accept" parent="InGameHud/mobile_controls/directions" index="3"]
-normal = SubResource( 26 )
-pressed = SubResource( 27 )
-
-[node name="accept_dialog" parent="InGameHud/mobile_controls/directions" index="4"]
-normal = SubResource( 28 )
-pressed = SubResource( 29 )
-
-[node name="pause" parent="InGameHud/mobile_controls" index="2"]
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="pause_HUD" type="Control" parent="."]
 pause_mode = 2
@@ -345,8 +310,6 @@ text = "[                        ]"
 __meta__ = {
 "_editor_description_": ""
 }
-
-[node name="Timer" type="Timer" parent="pause_HUD"]
 
 [node name="GameOver" parent="." instance=ExtResource( 9 )]
 pause_mode = 2

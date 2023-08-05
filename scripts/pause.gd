@@ -28,12 +28,8 @@ func selection_handler(_current_selection):
 		game_paused = false
 		$".".hide()
 		get_parent().get_node("InGameHud/mobile_controls/music_changer").show()
-		mobile_control.hide()
-		mobile_pause_button.show()
-		mobile_in_game_control_joystick.show()
-		mobile_in_game_control_shooter.show()
+		get_parent().toggle_pilot_controls(true)
 		
-		#$Timer.start()
 	elif _current_selection == 1:
 		
 		$".".hide()
@@ -64,26 +60,25 @@ func set_current_selection(_current_selection):
 
 
 
-func _on_Timer_timeout():
-	#is_game_paused(false)
-	queue_free()
+
 	
 func is_game_paused(var isPaused : bool):
 	if isPaused == true:
 		get_parent().get_node("InGameHud/mobile_controls/music_changer").hide()
 		if out_of_focus == false:
-			mobile_control.show()
-			mobile_pause_button.hide()
-			mobile_in_game_control_joystick.hide()
-			mobile_in_game_control_shooter.hide()
+			
+			get_parent().toggle_pilot_controls(false)
+			
 			if Input.is_action_just_pressed("ui_right") and current_selector < 2:
 				sound_system.sound_fx[4].play()
 				current_selector += 1
 				set_current_selection(current_selector)
+				
 			elif Input.is_action_just_pressed("ui_left") and current_selector > 0:
 				current_selector -= 1
 				sound_system.sound_fx[4].play()
 				set_current_selection(current_selector)
+				
 			elif Input.is_action_just_pressed("ui_up"):
 				sound_system.sound_fx[3].play()
 				selection_handler(current_selector)

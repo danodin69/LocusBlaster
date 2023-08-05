@@ -36,10 +36,9 @@ const NEW_FILE_PATH : String = 'user://x369x.odngw'
 #game_data
 
 func _ready():
-
+	
 	load_game_data()
 	rank.manager()
-	print(pass_key)
 	
 # FOR RESETS ONLY , REMOVE IN FINAL VERSION !	
 #	player_data["kills"] = kills

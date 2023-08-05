@@ -40,6 +40,7 @@ _global_script_class_icons={
 
 config/name="Locus Blaster"
 run/main_scene="res://scenes/splash_screen.tscn"
+boot_splash/show_image=false
 boot_splash/image="res://assets/splash_screen/boot_splash.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.0392157, 0.0392157, 0.0392157, 1 )
@@ -54,7 +55,6 @@ default_bus_layout=""
 [autoload]
 
 mainScript="*res://scripts/main_script.gd"
-RankSystem="*res://scripts/rank_system.gd"
 Loader="*res://scenes/ui/loading_screen.tscn"
 sound_system="*res://scenes/sound/sound_system.tscn"
 
@@ -65,8 +65,10 @@ window/size/height=1240
 window/size/resizable=false
 window/size/test_width=1300
 window/size/test_height=1240
+window/energy_saving/keep_screen_on=false
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
+window/stretch/shrink=1.1
 
 [global]
 

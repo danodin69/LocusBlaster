@@ -1,7 +1,7 @@
 extends Spatial
 
-var isShieldOn : bool
-var KillParticles : Resource = load("res://scenes/particles/KillParticles.tscn")
+var is_shield_on : bool
+var kill_particles : Resource = load("res://scenes/particles/KillParticles.tscn")
 var power_up_particles : Resource = load('res://scenes/particles/power_ups.tscn')
 
 onready var mobile_in_game_control_shooter = $InGameHud/mobile_controls/shooter
@@ -22,25 +22,14 @@ func _process(delta):
 	check_pause_input()
 	change_music()
 
-##
-func turn_on_game_ui(var turnOn = false):
-	if turnOn == true:
-		$InGameHud.show()
-		$InGameHud/mobile_controls/shooter.show()
-		$InGameHud/mobile_controls/virtual_joystick.show()
-		$InGameHud/mobile_controls/directions.hide()
-		$InGameHud/mobile_controls/pause.show()
-		$InGameHud/mobile_controls/music_changer.show()
-	else:
-		mobile_in_game_control_joystick.hide()
-		mobile_in_game_control_shooter.hide()
-		mobile_ui_directions.show()
-		mobile_pause_button.hide()
-		$InGameHud/mobile_controls/music_changer.hide()
+
+
+# This section checks for area bodies and make them obey the rules! > : ] 
 
 func _on_Guided_body_entered(body):
+	
 	if body.is_in_group('Enemies'):
-		if !isShieldOn :
+		if !is_shield_on :
 			$InGameHud.health -=10
 			$pilot_hud/pilot_hud_anim.play("damage")
 			$player/Camera/player.play("shake_camera")
@@ -48,21 +37,16 @@ func _on_Guided_body_entered(body):
 			$InGameHud.shield_health -= 30
 			
 
-func check_pause_input():
-	if Input.is_action_just_pressed("pause"):
-		if $player.game_started ==true:
-			get_tree().paused = true
-			$pause_HUD.game_paused = true
-			$pause_HUD.show()
+
 			
 			
 func _on_ShipHealth_body_entered(body):
 	
 	if body.is_in_group('Enemies'):
-		if !isShieldOn :
+		if !is_shield_on :
 			$InGameHud.health -=25
 			$pilot_hud/pilot_hud_anim.play("damage")
-			var particles = KillParticles.instance()
+			var particles = kill_particles.instance()
 			particles.transform.origin = transform.origin
 			main.add_child(particles)
 			$player/Camera/player.play("shake_camera")
@@ -74,7 +58,7 @@ func _on_ShipHealth_body_entered(body):
 			$InGameHud.shield_health -= 30
 			
 	if body.is_in_group('shield'):
-		isShieldOn = true
+		is_shield_on = true
 		sound_system.sound_fx[0].play()
 		$InGameHud.shield_health += 30
 		$pilot_hud/pilot_hud_anim.play("shield")
@@ -123,21 +107,14 @@ func destroy_all_enemies():
 	for enemy in enemies:
 		enemy.queue_free()
 		
-		var particles = KillParticles.instance()
+		var particles = kill_particles.instance()
 		particles.transform.origin = transform.origin
 		main.add_child(particles)
 
 		
+# Systems, UI n INPUTS
 
-func restart_game():
-	destroy_all_enemies()
-	
-	get_tree().paused = false
-	
-# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Main.tscn")
-	
-	
+
 
 
 func _on_Main_tree_exited():
@@ -149,7 +126,7 @@ func _on_Main_tree_entered():
 	sound_system.get_node("gameplay").play_random_song()
 	
 	if mainScript.is_game_restarted == true:
-		turn_on_game_ui(true)
+		toggle_pilot_controls(true)
 		get_tree().paused = false
 		mainScript.is_game_restarted = false
 		$player.game_started = true
@@ -162,22 +139,33 @@ func _on_Main_tree_entered():
 		get_tree().paused = false
 		mainScript.on_main_menu_called = false
 
+func restart_game():
+	destroy_all_enemies()
+	
+	get_tree().paused = false
+	
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://Main.tscn")
+	
+	
 
-func _on_gameplay_finished():
-	sound_system.get_node("gameplay").play_random_song()
 
-func change_music():
-	if Input.is_action_just_pressed("music_knob"):
-		sound_system.get_node("gameplay").play_random_song()
-
-
+func check_pause_input():
+	if Input.is_action_just_pressed("pause"):
+		if $player.game_started ==true:
+			get_tree().paused = true
+			$pause_HUD.game_paused = true
+			$pause_HUD.show()
+			
 func pause():
+	##This specifically pauses everything, check_pause_input don't
 	if $player.game_started ==true:
 		get_tree().paused = true
 
 func continue_game():
+	
 	get_tree().paused = false
-	turn_on_game_ui(true)
+	toggle_pilot_controls(true)
 	
 func show_objective_dialogue():
 	$dialogue_system.rank_objective_dialogue()
@@ -211,9 +199,29 @@ func revive_player():
 		$dialogue_system.close_continue_options_dialogue()
 		$pilot_hud/pilot_hud_anim.play("chips_health")
 		
+
+
+func change_music():
+	if Input.is_action_just_pressed("music_knob"):
+		sound_system.get_node("gameplay").play_random_song()
+
+
 		
 func toggle_accept_button_mobile(var val : bool):
 	get_node("InGameHud").is_a_dialogue_active = val
-	
 
 
+func toggle_pilot_controls(var turnOn = false):
+	if turnOn == true:
+		$InGameHud.show()
+		$InGameHud/mobile_controls/shooter.show()
+		$InGameHud/mobile_controls/virtual_joystick.show()
+		$InGameHud/mobile_controls/directions.hide()
+		$InGameHud/mobile_controls/pause.show()
+		$InGameHud/mobile_controls/music_changer.show()
+	else:
+		mobile_in_game_control_joystick.hide()
+		mobile_in_game_control_shooter.hide()
+		mobile_ui_directions.show()
+		mobile_pause_button.hide()
+		$InGameHud/mobile_controls/music_changer.hide()

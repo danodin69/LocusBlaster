@@ -52,16 +52,20 @@ onready var selector3 = $continue_options/TextureRect/selectors/selector_3
 onready var chip_count = $continue_options/TextureRect/chip_label
 
 
-# TODO : REMEMBER TO MAKE ENTER KEY WORK ONLY BASED ON CONDITION THAT THE DIALOGUE SYSTEM IS IN USE
 
 
 func _process(_delta):
+	
 	manager(mainScript.is_player_promoted)
-	input_manager()
-	update_chip_count()
+	
+	
 	
 
 func manager(value = false):
+	
+	input_manager()
+	
+	update_chip_count()
 	
 	var _is_Promoted : bool = value
 	
@@ -107,7 +111,7 @@ func manager(value = false):
 		print("value: false")
 
 func rank_objective_dialogue():
-	get_parent().turn_on_game_ui(false)
+	get_parent().toggle_pilot_controls(false)
 	get_parent().toggle_accept_button_mobile(true)
 	self.show()
 	
@@ -118,17 +122,22 @@ func rank_objective_dialogue():
 
 
 func rank_promotion_dialogue():
-	get_parent().turn_on_game_ui(false)
+	
+	get_parent().destroy_all_enemies()
+	
+	get_parent().toggle_pilot_controls(false)
 	get_parent().toggle_accept_button_mobile(true)
 	self.show()
+	
 	
 	promotion_dialogue.show()
 	close_promo_dialogue.show()
 	get_parent().pause()
 
+
 func continue_game_dialogue():
 	get_parent().toggle_accept_button_mobile(true)
-	get_parent().turn_on_game_ui(false)
+	get_parent().toggle_pilot_controls(false)
 	sound_system.sound_fx[5].play()
 	self.show()
 	is_continue_dialogue_active = true
@@ -175,6 +184,8 @@ func _on_d_sys_out_promo_pressed():
 	promotion_dialogue.hide()
 	sound_system.sound_fx[3].play()
 	
+	
+
 func handle_continue_options_input():
 	if is_continue_dialogue_active == true:
 		get_parent().toggle_accept_button_mobile(true)
@@ -196,6 +207,7 @@ func handle_continue_options_input():
 
 
 func selection_handler(_current_selection):
+	
 	if _current_selection == 0:
 		if mainScript.player_data["chips"] > 0:
 			get_parent().is_chip_used = true
