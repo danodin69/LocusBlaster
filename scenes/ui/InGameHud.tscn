@@ -289,13 +289,14 @@ passby_press = true
 action = "ui_down"
 
 [node name="shooter" type="Control" parent="mobile_controls"]
-visible = false
 modulate = Color( 0.894118, 0.670588, 0.882353, 0.705882 )
-anchor_left = 0.595833
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -620.0
+margin_right = 929.584
+margin_bottom = 620.0
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_group_": true
 }
 
 [node name="shoot" type="TouchScreenButton" parent="mobile_controls/shooter"]
@@ -364,17 +365,19 @@ passby_press = true
 action = "ui_right"
 
 [node name="virtual_joystick" type="Control" parent="mobile_controls"]
-visible = false
 modulate = Color( 0.894118, 0.670588, 0.882353, 0.705882 )
-anchor_left = -0.00130435
-anchor_top = 0.155645
-anchor_right = 0.438261
-anchor_bottom = 0.875806
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -1011.0
+margin_top = -628.0
+margin_bottom = 612.0
 script = ExtResource( 17 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_group_": true
 }
-pressed_color = Color( 0.980392, 0.921569, 0.980392, 1 )
+pressed_color = Color( 0, 0.796078, 0.92549, 0.388235 )
 deadzone_size = 1.0
 clampzone_size = 70.0
 visibility_mode = 1

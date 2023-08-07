@@ -19,10 +19,14 @@ onready var accept_button : Node = $mobile_controls/directions/rect/accept
 
 onready var accept_button_dialogue : Node = $mobile_controls/directions/rect/accept_dialogue
 
+
+onready var joy_stick : Node = $mobile_controls/virtual_joystick
+onready var shooter_hud : Node = $mobile_controls/shooter
+
 func _ready():
 	$health_guage.value = health
 
-
+	invert_mobile_controls(true)
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	_handle_game_ui()
@@ -76,3 +80,22 @@ func _on_Timer_timeout():
 	else:
 		accept_button.visible = true
 		accept_button_dialogue.visible = false
+		
+		
+func invert_mobile_controls(var is_inverted : bool = false):
+	
+	if is_inverted == true :
+		joy_stick.set_position(Vector2(-120, 0),true)
+		shooter_hud.set_position(Vector2(1100,0),true)
+	else:
+		joy_stick.set_position(Vector2(1115, -8), true)
+		shooter_hud.set_position(Vector2(0,0),true)
+
+#Analogue
+
+#-3 left
+#1289 right
+
+#shooter
+#1370.416 right
+#O left :?
