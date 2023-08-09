@@ -4,7 +4,7 @@ extends KinematicBody
 
 
 var game_started : bool = false
-const MAX_SPEED = 36
+const MAX_SPEED = 30
 const ACCELERATION = 1
 var input_vector = Vector3()
 var velocity = Vector3()

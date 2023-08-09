@@ -13,6 +13,8 @@ var game_paused : bool
 var is_game_restarted : bool = false
 var on_main_menu_called : bool = false
 
+var animate_highscore_counter : bool = false
+
 
 #GAME MEMORY VARS FOR IN-GAME STATS/ITEM[1] 
 
@@ -31,13 +33,24 @@ var rank : Rank = Rank.new()
 var is_player_promoted : bool = false
 
 
-const FILE_PATH : String = 'user://x639dkx.xxx'
+const FILE_PATH : String = 'user://settings.config'
+
 const NEW_FILE_PATH : String = 'user://x369x.odngw'
 #game_data
+
+#settings
+
+var music_on : bool 
+var fx_on : bool 
+var inverted_controls : bool = false
+
+
 
 func _ready():
 	
 	load_game_data()
+	load_settings()
+	
 	rank.manager()
 	
 # FOR RESETS ONLY , REMOVE IN FINAL VERSION !	
@@ -51,17 +64,12 @@ func _ready():
 	print(player_data)
 	
 #	set_chips_count(chips)
-# warning-ignore:unused_argument
 
-
-
-
-# warning-ignore:unused_argument
-
-func _process(delta):
+func _process(_delta):
 
 	update_stats()
 	save_game_data()
+	save_settings()
 	rank.manager()
 
 
@@ -117,7 +125,7 @@ func save_game_data():
 	
 	
 	var file = File.new()
-	file.open_encrypted_with_pass(NEW_FILE_PATH, File.WRITE,pass_key)
+	file.open_encrypted_with_pass(NEW_FILE_PATH, File.WRITE,"loolooloo")
 	file.store_string(to_json(player_data))
 	file.close()
 	
@@ -126,7 +134,7 @@ func load_game_data():
 	
 	var file = File.new()
 	if file.file_exists(NEW_FILE_PATH):
-		file.open_encrypted_with_pass(NEW_FILE_PATH, File.READ,pass_key)
+		file.open_encrypted_with_pass(NEW_FILE_PATH, File.READ,"loolooloo")
 		var data = parse_json(file.get_as_text())
 		print(player_data["kills"])
 		file.close()
@@ -137,56 +145,51 @@ func load_game_data():
 			printerr("Spoilt Data")
 	else:
 		printerr("Data Not Found")
+		
+		
+func set_player_rank(value: String):
+	player_data["player_rank"] = value
+	save_game_data()
 #-----END-----
 
-
-
-
-
 		
-#OBSOLETE ; REMOVE BEFORE FINAL VERSION!
-func load_data():
+#settings save
+func load_settings():
 	var FILE = File.new()
 	if !FILE.file_exists(FILE_PATH): return
 	FILE.open(FILE_PATH, FILE.READ)
 	
-	player_rank = FILE.get_var()
-	best_score = FILE.get_var()
-	kills = FILE.get_var()
-	deaths = FILE.get_var()
-	chips = FILE.get_var()
-	
+	music_on = FILE.get_var()
+	fx_on = FILE.get_var()
+	inverted_controls = FILE.get_var()
 
 	FILE.close()
 
-func save_data():
+func save_settings():
 	var FILE = File.new()
 	FILE.open(FILE_PATH, FILE.WRITE)
 	
-	FILE.store_var(player_rank)
-	FILE.store_var(best_score)
-	FILE.store_var(kills)
-	FILE.store_var(deaths)
-	FILE.store_var(chips)
+	FILE.store_var(music_on)
+	FILE.store_var(fx_on)
+	FILE.store_var(inverted_controls)
+
 	FILE.close()
 
-func set_best_score(value: int):
-	best_score = value
-	save_data()
+#func set_best_score(value: int):
+#	best_score = value
+#	save_data()
+#
+#func set_kill_count(value: int):
+#	kills = value
+#	save_data()
+#
+#func set_death_count(value: int):
+#	deaths = value
+#	save_data()
+#
+#func set_chips_count(value:int):
+#	chips = value
+#	save_data()
 
-func set_kill_count(value: int):
-	kills = value
-	save_data()
 
-func set_death_count(value: int):
-	deaths = value
-	save_data()
-
-func set_chips_count(value:int):
-	chips = value
-	save_data()
-
-func set_player_rank(value: String):
-	player_data["player_rank"] = value
-	save_game_data()
 	

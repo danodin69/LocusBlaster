@@ -14,6 +14,7 @@
 [ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19066.png" type="Texture" id=12]
 [ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#circle19078.png" type="Texture" id=13]
 [ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#path12638-6.png" type="Texture" id=14]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mobile_ui_control_#circle19078.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=2]
 size = 100
@@ -102,10 +103,6 @@ WindowDialog/fonts/title_font = SubResource( 8 )
 [sub_resource type="DynamicFont" id=12]
 size = 30
 font_data = ExtResource( 3 )
-
-[sub_resource type="StreamTexture" id=13]
-flags = 4
-load_path = "res://.import/mob_ui_#circle19078.png-688176964bc748542fd24acfa69299d1.stex"
 
 [sub_resource type="StreamTexture" id=14]
 flags = 4
@@ -220,9 +217,10 @@ passby_press = true
 action = "ui_left"
 
 [node name="accept" type="TouchScreenButton" parent="go/rect"]
-position = Vector2( 37, 25 )
-scale = Vector2( 0.111758, 0.111758 )
-normal = SubResource( 13 )
+modulate = Color( 0.682353, 0.25098, 0.717647, 0.384314 )
+position = Vector2( 32.9998, 13 )
+scale = Vector2( 0.302547, 0.302547 )
+normal = ExtResource( 15 )
 pressed = SubResource( 14 )
 passby_press = true
 action = "enter"

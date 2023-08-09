@@ -7,7 +7,7 @@ var pilot_name : String
 func _ready():
 	$LineEdit.grab_focus()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_player_name()
 	
 func get_player_name():

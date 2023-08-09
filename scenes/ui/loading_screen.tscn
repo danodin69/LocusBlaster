@@ -80,7 +80,7 @@ margin_top = 88.0001
 margin_bottom = 88.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 18 )
-text = "beta 2.0"
+text = "beta 2.2"
 __meta__ = {
 "_edit_use_anchors_": true
 }

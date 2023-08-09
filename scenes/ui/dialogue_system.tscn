@@ -830,17 +830,18 @@ expand = true
 [node name="left_side" type="Control" parent="rank_objective/TextureRect"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_top = -408.0
-margin_right = 624.0
-margin_bottom = 408.0
+margin_left = -43.0
+margin_top = -413.0
+margin_right = 581.0
+margin_bottom = 403.0
 
 [node name="top_label" type="Label" parent="rank_objective/TextureRect/left_side"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 110.0
-margin_top = 216.0
+margin_top = 158.0
 margin_right = 225.0
-margin_bottom = 283.0
+margin_bottom = 225.0
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 1 )
 text = "RANK"
@@ -851,9 +852,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 54.0
-margin_top = -112.0
+margin_top = -170.0
 margin_right = 286.0
-margin_bottom = 80.0
+margin_bottom = 22.0
 texture = ExtResource( 5 )
 expand = true
 
@@ -862,24 +863,24 @@ anchor_left = 0.50641
 anchor_top = 0.642157
 anchor_right = 1.04487
 anchor_bottom = 0.735294
+margin_top = -58.0
 margin_right = 6.10352e-05
+margin_bottom = -57.9998
 theme = SubResource( 10 )
 custom_fonts/font = SubResource( 11 )
 text = "{RANK}"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="right_side" type="Control" parent="rank_objective/TextureRect"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -848.0
-margin_top = -408.0
-margin_bottom = 408.0
+margin_left = -891.0
+margin_top = -413.0
+margin_right = -43.0
+margin_bottom = 403.0
 
 [node name="top_label" type="Label" parent="rank_objective/TextureRect/right_side"]
 visible = false
@@ -898,12 +899,11 @@ anchor_left = 0.0566038
 anchor_top = 0.264706
 anchor_right = 0.311321
 anchor_bottom = 0.328431
+margin_top = -58.0
+margin_bottom = -57.9996
 theme = SubResource( 22 )
 custom_fonts/font = SubResource( 23 )
 text = "{OBJECTIVES}"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="begin" type="Label" parent="rank_objective/TextureRect/right_side"]
 visible = false
@@ -925,9 +925,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -213.5
-margin_top = 22.0
+margin_top = -60.0
 margin_right = 213.5
-margin_bottom = 74.0
+margin_bottom = -8.0
 theme = SubResource( 22 )
 custom_fonts/font = SubResource( 23 )
 text = "Press [enter] to continue"
@@ -1075,9 +1075,9 @@ __meta__ = {
 [node name="selector_1" type="Label" parent="continue_options/TextureRect/selectors"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 120.0
+margin_left = 176.0
 margin_top = -24.0
-margin_right = 465.0
+margin_right = 521.0
 margin_bottom = 127.0
 theme = SubResource( 38 )
 custom_fonts/font = SubResource( 39 )
@@ -1097,12 +1097,14 @@ text = "[               ]"
 
 [node name="selector_3" type="Label" parent="continue_options/TextureRect/selectors"]
 visible = false
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 1272.0
-margin_top = -32.0
-margin_right = 1617.0
-margin_bottom = 119.0
+anchor_left = 1.0
+anchor_top = 0.679
+anchor_right = 1.0
+anchor_bottom = 0.679
+margin_left = -609.0
+margin_top = -107.692
+margin_right = -264.0
+margin_bottom = 43.308
 theme = SubResource( 38 )
 custom_fonts/font = SubResource( 39 )
 text = "[               ]"
@@ -1152,9 +1154,9 @@ text = "[  ACCEPT  ]"
 [node name="chip" type="TextureButton" parent="continue_options/TextureRect"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 160.0
+margin_left = 216.0
 margin_top = -108.0
-margin_right = 408.0
+margin_right = 464.0
 margin_bottom = 180.0
 texture_normal = ExtResource( 6 )
 expand = true
@@ -1164,15 +1166,13 @@ anchor_left = 0.130045
 anchor_top = 0.674107
 anchor_right = 0.216368
 anchor_bottom = 0.752232
-margin_left = -1.52588e-05
+margin_left = 56.0
+margin_right = 56.0
 theme = SubResource( 28 )
 custom_fonts/font = SubResource( 29 )
 text = "CHIPS ( 3 )"
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
-[node name="chip_label2" type="Label" parent="continue_options/TextureRect"]
+[node name="watch_add_label" type="Label" parent="continue_options/TextureRect"]
 anchor_left = 0.452915
 anchor_top = 0.683036
 anchor_right = 0.551009
@@ -1186,19 +1186,17 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="chip_label3" type="Label" parent="continue_options/TextureRect"]
+[node name="give_up_label" type="Label" parent="continue_options/TextureRect"]
 anchor_left = 0.762332
 anchor_top = 0.683036
 anchor_right = 0.860426
 anchor_bottom = 0.761161
-margin_left = -1.52588e-05
+margin_left = -63.9999
+margin_right = -63.9999
 theme = SubResource( 28 )
 custom_fonts/font = SubResource( 29 )
 text = "give up"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": true
-}
 
 [node name="watch_ads" type="TextureButton" parent="continue_options/TextureRect"]
 anchor_left = 0.5
@@ -1217,9 +1215,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -496.0
+margin_left = -560.0
 margin_top = -140.0
-margin_right = -184.0
+margin_right = -248.0
 margin_bottom = 204.0
 texture_normal = ExtResource( 8 )
 expand = true
@@ -1236,8 +1234,9 @@ margin_right = 772.0
 [node name="chip_label" type="Label" parent="continue_options/TextureRect/power_ups"]
 anchor_top = 0.5
 anchor_bottom = 0.5
+margin_left = 56.0
 margin_top = -81.5
-margin_right = 385.0
+margin_right = 441.0
 margin_bottom = 81.5
 theme = SubResource( 30 )
 custom_fonts/font = SubResource( 40 )
@@ -1263,8 +1262,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -385.0
+margin_left = -449.0
 margin_top = -81.5
+margin_right = -64.0
 margin_bottom = 81.5
 theme = SubResource( 30 )
 custom_fonts/font = SubResource( 40 )

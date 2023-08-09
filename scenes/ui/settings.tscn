@@ -78,27 +78,27 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -455.0
-margin_top = -289.0
+margin_top = -324.0
 margin_right = 422.0
-margin_bottom = 335.0
+margin_bottom = 300.0
 
 [node name="TextureRect" type="TextureRect" parent="PopupPanel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -404.5
-margin_top = -272.5
-margin_right = 404.5
-margin_bottom = 272.5
+margin_left = -605.5
+margin_top = -387.0
+margin_right = 570.5
+margin_bottom = 405.0
 texture = ExtResource( 1 )
 expand = true
 
 [node name="music" type="Label" parent="PopupPanel"]
 anchor_left = 0.126568
-anchor_top = 0.225962
+anchor_top = 0.100962
 anchor_right = 0.917902
-anchor_bottom = 0.339744
+anchor_bottom = 0.214744
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
 text = "Music"
@@ -113,7 +113,7 @@ anchor_right = 0.880403
 anchor_bottom = 1.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "   ON"
+text = "  "
 __meta__ = {
 "_editor_description_": ""
 }
@@ -124,16 +124,16 @@ anchor_right = 0.880403
 anchor_bottom = 1.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "[          ]"
+text = "[            ]"
 __meta__ = {
 "_editor_description_": ""
 }
 
 [node name="sounds" type="Label" parent="PopupPanel"]
 anchor_left = 0.126568
-anchor_top = 0.552885
+anchor_top = 0.427885
 anchor_right = 0.917902
-anchor_bottom = 0.666667
+anchor_bottom = 0.541667
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
 text = "SOUND fx"
@@ -148,7 +148,7 @@ anchor_right = 0.880403
 anchor_bottom = 1.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "   ON"
+text = "   "
 __meta__ = {
 "_editor_description_": ""
 }
@@ -159,7 +159,42 @@ anchor_right = 0.880403
 anchor_bottom = 1.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "[          ]"
+text = "[            ]"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="invert_controls" type="Label" parent="PopupPanel"]
+anchor_left = 0.126568
+anchor_top = 0.697116
+anchor_right = 0.917902
+anchor_bottom = 0.810898
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "invert control"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="switch" type="Label" parent="PopupPanel/invert_controls"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "    "
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="selector" type="Label" parent="PopupPanel/invert_controls"]
+anchor_left = 0.684438
+anchor_right = 0.880403
+anchor_bottom = 1.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "[           ]"
 __meta__ = {
 "_editor_description_": ""
 }
@@ -245,9 +280,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -63.5
-margin_top = -143.0
+margin_top = -39.0
 margin_right = 68.5
-margin_bottom = -72.0
+margin_bottom = 32.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
 text = "CLOSE"
@@ -261,7 +296,7 @@ anchor_right = 1.12879
 anchor_bottom = 1.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "[               ]"
+text = "[                 ]"
 __meta__ = {
 "_edit_use_anchors_": true,
 "_editor_description_": ""
@@ -269,9 +304,14 @@ __meta__ = {
 
 [node name="ColorRect" type="ColorRect" parent="PopupPanel"]
 show_behind_parent = true
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = -0.22691
+anchor_top = -0.145833
+anchor_right = 1.187
+anchor_bottom = 1.17468
 color = Color( 0.0470588, 0.027451, 0.0627451, 0.882353 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="select" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

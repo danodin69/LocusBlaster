@@ -4,6 +4,7 @@ var health = 100
 var initial_low_speed = 20
 var initial_high_speed = 50
 
+
 var speed = rand_range(initial_low_speed, initial_high_speed)
 onready var main = get_tree().get_root()
 var KillParticles = load("res://scenes/particles/KillParticles.tscn")
@@ -82,17 +83,16 @@ func _on_Area_body_entered(body):
 		body.queue_free()
 		health -= rank.allowed_bullet_damage
 		if health <= 0:
+			
 			rank.kills_per_game += 1
 			print("KPG: ",rank.kills_per_game)
 			var particles = KillParticles.instance()
 			particles.transform.origin = transform.origin
 			main.add_child(particles)
 			mainScript.update_highscore += 3
-#			mainScript.kills += 1
 			mainScript.update_kill_count += 1
-#			mainScript.player_data["kills"] += 1
-#			mainScript.save_game_data()
-			mainScript.save_data()
+			mainScript.animate_highscore_counter = true
+#			mainScript.save_data()
 			
 			queue_free()
 

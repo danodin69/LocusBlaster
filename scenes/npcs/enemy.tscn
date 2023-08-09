@@ -78,7 +78,7 @@ transform = Transform( -1, 5.50763e-09, 0, -8.74228e-08, -0.063, 0, 0, 0, 1, 0, 
 mesh = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0761169, 0, 4.34098 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0761169, 0.725807, 1.74794 )
 shape = SubResource( 2 )
 
 [node name="Particles" parent="." instance=ExtResource( 5 )]

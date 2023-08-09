@@ -14,7 +14,12 @@ func _ready():
 	
 func start_audio_manager():
 	
+	
+	
 	AudioServer.set_bus_layout(load("res://misc/audio_bus/default_bus_layout.tres"))
+	
+	AudioServer.set_bus_mute(1,mainScript.music_on)
+	AudioServer.set_bus_mute(2,mainScript.fx_on)
 	
 	$gameplay.bus = "Music"
 	$game_over.bus = "Music"

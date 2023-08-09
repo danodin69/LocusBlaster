@@ -13,6 +13,16 @@ onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_contro
 var current_selector = 0
 export var game_paused = false
 
+
+var tips : Array = [
+	"Dodging Enemies takes less damage than getting hit", 
+	"If You time it right your wings can destroy enemies without taking damage ",
+	"you can keep collecting health packs, it gets stored even when full , makes you immortal for a while :) ", 
+	"Your Focus and attention span Increases the more you play Locus Blaster",
+	"If you're the first to beat the developer highscore you will get a price in real life"
+	]
+
+
 func _ready():
 	set_current_selection(0)
 	is_game_paused(false)
@@ -67,6 +77,8 @@ func is_game_paused(var isPaused : bool):
 		get_parent().get_node("InGameHud/mobile_controls/music_changer").hide()
 		if out_of_focus == false:
 			
+			
+			
 			get_parent().toggle_pilot_controls(false)
 			
 			if Input.is_action_just_pressed("ui_right") and current_selector < 2:
@@ -82,3 +94,10 @@ func is_game_paused(var isPaused : bool):
 			elif Input.is_action_just_pressed("ui_up"):
 				sound_system.sound_fx[3].play()
 				selection_handler(current_selector)
+
+func suggest_tip():
+	randomize()
+	var tip = tips[randi()%tips.size()*1]
+	$tips.text = tip
+	
+	

@@ -87,6 +87,7 @@ func start_rank_zero_objective():
 	if kills_per_game >= 50:
 		
 		kills_per_game = 0
+		
 		mainScript.set_player_rank("novice")
 		novice = true
 		

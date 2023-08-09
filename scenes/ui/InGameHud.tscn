@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://scripts/in_game_hud.gd" type="Script" id=1]
 [ext_resource path="res://assets/ui/HUD/heart_life.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/ui/HUD/shield_outer.png" type="Texture" id=7]
 [ext_resource path="res://assets/ui/HUD/shield_display_improved.png" type="Texture" id=8]
 [ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19060.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/stats_screen/kills_stats_icon.png" type="Texture" id=10]
 [ext_resource path="res://misc/dpad/textures/d_pad_locus_touch.png" type="Texture" id=11]
 [ext_resource path="res://misc/dpad/textures/d_pad_locus_touch_norm.png" type="Texture" id=12]
 [ext_resource path="res://assets/ui/HUD/pausebutton_pressed.png" type="Texture" id=13]
@@ -16,13 +17,14 @@
 [ext_resource path="res://misc/joystick/textures/joystick_locus_knob.png" type="Texture" id=15]
 [ext_resource path="res://misc/joystick/textures/joystick_locus_outline.png" type="Texture" id=16]
 [ext_resource path="res://misc/joystick/virtual_joystick.gd" type="Script" id=17]
-[ext_resource path="res://assets/ui/HUD/mobile_ui/control_ui_#path12638-6.png" type="Texture" id=18]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mobile_ui_control_#path12640-7.png" type="Texture" id=18]
 [ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19082.png" type="Texture" id=19]
 [ext_resource path="res://assets/ui/HUD/mobile_ui/mob_ui_#g19066.png" type="Texture" id=20]
 [ext_resource path="res://assets/ui/HUD/mobile_ui/control_ui_#circle19078.png" type="Texture" id=21]
-[ext_resource path="res://assets/ui/HUD/mobile_ui/control_ui_#path12640-7.png" type="Texture" id=22]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mobile_ui_control_#circle19078.png" type="Texture" id=22]
 [ext_resource path="res://assets/ui/HUD/mobile_ui/next_#g31777.png" type="Texture" id=23]
 [ext_resource path="res://assets/ui/HUD/mobile_ui/next_#g31765.png" type="Texture" id=24]
+[ext_resource path="res://assets/ui/HUD/mobile_ui/mobile_ui_control_#path89111.png" type="Texture" id=25]
 
 [sub_resource type="DynamicFontData" id=14]
 font_path = "res://assets/fonts/American Captain.otf"
@@ -43,7 +45,7 @@ font_path = "res://assets/fonts/American Captain.otf"
 [sub_resource type="DynamicFont" id=19]
 font_data = SubResource( 18 )
 
-[sub_resource type="Theme" id=20]
+[sub_resource type="Theme" id=23]
 Button/fonts/font = SubResource( 15 )
 CheckBox/fonts/font = null
 CheckButton/fonts/font = null
@@ -77,9 +79,144 @@ WindowDialog/fonts/title_font = null
 [sub_resource type="DynamicFontData" id=21]
 font_path = "res://assets/fonts/American Captain.otf"
 
+[sub_resource type="DynamicFont" id=24]
+size = 48
+font_data = SubResource( 21 )
+
+[sub_resource type="Theme" id=20]
+Button/fonts/font = SubResource( 15 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 17 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 19 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
 [sub_resource type="DynamicFont" id=22]
 size = 70
 font_data = SubResource( 21 )
+
+[sub_resource type="Theme" id=27]
+Button/fonts/font = SubResource( 15 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 17 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 19 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
+[sub_resource type="DynamicFont" id=28]
+size = 39
+font_data = SubResource( 21 )
+
+[sub_resource type="Theme" id=29]
+Button/fonts/font = SubResource( 15 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 17 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 19 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
+[sub_resource type="DynamicFont" id=30]
+size = 58
+font_data = SubResource( 21 )
+
+[sub_resource type="Animation" id=25]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("highscore_counter:custom_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 70 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "high_score_added"
+tracks/0/type = "value"
+tracks/0/path = NodePath("highscore_counter:custom_fonts/font:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 90, 70 ]
+}
 
 [node name="InGameHud" type="Control"]
 pause_mode = 2
@@ -99,15 +236,81 @@ anchor_bottom = 1.0
 texture = ExtResource( 8 )
 expand = true
 
+[node name="score" type="Label" parent="."]
+modulate = Color( 0.898039, 0.94902, 0.992157, 1 )
+anchor_left = 0.087
+anchor_top = 0.14
+anchor_right = 0.087
+anchor_bottom = 0.14
+margin_left = 7.89999
+margin_top = -29.6
+margin_right = 118.9
+margin_bottom = 29.4
+theme = SubResource( 23 )
+custom_fonts/font = SubResource( 24 )
+text = "SCORE :"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
 [node name="highscore_counter" type="Label" parent="."]
 modulate = Color( 0.898039, 0.94902, 0.992157, 1 )
-anchor_left = 0.0958333
-anchor_top = 0.0945313
-anchor_right = 0.216667
-anchor_bottom = 0.15
+anchor_left = 0.153043
+anchor_top = 0.103226
+anchor_right = 0.273877
+anchor_bottom = 0.172581
 margin_bottom = -15.0
 theme = SubResource( 20 )
 custom_fonts/font = SubResource( 22 )
+text = "test"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="x" type="Label" parent="."]
+modulate = Color( 0.898039, 0.94902, 0.992157, 1 )
+anchor_left = 0.0986956
+anchor_top = 0.175
+anchor_right = 0.132609
+anchor_bottom = 0.207258
+margin_top = 1.52588e-05
+theme = SubResource( 27 )
+custom_fonts/font = SubResource( 28 )
+text = "Kills :"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="enemy_icon" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.0986957
+anchor_top = 0.172581
+anchor_right = 0.123043
+anchor_bottom = 0.217742
+margin_top = -1.52588e-05
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
+[node name="enemy_killed_counter" type="Label" parent="."]
+modulate = Color( 0.898039, 0.94902, 0.992157, 1 )
+anchor_left = 0.143956
+anchor_top = 0.189194
+anchor_right = 0.143956
+anchor_bottom = 0.189194
+margin_left = 7.89999
+margin_top = -29.6
+margin_right = 118.9
+margin_bottom = 29.4
+theme = SubResource( 29 )
+custom_fonts/font = SubResource( 30 )
+text = "0"
 __meta__ = {
 "_edit_use_anchors_": true,
 "_editor_description_": ""
@@ -146,10 +349,10 @@ texture = ExtResource( 2 )
 [node name="health_guage" type="TextureProgress" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -672.0
-margin_top = 160.0
-margin_right = -253.0
-margin_bottom = 189.0
+margin_left = -609.0
+margin_top = 149.0
+margin_right = -190.0
+margin_bottom = 178.0
 value = 55.0
 texture_over = ExtResource( 5 )
 texture_progress = ExtResource( 4 )
@@ -158,10 +361,10 @@ nine_patch_stretch = true
 [node name="shield_status" type="Control" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -432.0
-margin_top = 192.0
-margin_right = -256.0
-margin_bottom = 232.0
+margin_left = -378.0
+margin_top = 210.0
+margin_right = -202.0
+margin_bottom = 250.0
 
 [node name="shield1" type="Control" parent="shield_status"]
 anchor_top = 0.5
@@ -234,14 +437,14 @@ texture = ExtResource( 7 )
 [node name="mobile_controls" type="CanvasLayer" parent="."]
 
 [node name="directions" type="Control" parent="mobile_controls"]
-modulate = Color( 0.968627, 0.776471, 0.956863, 0.462745 )
+modulate = Color( 1, 1, 1, 0.415686 )
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_left = -292.0
-margin_top = -416.0
-margin_bottom = 416.0
+margin_left = -212.0
+margin_top = -354.0
+margin_bottom = 354.0
 
 [node name="rect" type="TextureRect" parent="mobile_controls/directions"]
 anchor_left = 0.5
@@ -249,39 +452,39 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -102.0
-margin_top = -340.0
+margin_top = -308.0
 margin_right = 69.0
-margin_bottom = 404.0
+margin_bottom = 340.0
 texture = ExtResource( 3 )
 expand = true
 
 [node name="right" type="TouchScreenButton" parent="mobile_controls/directions/rect"]
-position = Vector2( 47, 87 )
-scale = Vector2( 0.1264, 0.1264 )
-normal = ExtResource( 22 )
+position = Vector2( 60, 58 )
+scale = Vector2( 0.319549, 0.390879 )
+normal = ExtResource( 18 )
 pressed = ExtResource( 20 )
 passby_press = true
 action = "ui_right"
 
 [node name="left" type="TouchScreenButton" parent="mobile_controls/directions/rect"]
-position = Vector2( 47, 271 )
-scale = Vector2( 0.1264, 0.1264 )
-normal = ExtResource( 18 )
+position = Vector2( 36, 248 )
+scale = Vector2( 0.319549, 0.390879 )
+normal = ExtResource( 25 )
 pressed = ExtResource( 9 )
 passby_press = true
 action = "ui_left"
 
 [node name="accept" type="TouchScreenButton" parent="mobile_controls/directions/rect"]
-position = Vector2( 40, 440 )
-scale = Vector2( 0.111758, 0.111758 )
-normal = ExtResource( 21 )
+position = Vector2( 40, 408 )
+scale = Vector2( 0.292993, 0.292993 )
+normal = ExtResource( 22 )
 pressed = ExtResource( 19 )
 passby_press = true
 action = "ui_up"
 
 [node name="accept_dialogue" type="TouchScreenButton" parent="mobile_controls/directions/rect"]
 visible = false
-position = Vector2( 40, 554 )
+position = Vector2( 40, 521 )
 scale = Vector2( 0.111758, 0.111758 )
 normal = ExtResource( 21 )
 pressed = ExtResource( 19 )
@@ -289,6 +492,7 @@ passby_press = true
 action = "ui_down"
 
 [node name="shooter" type="Control" parent="mobile_controls"]
+visible = false
 modulate = Color( 0.894118, 0.670588, 0.882353, 0.705882 )
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -365,6 +569,7 @@ passby_press = true
 action = "ui_right"
 
 [node name="virtual_joystick" type="Control" parent="mobile_controls"]
+visible = false
 modulate = Color( 0.894118, 0.670588, 0.882353, 0.705882 )
 anchor_left = 1.0
 anchor_top = 0.5
@@ -377,7 +582,7 @@ script = ExtResource( 17 )
 __meta__ = {
 "_edit_group_": true
 }
-pressed_color = Color( 0, 0.796078, 0.92549, 0.388235 )
+pressed_color = Color( 0.796875, 0.339294, 0.763394, 0.466667 )
 deadzone_size = 1.0
 clampzone_size = 70.0
 visibility_mode = 1
@@ -391,9 +596,9 @@ anchor_left = 0.5
 anchor_top = 0.554
 anchor_right = 0.5
 anchor_bottom = 0.554
-margin_left = -207.0
+margin_left = -185.0
 margin_top = -220.722
-margin_right = 207.0
+margin_right = 229.0
 margin_bottom = 198.278
 grow_horizontal = 2
 grow_vertical = 2
@@ -432,12 +637,16 @@ margin_right = 280.0
 
 [node name="change_music" type="TouchScreenButton" parent="mobile_controls/music_changer"]
 modulate = Color( 0.721569, 0.560784, 0.709804, 1 )
-position = Vector2( 94.5127, 88.3057 )
-rotation = -0.261799
+position = Vector2( 88.5127, 91.3057 )
+rotation = -0.523598
 scale = Vector2( 0.216663, 0.251291 )
 normal = ExtResource( 23 )
 pressed = ExtResource( 24 )
 passby_press = true
 action = "music_knob"
+
+[node name="hud_anim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 25 )
+anims/high_score_added = SubResource( 26 )
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

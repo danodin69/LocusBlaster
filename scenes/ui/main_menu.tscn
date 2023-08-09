@@ -292,7 +292,7 @@ margin_right = -112.0
 margin_bottom = -121.0
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "V 0.2.0"
+text = "V 0.2.2"
 
 [node name="studio" type="Label" parent="."]
 anchor_left = 0.5

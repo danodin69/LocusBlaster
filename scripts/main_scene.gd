@@ -85,7 +85,11 @@ func _on_ShipHealth_body_entered(body):
 	if body.is_in_group('chip'):
 		sound_system.sound_fx[2].play()
 		mainScript.update_chips_count += 1
-		$pilot_hud/pilot_hud_anim.play("chips_health")
+		
+		#it plays shield animation because they are fundamentally the same as they both protect player's health
+		
+		$pilot_hud/pilot_hud_anim.play("shield")
+		
 		body.queue_free()
 		var particles = power_up_particles.instance()
 		particles.transform.origin = transform.origin
@@ -118,7 +122,8 @@ func destroy_all_enemies():
 
 
 func _on_Main_tree_exited():
-	mainScript.update_highscore = 0
+	
+	reset_globals()
 
 
 func _on_Main_tree_entered():
@@ -142,6 +147,7 @@ func _on_Main_tree_entered():
 func restart_game():
 	destroy_all_enemies()
 	
+	reset_globals()
 	get_tree().paused = false
 	
 # warning-ignore:return_value_discarded
@@ -154,6 +160,7 @@ func check_pause_input():
 	if Input.is_action_just_pressed("pause"):
 		if $player.game_started ==true:
 			get_tree().paused = true
+			$pause_HUD.suggest_tip()
 			$pause_HUD.game_paused = true
 			$pause_HUD.show()
 			
@@ -225,3 +232,8 @@ func toggle_pilot_controls(var turnOn = false):
 		mobile_ui_directions.show()
 		mobile_pause_button.hide()
 		$InGameHud/mobile_controls/music_changer.hide()
+
+func reset_globals():
+	mainScript.update_highscore = 0
+	mainScript.rank.kills_per_game = 0
+	

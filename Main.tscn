@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/npcs/EnemySpawner.tscn" type="PackedScene" id=2]
@@ -11,9 +11,12 @@
 [ext_resource path="res://scenes/ui/game_over.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/power_ups/shield_spawner.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/power_ups/repair_spawner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/ui/button_textures/settings.png" type="Texture" id=12]
 [ext_resource path="res://scenes/ui/stats.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/ui/settings.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/ui/source.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/ui/button_textures/exit.png" type="Texture" id=16]
+[ext_resource path="res://assets/ui/button_textures/play_button.png" type="Texture" id=17]
 [ext_resource path="res://scripts/pause.gd" type="Script" id=18]
 [ext_resource path="res://assets/images/ranks.png" type="Texture" id=20]
 [ext_resource path="res://assets/images/test_stats.png" type="Texture" id=22]
@@ -91,7 +94,7 @@ font_path = "res://assets/fonts/American Captain.otf"
 [sub_resource type="DynamicFont" id=4]
 font_data = SubResource( 3 )
 
-[sub_resource type="Theme" id=11]
+[sub_resource type="Theme" id=35]
 Button/fonts/font = SubResource( 8 )
 CheckBox/fonts/font = null
 CheckButton/fonts/font = null
@@ -124,6 +127,76 @@ WindowDialog/fonts/title_font = null
 
 [sub_resource type="DynamicFontData" id=13]
 font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=36]
+size = 53
+font_data = SubResource( 13 )
+
+[sub_resource type="Theme" id=33]
+Button/fonts/font = SubResource( 8 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
+
+[sub_resource type="DynamicFont" id=34]
+size = 70
+font_data = SubResource( 13 )
+
+[sub_resource type="Theme" id=11]
+Button/fonts/font = SubResource( 8 )
+CheckBox/fonts/font = null
+CheckButton/fonts/font = null
+ColorPickerButton/fonts/font = null
+Fonts/fonts/large = null
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = null
+ItemList/fonts/font = null
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = null
+LinkButton/fonts/font = null
+MenuButton/fonts/font = null
+OptionButton/fonts/font = null
+PopupMenu/fonts/font = null
+PopupMenu/fonts/font_separator = null
+ProgressBar/fonts/font = null
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = null
+TabContainer/fonts/font = null
+Tabs/fonts/font = null
+TextEdit/fonts/font = null
+ToolButton/fonts/font = null
+TooltipLabel/fonts/font = null
+Tree/fonts/font = null
+Tree/fonts/title_button_font = null
+WindowDialog/fonts/title_font = null
 
 [sub_resource type="DynamicFont" id=12]
 size = 70
@@ -214,20 +287,53 @@ script = ExtResource( 18 )
 [node name="ColorRect" type="ColorRect" parent="pause_HUD"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0392157, 0, 0.0980392, 0.419608 )
+color = Color( 0.0392157, 0, 0.0980392, 0.698039 )
 
-[node name="continue" type="Label" parent="pause_HUD"]
+[node name="dyk" type="Label" parent="pause_HUD"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -112.0
-margin_top = -272.0
-margin_right = 96.0
-margin_bottom = -201.0
+margin_left = -515.0
+margin_top = -412.0
+margin_right = 544.0
+margin_bottom = -343.0
+theme = SubResource( 35 )
+custom_fonts/font = SubResource( 36 )
+text = "did you know?"
+align = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="tips" type="Label" parent="pause_HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -515.0
+margin_top = -317.0
+margin_right = 544.0
+margin_bottom = -158.0
+theme = SubResource( 33 )
+custom_fonts/font = SubResource( 34 )
+align = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="continue" type="TextureRect" parent="pause_HUD"]
+anchor_top = 0.684
+anchor_bottom = 0.684
+margin_left = 401.0
+margin_top = -179.52
+margin_right = 532.0
+margin_bottom = -10.52
 theme = SubResource( 11 )
-custom_fonts/font = SubResource( 12 )
-text = "CONTINUE"
+texture = ExtResource( 17 )
+expand = true
 __meta__ = {
 "_editor_description_": ""
 }
@@ -248,17 +354,18 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="settings" type="Label" parent="pause_HUD"]
+[node name="settings" type="TextureRect" parent="pause_HUD"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.61
 anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -112.0
-margin_right = 91.0
-margin_bottom = 71.0
+anchor_bottom = 0.61
+margin_left = -72.0
+margin_top = -65.8
+margin_right = 68.0
+margin_bottom = 67.2
 theme = SubResource( 11 )
-custom_fonts/font = SubResource( 12 )
-text = "SETTINGS"
+texture = ExtResource( 12 )
+expand = true
 __meta__ = {
 "_editor_description_": ""
 }
@@ -279,19 +386,18 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="quit" type="Label" parent="pause_HUD"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -72.0
-margin_top = 256.0
-margin_right = 64.0
-margin_bottom = 327.0
+[node name="quit" type="TextureRect" parent="pause_HUD"]
+anchor_left = 1.0
+anchor_top = 0.679
+anchor_right = 1.0
+anchor_bottom = 0.679
+margin_left = -520.0
+margin_top = -170.12
+margin_right = -421.0
+margin_bottom = -20.12
 theme = SubResource( 11 )
-custom_fonts/font = SubResource( 12 )
-text = "quit"
-align = 1
+texture = ExtResource( 16 )
+expand = true
 __meta__ = {
 "_editor_description_": ""
 }
@@ -312,13 +418,22 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="quit2" type="Label" parent="pause_HUD/quit/selector"]
+anchor_left = 0.241803
+anchor_top = 1.90141
+anchor_right = 0.790984
+anchor_bottom = 2.90141
+theme = SubResource( 33 )
+custom_fonts/font = SubResource( 34 )
+text = "quit ?"
+__meta__ = {
+"_edit_use_anchors_": true,
+"_editor_description_": ""
+}
+
 [node name="GameOver" parent="." instance=ExtResource( 9 )]
 pause_mode = 2
 visible = false
-
-[node name="notify" parent="GameOver" index="6"]
-margin_top = 352.0
-margin_bottom = 423.0
 
 [node name="settings" parent="." instance=ExtResource( 14 )]
 pause_mode = 2
@@ -342,6 +457,21 @@ visible = false
 mouse_filter = 2
 
 [node name="dialogue_system" parent="." instance=ExtResource( 24 )]
+
+[node name="rank_name" parent="dialogue_system/rank_objective/TextureRect/left_side" index="2"]
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="objectives" parent="dialogue_system/rank_objective/TextureRect/right_side" index="1"]
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="chip_label" parent="dialogue_system/continue_options/TextureRect" index="3"]
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [connection signal="tree_entered" from="." to="." method="_on_Main_tree_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_Main_tree_exited"]

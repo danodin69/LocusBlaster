@@ -26,7 +26,7 @@ onready var shooter_hud : Node = $mobile_controls/shooter
 func _ready():
 	$health_guage.value = health
 
-	invert_mobile_controls(true)
+	invert_mobile_controls(mainScript.inverted_controls)
 # warning-ignore:unused_argument
 func _physics_process(delta):
 	_handle_game_ui()
@@ -36,8 +36,12 @@ func _handle_game_ui():
 	update_highscore_ui = mainScript.update_highscore
 	$health_guage.value = health
 	$highscore_counter.text = str(update_highscore_ui)
+	$enemy_killed_counter.text = str(mainScript.rank.kills_per_game)
 	get_parent().get_node("GameOver/score/new_score").text = str(update_highscore_ui)
-
+	
+	if mainScript.animate_highscore_counter == true:
+		$hud_anim.play("high_score_added")
+		mainScript.animate_highscore_counter = false
 	
 	if shield_health <= 0 :
 		get_parent().is_shield_on = false
@@ -88,7 +92,7 @@ func invert_mobile_controls(var is_inverted : bool = false):
 		joy_stick.set_position(Vector2(-120, 0),true)
 		shooter_hud.set_position(Vector2(1100,0),true)
 	else:
-		joy_stick.set_position(Vector2(1115, -8), true)
+		joy_stick.set_position(Vector2(1120, -8), true)
 		shooter_hud.set_position(Vector2(0,0),true)
 
 #Analogue
