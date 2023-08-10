@@ -435,6 +435,10 @@ __meta__ = {
 pause_mode = 2
 visible = false
 
+[node name="notify" parent="GameOver" index="6"]
+margin_top = 352.0
+margin_bottom = 423.0
+
 [node name="settings" parent="." instance=ExtResource( 14 )]
 pause_mode = 2
 mouse_filter = 2

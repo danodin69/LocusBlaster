@@ -43,31 +43,26 @@ func _handle_game_ui():
 		$hud_anim.play("high_score_added")
 		mainScript.animate_highscore_counter = false
 	
-	if shield_health <= 0 :
-		get_parent().is_shield_on = false
-		shield_indicator1.hide()
-		$shield.hide()
+	match shield_health:
+		0:
+			get_parent().is_shield_on = false
+			shield_indicator1.hide()
+			$shield.hide()
 		
-		
-	elif shield_health >= 30:
-		get_parent().is_shield_on = true
-		$shield.show()
-		
-	if shield_health == 30:
-		shield_indicator1.show()
-		shield_indicator2.hide()
-		shield_indicator3.hide()
-		
-	elif shield_health == 60:
-		shield_indicator1.show()
-		shield_indicator2.show()
-		shield_indicator3.hide()
-	
-	elif shield_health >= 90:
-		shield_health = 90
-		shield_indicator1.show()
-		shield_indicator2.show()
-		shield_indicator3.show()
+		30:
+			get_parent().is_shield_on = true
+			shield_indicator1.show()
+			shield_indicator2.hide()
+			shield_indicator3.hide()
+			$shield.show()
+		60:
+			shield_indicator1.show()
+			shield_indicator2.show()
+			shield_indicator3.hide()
+		90:
+			shield_indicator1.show()
+			shield_indicator2.show()
+			shield_indicator3.show()
 	
 	update_accept_ui_mobile()
 	

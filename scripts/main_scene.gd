@@ -58,9 +58,16 @@ func _on_ShipHealth_body_entered(body):
 			$InGameHud.shield_health -= 30
 			
 	if body.is_in_group('shield'):
+
+		if $InGameHud.shield_health < 90:
+			#Handles Incrementation of shield only if lesser than 90
+			$InGameHud.shield_health += 30
+
+
 		is_shield_on = true
 		sound_system.sound_fx[0].play()
-		$InGameHud.shield_health += 30
+
+		
 		$pilot_hud/pilot_hud_anim.play("shield")
 		body.queue_free()
 		var particles = power_up_particles.instance()
