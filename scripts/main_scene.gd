@@ -16,8 +16,8 @@ onready var main = get_tree().get_root()
 var is_chip_used : bool = false
 
 
-# warning-ignore:unused_argument
-func _process(delta):
+
+func _process(_delta):
 	check_health()
 	check_pause_input()
 	change_music()

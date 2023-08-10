@@ -19,27 +19,36 @@ onready var accept_button : Node = $mobile_controls/directions/rect/accept
 
 onready var accept_button_dialogue : Node = $mobile_controls/directions/rect/accept_dialogue
 
+onready var health_guage : Node = $health_guage
+onready var high_score_counter : Node = $highscore_counter
+onready var destroyed_enemies_counter : Node = $enemy_killed_counter
+
+onready var update_gameOver_score : Node = get_parent().get_node("GameOver/score/new_score")
+
 
 onready var joy_stick : Node = $mobile_controls/virtual_joystick
 onready var shooter_hud : Node = $mobile_controls/shooter
 
 func _ready():
+	
 	$health_guage.value = health
 
 	invert_mobile_controls(mainScript.inverted_controls)
-# warning-ignore:unused_argument
-func _physics_process(delta):
+
+func _process(_delta):
+	#Elegant :)
 	_handle_game_ui()
 	
 func _handle_game_ui():
 	
 	update_highscore_ui = mainScript.update_highscore
-	$health_guage.value = health
-	$highscore_counter.text = str(update_highscore_ui)
-	$enemy_killed_counter.text = str(mainScript.rank.kills_per_game)
-	get_parent().get_node("GameOver/score/new_score").text = str(update_highscore_ui)
+	health_guage.value = health
+	high_score_counter.text = str(update_highscore_ui)
+	destroyed_enemies_counter.text = str(mainScript.rank.kills_per_game)
+
+	update_gameOver_score.text = str(update_highscore_ui)
 	
-	if mainScript.animate_highscore_counter == true:
+	if !mainScript.animate_highscore_counter:
 		$hud_anim.play("high_score_added")
 		mainScript.animate_highscore_counter = false
 	
