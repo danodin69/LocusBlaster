@@ -4,6 +4,8 @@ var is_shield_on : bool
 var kill_particles : Resource = load("res://scenes/particles/KillParticles.tscn")
 var power_up_particles : Resource = load('res://scenes/particles/power_ups.tscn')
 
+var is_chip_used : bool = false
+
 onready var mobile_in_game_control_shooter = $InGameHud/mobile_controls/shooter
 onready var mobile_in_game_control_joystick = $InGameHud/mobile_controls/virtual_joystick
 onready var mobile_pause_button = $InGameHud/mobile_controls/pause
@@ -13,8 +15,33 @@ onready var mobile_ui_directions = $InGameHud/mobile_controls/directions
 onready var main = get_tree().get_root()
 
 
-var is_chip_used : bool = false
 
+
+
+
+
+func _on_Main_tree_exited():
+	
+	reset_globals()
+
+
+func _on_Main_tree_entered():
+	
+	sound_system.get_node("gameplay").play_random_song()
+	
+	if mainScript.is_game_restarted == true:
+		toggle_pilot_controls(true)
+		get_tree().paused = false
+		mainScript.is_game_restarted = false
+		$player.game_started = true
+		
+		
+		$main_menu.queue_free()
+		$pilot_hud.show()
+		
+	elif mainScript.on_main_menu_called == true:
+		get_tree().paused = false
+		mainScript.on_main_menu_called = false
 
 
 func _process(_delta):
@@ -128,28 +155,7 @@ func destroy_all_enemies():
 
 
 
-func _on_Main_tree_exited():
-	
-	reset_globals()
 
-
-func _on_Main_tree_entered():
-	
-	sound_system.get_node("gameplay").play_random_song()
-	
-	if mainScript.is_game_restarted == true:
-		toggle_pilot_controls(true)
-		get_tree().paused = false
-		mainScript.is_game_restarted = false
-		$player.game_started = true
-		
-		
-		$main_menu.queue_free()
-		$pilot_hud.show()
-		
-	elif mainScript.on_main_menu_called == true:
-		get_tree().paused = false
-		mainScript.on_main_menu_called = false
 
 func restart_game():
 	destroy_all_enemies()
