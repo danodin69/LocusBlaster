@@ -1,24 +1,56 @@
+# BETA 1.2
+
 INSTRUCTIONS
 
 SHIP CONTROLS
 
-WASD to move
-space to shoot
+[W][A][S][D] to move
+space [ ␣ ] to shoot
 
 
 MENU UI CONTROLS
 
-left and right Direction key to move selector, space to select
+left and right [ ← ][ → ] Direction key to move selector, space [ ␣ ] to select
 
 SETTINGS DIALOG CONTROLSS
 
-up and down direction key to move selector, enter key to select
+up [ ↑ ] and down[ ↓ ] direction key to move selector, enter key to select
 
 IN-GAME CONTROLS
 
-P key to pause
+[ P ] |or| [ESC] - key to pause
 
 
 GENERAL CONTROLS
 
-M key to change music
+[ M ] - key to change music
+
+
+
+# BETA 2.2 
+
+INSTRUCTIONS
+
+SHIP CONTROLS
+
+[W][A][S][D] to move |or| Direction Keys [←] [↑] [→][↓] 
+space [ ␣ ] to shoot
+
+
+MENU UI CONTROLS
+
+left and right [ ← ][ → ] - Direction key |or| [W][A][S][D] to move selector, arrow up [ ↑ ]- Direction key to select
+
+DIALOG CONTROLSS
+
+left and right [ ← ][ → ] - direction key to move selector, arrow down [ ↓ ] - Direction key to select
+
+IN-GAME CONTROLS
+
+[ P ] |or| [ESC] - key to pause
+
+
+GENERAL CONTROLS
+
+[ M ] - key to change music
+
