@@ -18,8 +18,7 @@ onready var mobile_ui_controls = get_parent().get_node("InGameHud/mobile_control
 func _ready():
 	set_current_selection(0)
 
-# warning-ignore:unused_argument
-func _process(delta):
+func _process(_delta):
 	
 	if out_of_focus == false:
 		get_parent().toggle_accept_button_mobile(false)

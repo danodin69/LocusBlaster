@@ -1,6 +1,6 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://assets/images/signed_danodin.png" type="Texture" id=1]
+[ext_resource path="res://assets/splash_screen/ddpg.png" type="Texture" id=1]
 [ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=2]
 [ext_resource path="res://assets/fonts/American Captain.otf" type="DynamicFontData" id=3]
 
@@ -94,7 +94,7 @@ func open_link(link):
 "
 
 [sub_resource type="DynamicFont" id=9]
-size = 53
+size = 59
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFontData" id=1]
@@ -122,7 +122,7 @@ font_path = "res://assets/fonts/American Captain.otf"
 [sub_resource type="DynamicFont" id=4]
 font_data = SubResource( 3 )
 
-[sub_resource type="Theme" id=10]
+[sub_resource type="Theme" id=19]
 default_font = SubResource( 8 )
 Button/fonts/font = SubResource( 2 )
 CheckBox/fonts/font = SubResource( 8 )
@@ -172,8 +172,9 @@ Tree/fonts/font = SubResource( 8 )
 Tree/fonts/title_button_font = SubResource( 8 )
 WindowDialog/fonts/title_font = SubResource( 8 )
 
-[sub_resource type="DynamicFont" id=11]
-size = 90
+[sub_resource type="DynamicFont" id=20]
+size = 56
+outline_color = Color( 0.976471, 0.614706, 0.614706, 1 )
 font_data = ExtResource( 3 )
 
 [sub_resource type="Theme" id=12]
@@ -227,8 +228,174 @@ Tree/fonts/title_button_font = SubResource( 8 )
 WindowDialog/fonts/title_font = SubResource( 8 )
 
 [sub_resource type="DynamicFont" id=13]
-size = 259
+size = 235
 font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=10]
+default_font = SubResource( 8 )
+Button/fonts/font = SubResource( 2 )
+CheckBox/fonts/font = SubResource( 8 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 8 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 8 )
+Fonts/fonts/large = SubResource( 8 )
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = SubResource( 8 )
+ItemList/fonts/font = SubResource( 8 )
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = SubResource( 8 )
+LinkButton/fonts/font = SubResource( 8 )
+MenuButton/fonts/font = SubResource( 8 )
+OptionButton/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font_separator = SubResource( 8 )
+ProgressBar/fonts/font = SubResource( 8 )
+RichTextLabel/fonts/bold_font = SubResource( 8 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
+RichTextLabel/fonts/italics_font = SubResource( 8 )
+RichTextLabel/fonts/mono_font = SubResource( 8 )
+RichTextLabel/fonts/normal_font = SubResource( 8 )
+TabContainer/fonts/font = SubResource( 8 )
+Tabs/fonts/font = SubResource( 8 )
+TextEdit/fonts/font = SubResource( 8 )
+ToolButton/fonts/font = SubResource( 8 )
+TooltipLabel/fonts/font = SubResource( 8 )
+Tree/fonts/font = SubResource( 8 )
+Tree/fonts/title_button_font = SubResource( 8 )
+WindowDialog/fonts/title_font = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 51
+outline_color = Color( 0.976471, 0.614706, 0.614706, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=17]
+default_font = SubResource( 8 )
+Button/fonts/font = SubResource( 2 )
+CheckBox/fonts/font = SubResource( 8 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 8 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 8 )
+Fonts/fonts/large = SubResource( 8 )
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = SubResource( 8 )
+ItemList/fonts/font = SubResource( 8 )
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = SubResource( 8 )
+LinkButton/fonts/font = SubResource( 8 )
+MenuButton/fonts/font = SubResource( 8 )
+OptionButton/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font_separator = SubResource( 8 )
+ProgressBar/fonts/font = SubResource( 8 )
+RichTextLabel/fonts/bold_font = SubResource( 8 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
+RichTextLabel/fonts/italics_font = SubResource( 8 )
+RichTextLabel/fonts/mono_font = SubResource( 8 )
+RichTextLabel/fonts/normal_font = SubResource( 8 )
+TabContainer/fonts/font = SubResource( 8 )
+Tabs/fonts/font = SubResource( 8 )
+TextEdit/fonts/font = SubResource( 8 )
+ToolButton/fonts/font = SubResource( 8 )
+TooltipLabel/fonts/font = SubResource( 8 )
+Tree/fonts/font = SubResource( 8 )
+Tree/fonts/title_button_font = SubResource( 8 )
+WindowDialog/fonts/title_font = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 51
+outline_size = 1
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_fonts/font:outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_fonts/font:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 51 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "kanye_special"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:custom_fonts/font:outline_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:custom_fonts/font:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 51, 60, 70, 60, 51 ]
+}
 
 [node name="source" type="Control"]
 anchor_right = 1.0
@@ -241,7 +408,7 @@ anchor_bottom = 1.0
 color = Color( 0.0431373, 0.0431373, 0.0980392, 1 )
 
 [node name="logo" type="Control" parent="."]
-anchor_right = 0.3
+anchor_right = 0.37
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": true
@@ -252,13 +419,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -242.0
-margin_top = -384.5
-margin_right = 242.0
-margin_bottom = 384.5
+margin_left = -208.0
+margin_top = -472.0
+margin_right = 314.0
+margin_bottom = 219.0
 
 [node name="icon" type="Sprite" parent="logo/Control"]
-position = Vector2( 365, 230.5 )
+position = Vector2( 271, 343 )
 scale = Vector2( 0.349828, 0.349829 )
 texture = ExtResource( 1 )
 
@@ -274,18 +441,18 @@ __meta__ = {
 anchor_left = 0.129
 anchor_right = 0.129
 margin_left = -95.2904
-margin_top = 175.0
-margin_right = 94.7096
-margin_bottom = 229.0
+margin_top = 160.0
+margin_right = 115.71
+margin_bottom = 220.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
 text = "DEVELOPER"
 
 [node name="version" type="Label" parent="names"]
-anchor_left = 0.770453
-anchor_top = 0.898674
-anchor_right = 0.878623
-anchor_bottom = 0.95146
+anchor_left = 0.73743
+anchor_top = 0.902635
+anchor_right = 0.8456
+anchor_bottom = 0.971364
 margin_top = 16.0
 margin_bottom = 15.9999
 theme = ExtResource( 2 )
@@ -296,24 +463,22 @@ __meta__ = {
 }
 
 [node name="sub" type="Label" parent="names"]
-anchor_left = 0.0612708
-anchor_top = 0.208333
-anchor_right = 0.257942
-anchor_bottom = 0.294508
-margin_top = 90.0
-margin_bottom = 92.843
-theme = SubResource( 10 )
-custom_fonts/font = SubResource( 11 )
+anchor_left = 0.0796095
+anchor_top = 0.329897
+anchor_right = 0.192738
+anchor_bottom = 0.394044
+theme = SubResource( 19 )
+custom_fonts/font = SubResource( 20 )
 text = "dan odin"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [node name="sub7" type="Label" parent="names"]
-anchor_left = 0.00488827
-anchor_top = 0.645161
-anchor_right = 0.872207
-anchor_bottom = 0.899316
+anchor_left = 0.0670391
+anchor_top = 0.672394
+anchor_right = 0.853352
+anchor_bottom = 0.942727
 theme = SubResource( 12 )
 custom_fonts/font = SubResource( 13 )
 text = "locus blaster"
@@ -322,14 +487,10 @@ __meta__ = {
 }
 
 [node name="sub6" type="Label" parent="names"]
-anchor_left = 0.619233
-anchor_top = 0.228739
-anchor_right = 0.91
-anchor_bottom = 0.41
-margin_left = -6.10352e-05
-margin_top = 64.0
-margin_right = 0.528076
-margin_bottom = 63.57
+anchor_left = 0.670391
+anchor_top = 0.302406
+anchor_right = 0.844972
+anchor_bottom = 0.36197
 theme = SubResource( 10 )
 custom_fonts/font = SubResource( 11 )
 text = "master albert"
@@ -338,27 +499,28 @@ __meta__ = {
 }
 
 [node name="sub2" type="Label" parent="names"]
-anchor_left = 0.393343
-anchor_top = 0.208333
-anchor_right = 0.534039
-anchor_bottom = 0.294508
-margin_top = 72.0
-margin_bottom = 74.843
-theme = SubResource( 10 )
-custom_fonts/font = SubResource( 11 )
+anchor_left = 0.369414
+anchor_top = 0.290951
+anchor_right = 0.446928
+anchor_bottom = 0.353952
+margin_top = 1.52588e-05
+theme = SubResource( 17 )
+custom_fonts/font = SubResource( 18 )
 text = "KANYE"
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="names/sub2"]
+autoplay = "kanye_special"
+anims/RESET = SubResource( 15 )
+anims/kanye_special = SubResource( 16 )
+
 [node name="sub3" type="Label" parent="names"]
-anchor_left = 0.393343
-anchor_top = 0.320076
-anchor_right = 0.546142
-anchor_bottom = 0.40625
-margin_top = 72.0
-margin_right = -16.0
-margin_bottom = 74.844
+anchor_left = 0.365922
+anchor_top = 0.407789
+anchor_right = 0.451816
+anchor_bottom = 0.470791
 theme = SubResource( 10 )
 custom_fonts/font = SubResource( 11 )
 text = "abram"
@@ -366,13 +528,49 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="sub8" type="Label" parent="names"]
+anchor_left = 0.478352
+anchor_top = 0.339061
+anchor_right = 0.552375
+anchor_bottom = 0.402062
+theme = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+text = "Chyna"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="sub5" type="Label" parent="names"]
+anchor_left = 0.482542
+anchor_top = 0.452463
+anchor_right = 0.549581
+anchor_bottom = 0.512028
+theme = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+text = "YINKA"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="sub4" type="Label" parent="names"]
-anchor_left = 0.38766
-anchor_top = 0.440341
-anchor_right = 0.528356
-anchor_bottom = 0.529295
-margin_top = 72.0
-margin_bottom = 72.0
+anchor_left = 0.376397
+anchor_top = 0.530355
+anchor_right = 0.448324
+anchor_bottom = 0.58992
+theme = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+text = "fawaz"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="sub9" type="Label" parent="names"]
+anchor_left = 0.497207
+anchor_top = 0.570447
+anchor_right = 0.543995
+anchor_bottom = 0.630012
+margin_bottom = 3.05176e-05
 theme = SubResource( 10 )
 custom_fonts/font = SubResource( 11 )
 text = "luci"
@@ -384,10 +582,10 @@ __meta__ = {
 [node name="titles2" type="Label" parent="names"]
 anchor_left = 0.46
 anchor_right = 0.46
-margin_left = -69.12
+margin_left = -80.12
 margin_top = 157.0
-margin_right = 68.88
-margin_bottom = 211.0
+margin_right = 74.88
+margin_bottom = 217.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
 text = "TESTERS"
@@ -396,9 +594,9 @@ text = "TESTERS"
 anchor_left = 0.744
 anchor_right = 0.744
 margin_left = -84.5867
-margin_top = 178.0
-margin_right = 84.4133
-margin_bottom = 232.0
+margin_top = 152.0
+margin_right = 104.413
+margin_bottom = 212.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
 text = "3D ASSETS"
