@@ -1,7 +1,9 @@
 extends Spatial
 
-onready var main = get_tree().get_root()
 var chip = load("res://scenes/power_ups/save_me.tscn")
+
+onready var main = get_tree().get_root()
+
 
 func spawn():
 	if get_parent().get_node("player").game_started == true:

@@ -1,17 +1,11 @@
 extends Control
 
-#onready var main = get_tree().current_scene
+
+var game_paused : bool = false
+
 var out_of_focus : bool = false
-var pause_scene = load("res://Main.tscn")
-onready var selector1 = $continue/selector
-onready var selector2 = $settings/selector
-onready var selector3 = $quit/selector
-onready var mobile_control = get_parent().get_node("InGameHud/mobile_controls/directions")
-onready var mobile_in_game_control_shooter = get_parent().get_node("InGameHud/mobile_controls/shooter")
-onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/mobile_controls/virtual_joystick")
-onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_controls/pause")
-var current_selector = 0
-export var game_paused = false
+var pause_scene : Resource = load("res://Main.tscn")
+var current_selector : int= 0
 
 
 var tips : Array = [
@@ -21,6 +15,19 @@ var tips : Array = [
 	"Your Focus and attention span Increases the more you play Locus Blaster",
 	"If you're the first to beat the developer highscore you will get a price in real life"
 	]
+
+onready var selector1 : Node = $continue/selector
+onready var selector2 : Node = $settings/selector
+onready var selector3 : Node = $quit/selector
+onready var mobile_control : Node = get_parent().get_node("InGameHud/mobile_controls/directions")
+onready var mobile_in_game_control_shooter : Node = get_parent().get_node("InGameHud/mobile_controls/shooter")
+onready var mobile_in_game_control_joystick : Node = get_parent().get_node("InGameHud/mobile_controls/virtual_joystick")
+onready var mobile_pause_button : Node = get_parent().get_node("InGameHud/mobile_controls/pause")
+
+
+
+
+
 
 
 func _ready():

@@ -2,18 +2,27 @@ class_name PlayerShip
 
 extends KinematicBody
 
+#This script is an modified version of master albert open source spaceship shooter, and thus you the license on that project is applicable here  -> https://github.com/harambert/Godot-3D-Space-Shooter 
+
+
+const MAX_SPEED = 30.0
+const ACCELERATION = 1.0
+const COOLDOWN = 7
+
+var health : int = 100
+var shield_health : int
 
 var game_started : bool = false
-const MAX_SPEED = 30
-const ACCELERATION = 1
+
 var input_vector = Vector3()
 var velocity = Vector3()
 var cooldown = 0
-const COOLDOWN = 7
+
+var Bullet = load("res://scenes/npcs/Bullet.tscn")
 
 onready var guns = [$Gun0, $Gun1]
 onready var main = get_tree().get_root()
-var Bullet = load("res://scenes/npcs/Bullet.tscn")
+
 
 func _physics_process(delta):
 	is_game_started(game_started, delta)

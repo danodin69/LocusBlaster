@@ -9,7 +9,9 @@ func _ready():
 
 func _physics_process(_delta):
 	get_player_name()
-	
+
+
+
 func get_player_name():
 	var line_edit = $LineEdit.text
 	if line_edit == "":

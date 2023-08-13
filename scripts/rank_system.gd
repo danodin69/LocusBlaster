@@ -35,6 +35,7 @@ var hero_obj : String = "SHIP POWER\n- MEDIUM BULLET DAMAGE\n\nMAIN OBJECTIVE\n-
 
 var captain_obj : String = "SHIP POWER\n- MAXMUM BULLET DAMAGE\n\nMAIN OBJECTIVE\n- BLAST FOREVER"
 
+# MAIN MISSIONS
 
 #var zero_obj : String = "SHIP POWER\n- LOW BULLET DAMAGE\n- MAXIMUM OF ONE SHIELD\n- SHIP REPAIR DISABLED\n\nMAIN OBJECTIVE\n- DESTROY 50 ENEMY SHIPS IN ONE FLIGHT"
 #
@@ -47,7 +48,7 @@ var captain_obj : String = "SHIP POWER\n- MAXMUM BULLET DAMAGE\n\nMAIN OBJECTIVE
 
 func manager():
 	var rank : String = mainScript.player_data["player_rank"]
-#	rank = ""
+
 	if rank == "":
 		mainScript.set_player_rank("zero")
 		print("Player Rank Set: ", mainScript.player_data["player_rank"])
@@ -66,19 +67,19 @@ func manager():
 			start_rank_captain_locus_objective()
 			
 func start_rank_zero_objective():
-	"""
-	  Rank Zero 
-	| Attributes |
+# 	"""
+# 	  Rank Zero 
+# 	| Attributes |
 
-	- 4 BULLETS KILLS ONE ENEMY
-	- MAXIMUM OF ONE SHIELD
-	- NO SHIP REPAIR CAPABILITIES 
+# 	- 4 BULLETS KILLS ONE ENEMY
+# 	- MAXIMUM OF ONE SHIELD
+# 	- NO SHIP REPAIR CAPABILITIES 
 
-	| Promotion |
+# 	| Promotion |
 
-	- KILL 50 ENEMIES IN ONE FLIGHT
+# 	- KILL 50 ENEMIES IN ONE FLIGHT
 
-"""
+# """
 	
 	allowed_bullet_damage = 15
 	allowed_maximum_shield = 1
@@ -99,19 +100,19 @@ func start_rank_zero_objective():
 
 	
 func start_rank_novice_objective():
-	"""
-	  Rank Novice
-	| Attributes |
+# 	"""
+# 	  Rank Novice
+# 	| Attributes |
 
-	- 3 BULLETS KILLS ONE ENEMY
-	- MAXIMUM OF TWO SHIELDS
-	- SHIP REPAIR CAPABILITIES
+# 	- 3 BULLETS KILLS ONE ENEMY
+# 	- MAXIMUM OF TWO SHIELDS
+# 	- SHIP REPAIR CAPABILITIES
 
-	| Promotion |
+# 	| Promotion |
 
-	- KILL 666 ENEMIES IN ONE FLIGHT
+# 	- KILL 666 ENEMIES IN ONE FLIGHT
 
-"""
+# """
 
 	
 		
@@ -131,19 +132,19 @@ func start_rank_novice_objective():
 		print(">>>PROMOTED TO HERO")
 	
 func start_rank_hero_objective():
-	"""
-	  Rank Hero
-	| Attributes |
+# 	"""
+# 	  Rank Hero
+# 	| Attributes |
 
-	- 2 BULLETS KILLS ONE ENEMY
-	- MAXIMUM OF TWO SHIELDS
-	- SHIP REPAIR CAPABILITIES
+# 	- 2 BULLETS KILLS ONE ENEMY
+# 	- MAXIMUM OF TWO SHIELDS
+# 	- SHIP REPAIR CAPABILITIES
 
-	| Promotion |
+# 	| Promotion |
 
-	- KILL 666 ENEMIES IN ONE FLIGHT
+# 	- KILL 666 ENEMIES IN ONE FLIGHT
 
-"""
+# """
 
 	
 	

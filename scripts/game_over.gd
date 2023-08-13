@@ -1,10 +1,15 @@
 extends Control
+
+
 var game_over : bool = false
+var best_score : int = mainScript.best_score
+
+var current_selector : int = 0
 onready var selector1 = $score/restart/selector
 onready var selector2 = $score/menu/selector
-var best_score = mainScript.best_score
+
 onready var best_score_text = $score/best_score
-var current_selector = 0
+
 
 onready var mobile_in_game_control_shooter = get_parent().get_node("InGameHud/mobile_controls/shooter")
 onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/mobile_controls/virtual_joystick")
@@ -24,9 +29,9 @@ func _process(delta):
 		
 
 
-func is_game_over(var isGameOver : bool):
+func is_game_over(var _is_game_over : bool):
 	
-	if isGameOver == true:
+	if _is_game_over == true:
 		
 		
 		get_parent().toggle_pilot_controls(false)
@@ -57,7 +62,7 @@ func selection_handler(_current_selection):
 		
 		get_parent().toggle_pilot_controls(true)
 		
-		print("RESTART")
+		print_debug("GAME RESTARTED")
 		
 	elif _current_selection == 1:
 		
@@ -67,7 +72,7 @@ func selection_handler(_current_selection):
 		get_parent().restart_game()
 		
 		
-		print("MENU")
+		print_debug("GAME MENU LOADED")
 	
 func set_current_selection(_current_selection):
 	selector1.hide()

@@ -61,7 +61,7 @@ func _ready():
 #	player_data["deaths"] = deaths
 #	player_data["pilot_name"] = ""
 #	save_game_data()
-	print(player_data)
+	print_debug(player_data)
 	
 #	set_chips_count(chips)
 
@@ -175,21 +175,7 @@ func save_settings():
 
 	FILE.close()
 
-#func set_best_score(value: int):
-#	best_score = value
-#	save_data()
-#
-#func set_kill_count(value: int):
-#	kills = value
-#	save_data()
-#
-#func set_death_count(value: int):
-#	deaths = value
-#	save_data()
-#
-#func set_chips_count(value:int):
-#	chips = value
-#	save_data()
+
 
 
 	

@@ -3,11 +3,6 @@ extends Control
 
 var is_stats_screen : bool = false
 
-onready var best_score  = $profile_mid/best_score
-onready var chips  = $profile_top/chip_amount
-onready var kills = $profile_mid/kills
-onready var deaths = $profile_mid/deaths
-onready var mobile_control_dialog = get_parent().get_node("InGameHud/mobile_controls/directions/rect/accept_dialogue")
 
 #RANK ICONS
 var zero_texture : = load("res://assets/sprites/ranks/zero.png")
@@ -15,13 +10,21 @@ var novice_texture :  = load("res://assets/sprites/ranks/novice.png")
 var hero_texture :  =  load("res://assets/sprites/ranks/hero.png")
 var captain_locus_texture : =load( "res://assets/sprites/ranks/captain_locus.png")
 
-onready var pilot_name = $profile_top/player_name
-onready var player_rank_icon = $profile_top/rank_icon
-onready var player_rank_text = $profile_top/player_rank
+
+var current_selector : int = 0
+
+onready var pilot_name : Node = $profile_top/player_name
+onready var player_rank_icon : Node  = $profile_top/rank_icon
+onready var player_rank_text : Node = $profile_top/player_rank
 #SELECTORS AND SELECTORS VARS
 
-var current_selector = 0
 
+
+onready var best_score : Node   = $profile_mid/best_score
+onready var chips  : Node  = $profile_top/chip_amount
+onready var kills : Node  = $profile_mid/kills
+onready var deaths : Node  = $profile_mid/deaths
+onready var mobile_control_dialog : Node  = get_parent().get_node("InGameHud/mobile_controls/directions/rect/accept_dialogue")
 
 
 onready var selector : Array = [$profile_top/player_icon/selector, $profile_top/chip_icon/selector, $profile_top/rank_icon/selector, $profile_mid/chart_icon/selector, $profile_mid/kills_icon/selector, $profile_mid/deaths_icon/selector, $container_h3/close/selector]
@@ -52,12 +55,6 @@ func _process(delta):
 			
 			selection_handler(current_selector)
 			
-#		if Input.is_action_just_pressed("enter"):
-#			mobile_control_dialog.hide()
-#			$".".hide()
-#			$choosen.play()
-#			get_parent().get_node("main_menu").out_of_focus = false
-#			is_stats_screen = false
 			
 			
 

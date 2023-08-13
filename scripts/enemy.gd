@@ -1,31 +1,32 @@
 extends KinematicBody
 
-var health = 100
-var initial_low_speed = 20
+var health : int = 100
+var initial_low_speed : int = 20
 var initial_high_speed = 50
 
 
-var speed = rand_range(initial_low_speed, initial_high_speed)
+var speed : float = rand_range(initial_low_speed, initial_high_speed)
+
+var KillParticles : Resource = load("res://scenes/particles/KillParticles.tscn")
+
+var rank := mainScript.rank
+
 onready var main = get_tree().get_root()
-var KillParticles = load("res://scenes/particles/KillParticles.tscn")
 
-var rank = mainScript.rank
 
-#
-# warning-ignore:unused_argument
-func _physics_process(delta):
+func _physics_process(_delta):
 	difficulty_meter()
 	
 
-"""
-Dan: I Tried to use a match statement for this, 
-	 but gdscript is unable to , conditional statement is more suitable
-	 check end of script for commented match method
 
-	 Difficulty increases base on highscore, the game becomes a test of focus
-	 the level highscore comparison numbers are skipped in other to simulate short rest periods and avoid
-	 difficulty looking forced until extreme levels
-"""
+#Dan: I Tried to use a match statement for this, 
+	#  but gdscript is unable to , conditional statement is more suitable
+	#  check end of script for commented match method
+
+	#  Difficulty increases base on highscore, the game becomes a test of focus
+	#  the level highscore comparison numbers are skipped in other to simulate short rest periods and avoid
+	#  difficulty looking forced until extreme levels
+
 func difficulty_meter():
 	
 	var speed_easy = rand_range(30, 80)

@@ -1,11 +1,18 @@
 extends Control
-"""
-Dan: I might have done some magic in this script
-	 in case future me comes back here
+
+
+# """
+# Dan: I might have done some magic in this script
+# 	 in case future me comes back here
 	
 
 
-"""
+# """
+
+var m : int = 1
+var e : int = 1
+var t : int = 1
+
 var is_settings_dialog_menu : bool = false
 var is_settings_dialog_pause : bool = false
 
@@ -23,9 +30,6 @@ onready var invert_controls = $PopupPanel/invert_controls/switch
 
 var current_selector = 0
 
-var m : int = 1
-var e : int = 1
-var t : int = 1
 
 onready var mobile_control_dialog = get_parent().get_node("InGameHud/mobile_controls/directions/rect/accept_dialogue") #This node makes it possible to close dialogs
 
@@ -33,8 +37,8 @@ func _ready():
 #	$PopupPanel.show()
 	set_current_selection(0)
 
-# warning-ignore:unused_argument
-func _process(delta):
+
+func _process(_delta):
 	
 	handle_main_menu_input()
 	handle_pause_menu_input()
@@ -139,11 +143,6 @@ func set_current_selection(_current_selection):
 		selector4.show()
 
 
-func _on_Timer_timeout():
-	get_parent().get_node("InGameHud").show()
-	get_parent().get_node("InGameHud/pilot_hud/CanvasLayer").show()
-	get_parent().get_node("player").game_started = true
-	queue_free()
 
 
 
@@ -206,8 +205,10 @@ func set_ui():
 	
 	match mainScript.inverted_controls:
 		true:
+			t = 1
 			invert_controls.text = "   + o "
 		false:
+			t = -1
 			invert_controls.text = "   o + "
 			
 			
@@ -227,3 +228,9 @@ func set_ui():
 			
 		false:
 			sound_switch.text = "    ON"
+
+func _on_Timer_timeout():
+	get_parent().get_node("InGameHud").show()
+	get_parent().get_node("InGameHud/pilot_hud/CanvasLayer").show()
+	get_parent().get_node("player").game_started = true
+	queue_free()

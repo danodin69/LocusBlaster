@@ -10,6 +10,17 @@ var novice_texture :  = load("res://assets/sprites/ranks/novice.png")
 var hero_texture :  =  load("res://assets/sprites/ranks/hero.png")
 var captain_locus_texture : =load( "res://assets/sprites/ranks/captain_locus.png")
 
+#ACTIVE DIALOGUES
+
+var is_objective_dialogue_active : bool =  false 
+var is_promotion_dialogue_active : bool =  false 
+var is_continue_dialogue_active : bool = false
+
+
+var current_selector : int = 0
+
+
+
 onready var close_all_dialogues = $d_sys_out
 onready var close_promo_dialogue = $d_sys_out_promo
 
@@ -34,14 +45,7 @@ onready var promo_accept :Node = $promotion/TextureRect/center/accept
 
 onready var continue_options_dialogue :Node= $continue_options
 
-#ACTIVE DIALOGUES
 
-var is_objective_dialogue_active : bool =  false 
-var is_promotion_dialogue_active : bool =  false 
-var is_continue_dialogue_active : bool = false
-
-
-var current_selector : int = 0
 
 onready var selector1=$continue_options/TextureRect/selectors/selector_1
 
@@ -108,7 +112,7 @@ func manager(value = false):
 	if value==true:
 		rank_promotion_dialogue()
 		mainScript.is_player_promoted = false
-		print("value: false")
+		print_debug("value: false")
 
 func rank_objective_dialogue():
 	get_parent().toggle_pilot_controls(false)
@@ -162,27 +166,7 @@ func input_manager():
 			get_parent().toggle_accept_button_mobile(false)
 		
 
-func _on_d_sys_out_pressed():
-	get_parent().toggle_accept_button_mobile(false)
-	get_parent().continue_game()
-	obj_dialogue.hide()
-	sound_system.sound_fx[3].play()
-	promotion_dialogue.hide()
-	$".".hide()
-	
 
-
-func _on_d_sys_out_promo_pressed():
-	mainScript.is_player_promoted = false
-	get_parent().toggle_accept_button_mobile(false)
-	
-	close_promo_dialogue.hide()
-	
-	close_all_dialogues.show()
-	
-	obj_dialogue.show()
-	promotion_dialogue.hide()
-	sound_system.sound_fx[3].play()
 	
 	
 
@@ -253,4 +237,25 @@ func _revive():
 	sound_system.sound_fx[1].play()
 	get_parent().continue_game()
 
+func _on_d_sys_out_pressed():
+	get_parent().toggle_accept_button_mobile(false)
+	get_parent().continue_game()
+	obj_dialogue.hide()
+	sound_system.sound_fx[3].play()
+	promotion_dialogue.hide()
+	$".".hide()
+	
+
+
+func _on_d_sys_out_promo_pressed():
+	mainScript.is_player_promoted = false
+	get_parent().toggle_accept_button_mobile(false)
+	
+	close_promo_dialogue.hide()
+	
+	close_all_dialogues.show()
+	
+	obj_dialogue.show()
+	promotion_dialogue.hide()
+	sound_system.sound_fx[3].play()
 

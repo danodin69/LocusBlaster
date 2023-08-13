@@ -1,22 +1,21 @@
 extends KinematicBody
 
+
+
 var velocity = Vector3()
-var KillParticles = load("res://scenes/particles/KillParticles.tscn")
+var timer = Timer.new()
+
 
 onready var main = get_tree().get_root()
 
 
 
-var timer = Timer.new()
-
-
-
-"""
-Dan: When one bullet spawns this code runs all over again 
-	 Then it destroys itself in 2 millisecond, as long as the bullet spawns
-	 The reason is because without the timer, the game lags when bullets are
-	 contantly spawned even when destroyed after collision
-"""
+# """
+# Dan: When one bullet spawns this code runs all over again 
+# 	 Then it destroys itself in 2 millisecond, as long as the bullet spawns
+# 	 The reason is because without the timer, the game lags when bullets are
+# 	 contantly spawned even when destroyed after collision
+# """
 
 func _ready():
 	sound_system.sound_fx[7].play()
@@ -26,29 +25,22 @@ func _ready():
 	
 	
 	
-# warning-ignore:unused_argument
-func _physics_process(delta):
+
+func _physics_process(_delta):
 	timer.set_wait_time(0.009)
+
 # warning-ignore:return_value_discarded
 	move_and_slide(velocity)
 	
 
-#Destroy enemies on collison
+#Destroy bullet on collison
+
 func _on_Area_body_entered(body):
 	if body.is_in_group("Enemies"):
-#		mainScript.update_highscore += 3
-#		mainScript.kills += 1
-#		mainScript.save_data()
-#		var particles = KillParticles.instance()
-#		main.add_child(particles)
-#		particles.transform.origin = transform.origin
-#		body.queue_free()
-#		sound_system.sound_fx[5].play()
 		visible = false
 		$Area/CollisionShape.disabled = true
 		
-		
-		
+			
 func _on_LightTimer_timeout():
 	$OmniLight.visible = false
 

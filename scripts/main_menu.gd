@@ -2,16 +2,18 @@ extends Control
 
 var game_started : bool = false
 var out_of_focus : bool = false
-onready var selector1 = $play/selector
-onready var selector2 = $highscores/selector
-onready var selector3 = $settings/selector
-onready var selector4 = $source/selector
+var current_selector : int = 0
 
-var current_selector = 0
-onready var mobile_in_game_control_shooter = get_parent().get_node("InGameHud/mobile_controls/shooter")
-onready var mobile_in_game_control_joystick = get_parent().get_node("InGameHud/mobile_controls/virtual_joystick")
-onready var mobile_pause_button = get_parent().get_node("InGameHud/mobile_controls/pause")
-onready var mobile_ui_controls = get_parent().get_node("InGameHud/mobile_controls/directions")
+onready var selector1 : Node = $play/selector
+onready var selector2 : Node = $highscores/selector
+onready var selector3 : Node = $settings/selector
+onready var selector4 : Node = $source/selector
+
+
+onready var mobile_in_game_control_shooter : Node = get_parent().get_node("InGameHud/mobile_controls/shooter")
+onready var mobile_in_game_control_joystick : Node= get_parent().get_node("InGameHud/mobile_controls/virtual_joystick")
+onready var mobile_pause_button : Node = get_parent().get_node("InGameHud/mobile_controls/pause")
+onready var mobile_ui_controls : Node = get_parent().get_node("InGameHud/mobile_controls/directions")
 
 
 

@@ -6,6 +6,8 @@ var power_up_particles : Resource = load('res://scenes/particles/power_ups.tscn'
 
 var is_chip_used : bool = false
 
+var music_system : Node = sound_system.get_node("gameplay")
+
 onready var mobile_in_game_control_shooter = $InGameHud/mobile_controls/shooter
 onready var mobile_in_game_control_joystick = $InGameHud/mobile_controls/virtual_joystick
 onready var mobile_pause_button = $InGameHud/mobile_controls/pause
@@ -101,11 +103,11 @@ func _on_ShipHealth_body_entered(body):
 		particles.transform.origin = transform.origin
 		main.add_child(particles)
 
-	"""
-	Dan: Little loophole here that i won't patch!
-		 the repair gives extra hidden health even after
-		 health is at 100% 
-	"""
+	# """
+	# Dan: Little loophole here that i won't patch!
+	# 	 the repair gives extra hidden health even after
+	# 	 health is at 100% 
+	# """
 	if body.is_in_group('repair'):
 		$pilot_hud/pilot_hud_anim.play("chips_health")
 		sound_system.sound_fx[1].play()
@@ -222,8 +224,9 @@ func revive_player():
 
 
 func change_music():
+	
 	if Input.is_action_just_pressed("music_knob"):
-		sound_system.get_node("gameplay").play_random_song()
+		music_system.play_next_song_on_list()
 
 
 		
