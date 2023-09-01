@@ -2,7 +2,7 @@ class_name PlayerShip
 
 extends KinematicBody
 
-#This script is an modified version of master albert open source spaceship shooter, and thus you the license on that project is applicable here  -> https://github.com/harambert/Godot-3D-Space-Shooter 
+#This script is an modified version of master albert open source spaceship shooter, and thus the license on that project is applicable here  -> https://github.com/harambert/Godot-3D-Space-Shooter 
 
 
 const MAX_SPEED = 30.0

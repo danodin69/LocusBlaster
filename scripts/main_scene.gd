@@ -1,3 +1,6 @@
+# LOCUS BLASTER 0.3.0
+
+
 extends Spatial
 
 var is_shield_on : bool
@@ -140,7 +143,7 @@ func check_health():
 
 
 func destroy_all_enemies():
-	#Enemies Kill Themselves >:] 
+	# Enemies Kill Themselves >:]
 	
 	var enemies = get_tree().get_nodes_in_group("Enemies")
 	
