@@ -43,16 +43,20 @@ func is_game_started(var is_started : bool, var delta):
 		transform.origin.x = clamp(transform.origin.x, -30, 30)
 		transform.origin.y = clamp(transform.origin.y, -25, 25)
 
-		if Input.is_action_pressed("shoot") and cooldown <= 0:
+		_run_ship_controls(delta)
 
-			cooldown = COOLDOWN * delta
-			for i in guns:
-				var bullet = Bullet.instance()
-				main.add_child(bullet)
-				bullet.transform = i.global_transform
-				bullet.velocity = bullet.transform.basis.z * -600
-
-		if cooldown > 0:
-			cooldown -= delta
+		
 
 
+func _run_ship_controls(var delta):
+	if Input.is_action_pressed("shoot") and cooldown <= 0|| Input.is_action_pressed("move_right") and cooldown <= 0|| Input.is_action_pressed("move_left") and cooldown <= 0|| Input.is_action_pressed("move_down") and cooldown <= 0 || Input.is_action_pressed("move_up") and cooldown <= 0:
+
+		cooldown = COOLDOWN * delta
+		for i in guns:
+			var bullet = Bullet.instance()
+			main.add_child(bullet)
+			bullet.transform = i.global_transform
+			bullet.velocity = bullet.transform.basis.z * -600
+
+	if cooldown > 0:
+		cooldown -= delta

@@ -1,6 +1,5 @@
 extends Control
 
-var load_scene = Loader
 var pilot_name : String 
 
 
@@ -23,8 +22,11 @@ func get_player_name():
 			$retro_shader/CanvasLayer.visible = false
 			pilot_name = $LineEdit.text.to_lower()
 			mainScript.player_data["pilot_name"] = pilot_name
-			Loader.load_scene("res://Main.tscn")
-	#		get_tree().change_scene("res://Main.tscn")
+
+# warning-ignore:return_value_discarded
+			Loader.load_scene("res://scenes/ui/tutorial.tscn")
+			# Loader.load_scene("res://Main.tscn")	
+
 	
 
 
@@ -33,7 +35,13 @@ func _on_Timer_timeout():
 
 
 func _on_TextureButton_pressed():
-	$retro_shader/CanvasLayer.visible = false
-	pilot_name = $LineEdit.text.to_lower()
-	mainScript.player_data["pilot_name"] = pilot_name
-	Loader.load_scene("res://Main.tscn")
+	var line_edit = $LineEdit.text
+	if line_edit == "":
+		pass
+	else:
+		$retro_shader/CanvasLayer.visible = false
+		pilot_name = $LineEdit.text.to_lower()
+		mainScript.player_data["pilot_name"] = pilot_name
+	# warning-ignore:return_value_discarded
+		Loader.load_scene("res://scenes/ui/tutorial.tscn")
+		# Loader.load_scene("res://Main.tscn")		

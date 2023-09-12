@@ -220,6 +220,7 @@ func revive_player():
 
 		$InGameHud.health += 60
 		$InGameHud.shield_health = 60
+		is_shield_on = true
 		
 		$dialogue_system.close_continue_options_dialogue()
 		$pilot_hud/pilot_hud_anim.play("chips_health")

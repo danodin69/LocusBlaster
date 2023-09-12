@@ -120,7 +120,7 @@ func start_rank_novice_objective():
 	allowed_maximum_shield = 2
 	is_ship_repair_allowed = true
 	
-	if kills_per_game >= 350:
+	if kills_per_game >= 10:
 		kills_per_game = 0
 		
 		novice = false

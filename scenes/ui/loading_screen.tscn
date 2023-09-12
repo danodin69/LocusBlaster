@@ -73,14 +73,12 @@ text = "LOCUS BLASTER"
 
 [node name="version" type="Label" parent="."]
 anchor_left = 0.636087
-anchor_top = 0.432258
+anchor_top = 0.572581
 anchor_right = 0.697826
-anchor_bottom = 0.483065
-margin_top = 88.0001
-margin_bottom = 88.0
+anchor_bottom = 0.616129
 theme = ExtResource( 3 )
 custom_fonts/font = SubResource( 18 )
-text = "beta 2.2"
+text = "beta 2.3"
 __meta__ = {
 "_edit_use_anchors_": true
 }

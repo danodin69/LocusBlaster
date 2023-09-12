@@ -1,10 +1,362 @@
-[gd_scene format=2]
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://assets/themes/fonts.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/American Captain.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/ui/button_textures/circle_tutorial.png" type="Texture" id=3]
+[ext_resource path="res://manual.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/button_textures/selector_tutorial.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/button_textures/load_game_tutorial.png" type="Texture" id=6]
+[ext_resource path="res://scripts/tutorial.gd" type="Script" id=7]
+[ext_resource path="res://shaders/retro_effects/retro.tscn" type="PackedScene" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=10]
+font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=8]
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/fonts/American Captain.otf"
+
+[sub_resource type="DynamicFont" id=4]
+font_data = SubResource( 3 )
+
+[sub_resource type="Theme" id=11]
+default_font = SubResource( 8 )
+Button/fonts/font = SubResource( 10 )
+CheckBox/fonts/font = SubResource( 8 )
+CheckButton/colors/font_color = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_disabled = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_focus = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 0, 0, 0, 1 )
+CheckButton/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+CheckButton/constants/check_vadjust = 0
+CheckButton/constants/hseparation = 0
+CheckButton/fonts/font = SubResource( 8 )
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+ColorPickerButton/fonts/font = SubResource( 8 )
+Fonts/fonts/large = SubResource( 8 )
+Fonts/fonts/normal = SubResource( 6 )
+GraphNode/fonts/title_font = SubResource( 8 )
+ItemList/fonts/font = SubResource( 8 )
+Label/fonts/font = SubResource( 4 )
+LineEdit/fonts/font = SubResource( 8 )
+LinkButton/fonts/font = SubResource( 8 )
+MenuButton/fonts/font = SubResource( 8 )
+OptionButton/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font = SubResource( 8 )
+PopupMenu/fonts/font_separator = SubResource( 8 )
+ProgressBar/fonts/font = SubResource( 8 )
+RichTextLabel/fonts/bold_font = SubResource( 8 )
+RichTextLabel/fonts/bold_italics_font = SubResource( 8 )
+RichTextLabel/fonts/italics_font = SubResource( 8 )
+RichTextLabel/fonts/mono_font = SubResource( 8 )
+RichTextLabel/fonts/normal_font = SubResource( 8 )
+TabContainer/fonts/font = SubResource( 8 )
+Tabs/fonts/font = SubResource( 8 )
+TextEdit/fonts/font = SubResource( 8 )
+ToolButton/fonts/font = SubResource( 8 )
+TooltipLabel/fonts/font = SubResource( 8 )
+Tree/fonts/font = SubResource( 8 )
+Tree/fonts/title_button_font = SubResource( 8 )
+WindowDialog/fonts/title_font = SubResource( 8 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+font_data = ExtResource( 2 )
 
 [node name="tutorial" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 7 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="bg" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.117647, 0.0980392, 0.164706, 0.384314 )
+color = Color( 0.027451, 0.0196078, 0.0470588, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="1" type="TextureRect" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 400.0
+margin_top = -76.0
+margin_right = 552.0
+margin_bottom = 72.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="selector" type="TextureButton" parent="1"]
+visible = false
+anchor_left = -0.276316
+anchor_top = -0.27027
+anchor_right = 1.30263
+anchor_bottom = 1.24324
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="1_instruction" type="Label" parent="1/selector"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 154.0
+margin_top = -280.0
+margin_right = 1214.0
+margin_bottom = -95.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Press  D-KEY TO MOVE THE BOX RIGHT 
+Press  A-KEY TO MOVE THE BOX LEFT"
+align = 1
+
+[node name="2" type="TextureRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -74.0
+margin_right = 76.0
+margin_bottom = 74.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="selector" type="TextureButton" parent="2"]
+visible = false
+anchor_left = -0.276316
+anchor_top = -0.27027
+anchor_right = 1.30263
+anchor_bottom = 1.24324
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="2_instruction" type="Label" parent="2/selector"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -672.0
+margin_top = 454.0
+margin_right = 673.0
+margin_bottom = 639.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "ALTERNATIVELY YOU CAN USE YOUR ARROW KEYS
+< LEFT - RIGHT > TO MOVE THE BOX"
+align = 1
+
+[node name="3" type="TextureRect" parent="."]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 1759.0
+margin_top = -75.0
+margin_right = 1911.0
+margin_bottom = 73.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="selector" type="TextureButton" parent="3"]
+visible = false
+anchor_left = -0.276316
+anchor_top = -0.27027
+anchor_right = 1.30263
+anchor_bottom = 1.24324
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="3_instruction" type="Label" parent="3/selector"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -1437.0
+margin_top = -241.0
+margin_right = 112.0
+margin_bottom = -150.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "USE W-KEY  OR UP ^ARROW KEY TO SELECT THIS CIRCLE  "
+align = 1
+
+[node name="dialogue" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -894.0
+margin_top = -460.0
+margin_right = 858.0
+margin_bottom = 516.0
+
+[node name="bg" type="TextureRect" parent="dialogue"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -775.5
+margin_top = -432.0
+margin_right = 775.5
+margin_bottom = 432.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="1_instruction" type="Label" parent="dialogue"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 124.0
+margin_top = 845.0
+margin_right = 423.0
+margin_bottom = 883.0
+theme = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
+text = "PRESS enter to continue"
+align = 1
+
+[node name="1" type="TextureRect" parent="dialogue"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.0
+margin_top = -190.0
+margin_right = 76.0
+margin_bottom = -42.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="selector" type="TextureButton" parent="dialogue/1"]
+visible = false
+anchor_left = -0.276316
+anchor_top = -0.27027
+anchor_right = 1.30263
+anchor_bottom = 1.24324
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="2" type="Label" parent="dialogue"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -149.0
+margin_top = 312.0
+margin_right = 211.0
+margin_bottom = 403.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "LOAD GAME"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="selector" type="TextureButton" parent="dialogue/2"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -297.516
+margin_top = -80.8649
+margin_right = 297.516
+margin_bottom = 56.8649
+texture_normal = ExtResource( 6 )
+expand = true
+
+[node name="3" type="TextureRect" parent="dialogue"]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 1759.0
+margin_top = -75.0
+margin_right = 1911.0
+margin_bottom = 73.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="selector" type="TextureButton" parent="dialogue/3"]
+visible = false
+anchor_left = -0.276316
+anchor_top = -0.27027
+anchor_right = 1.30263
+anchor_bottom = 1.24324
+texture_normal = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="title" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -180.0
+margin_top = 100.0
+margin_right = 180.0
+margin_bottom = 191.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "UI CONTROLS"
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="retro_shader" parent="." instance=ExtResource( 8 )]
+
+[editable path="retro_shader"]

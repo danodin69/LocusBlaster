@@ -59,7 +59,7 @@ func _ready():
 #	player_data["best_score"] = 2345
 #	player_data["chips"] = chips
 #	player_data["deaths"] = deaths
-#	player_data["pilot_name"] = ""
+	# player_data["pilot_name"] = ""
 #	save_game_data()
 	print_debug(player_data)
 	

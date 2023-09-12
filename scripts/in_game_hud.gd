@@ -83,6 +83,9 @@ func _handle_game_ui():
 		$hud_anim.play("high_score_added")
 		mainScript.animate_highscore_counter = false
 	
+	if get_parent().is_shield_on == true:
+		$shield.show()
+
 	match shield_health:
 		0:
 			get_parent().is_shield_on = false
