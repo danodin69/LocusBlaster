@@ -6,7 +6,7 @@ extends KinematicBody
 
 
 const MAX_SPEED = 30.0
-const ACCELERATION = 1.0
+const ACCELERATION = 0.5
 const COOLDOWN = 7
 
 var health : int = 100

@@ -11,6 +11,7 @@ var telegram = \"https://t.me/danodin69\"
 var instagram = \"https://instagram.com/danodin69\"
 var spotify = \"https://spoti.fi/3jYdxek\"
 var github = \"https://bit.ly/3CtdjSF\"
+var privacy= \"https://docs.google.com/document/d/1EYUX0A5RxR3GMOeAp6V-oNszZsLWQGnTpsOMjPAWnk0/edit?usp=sharing\"
 
 
 
@@ -18,7 +19,8 @@ onready var selector1 = $links/telegram/selector
 onready var selector2 = $links/instagram/selector
 onready var selector3 = $links/spotify/selector
 onready var selector4 = $links/github/selector
-onready var selector5 = $links/close/selector
+onready var selector5 = $links/privacy_policy/selector
+onready var selector6 = $links/close/selector
 var current_selector = 0
 var is_source_screen : bool = false
 
@@ -29,7 +31,7 @@ func _process(delta):
 	if is_source_screen == true:
 		get_parent().show()
 		get_parent().get_parent().get_node(\"main_menu\").out_of_focus = true
-		if Input.is_action_just_pressed(\"ui_right\") and current_selector < 4:
+		if Input.is_action_just_pressed(\"ui_right\") and current_selector < 5:
 			sound_system.sound_fx[4].play()
 			current_selector += 1
 			set_current_selection(current_selector)
@@ -43,25 +45,25 @@ func _process(delta):
 		if Input.is_action_just_pressed(\"ui_down\"):
 			get_parent().hide()
 			sound_system.sound_fx[3].play()
-			get_parent().get_parent().get_node(\"main_menu\").out_of_focus = false
-			is_source_screen = false
+			
 			selection_handler(current_selector)
 
 func selection_handler(_current_selection):
 	if _current_selection == 0:
 		open_link(telegram)
-		is_source_screen = false
 		
 	elif _current_selection == 1:
-		is_source_screen = false
 		open_link(instagram)
 	elif _current_selection == 2:
-		is_source_screen = false
 		open_link(spotify)
 	elif _current_selection == 3:
-		is_source_screen = false
 		open_link(github)
 	elif _current_selection == 4:
+		open_link(privacy)
+		
+	
+	elif _current_selection == 5:
+		get_parent().get_parent().get_node(\"main_menu\").out_of_focus = false
 		is_source_screen = false
 		
 		
@@ -71,6 +73,7 @@ func set_current_selection(_current_selection):
 	selector3.hide()
 	selector4.hide()
 	selector5.hide()
+	selector6.hide()
 	
 	if _current_selection == 0:
 		selector1.show()
@@ -82,6 +85,8 @@ func set_current_selection(_current_selection):
 		selector4.show()
 	elif _current_selection == 4:
 		selector5.show()
+	elif _current_selection == 5:
+		selector6.show()
 		
 
 
@@ -602,7 +607,7 @@ text = "3D ASSETS"
 [node name="bottom" type="ColorRect" parent="."]
 anchor_top = 0.791936
 anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_bottom = 0.909677
 color = Color( 0.00392157, 0.0235294, 0.0509804, 1 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -613,9 +618,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -791.0
+margin_left = -790.0
 margin_top = -274.0
-margin_right = 791.0
+margin_right = 802.0
+margin_bottom = -88.0
 
 [node name="telegram" type="Label" parent="links"]
 anchor_top = 0.5
@@ -628,26 +634,32 @@ custom_fonts/font = SubResource( 9 )
 text = "Telegram"
 
 [node name="selector" type="Label" parent="links/telegram"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = -15.0
-margin_top = -27.0
-margin_right = 189.0
-margin_bottom = 27.0
+anchor_left = -0.078534
+anchor_top = 0.05
+anchor_right = 1.10995
+anchor_bottom = 1.05
+margin_right = -23.0
+margin_bottom = -6.0
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
-text = "[                          ]"
+text = "[                            ]"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="instagram" type="Label" parent="links"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 305.0
-margin_top = -43.0
-margin_right = 492.0
-margin_bottom = 11.0
+anchor_left = 0.15129
+anchor_top = 0.268817
+anchor_right = 0.255456
+anchor_bottom = 0.591398
+margin_right = -23.0
+margin_bottom = -5.99999
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
 text = "instagram"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="selector" type="Label" parent="links/instagram"]
 visible = false
@@ -662,16 +674,18 @@ custom_fonts/font = SubResource( 9 )
 text = "[                            ]"
 
 [node name="spotify" type="Label" parent="links"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 647.0
-margin_top = -43.0
-margin_right = 818.0
-margin_bottom = 11.0
+anchor_left = 0.320933
+anchor_top = 0.268817
+anchor_right = 0.405754
+anchor_bottom = 0.591398
+margin_bottom = -5.99999
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
 text = "spotify"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="selector" type="Label" parent="links/spotify"]
 visible = false
@@ -686,15 +700,18 @@ custom_fonts/font = SubResource( 9 )
 text = "[                          ]"
 
 [node name="github" type="Label" parent="links"]
-anchor_top = 0.5
-anchor_bottom = 0.5
-margin_left = 957.0
-margin_top = -43.0
-margin_right = 1141.0
-margin_bottom = 11.0
+anchor_left = 0.474702
+anchor_top = 0.268817
+anchor_right = 0.577381
+anchor_bottom = 0.591398
+margin_right = -23.0
+margin_bottom = -5.99999
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
 text = "github</>"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="selector" type="Label" parent="links/github"]
 visible = false
@@ -708,16 +725,41 @@ theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
 text = "[                           ]"
 
-[node name="close" type="Label" parent="links"]
+[node name="privacy_policy" type="Label" parent="links"]
+anchor_left = 0.633433
+anchor_top = 0.268817
+anchor_right = 0.780754
+anchor_bottom = 0.591398
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 9 )
+text = "privacy policy"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="selector" type="Label" parent="links/privacy_policy"]
+visible = false
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 1419.0
-margin_top = -43.0
-margin_right = 1536.0
-margin_bottom = 11.0
+margin_left = -15.0
+margin_top = -27.0
+margin_right = 189.0
+margin_bottom = 27.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 9 )
+text = "[                                          ]"
+
+[node name="close" type="Label" parent="links"]
+anchor_left = 0.868552
+anchor_top = 0.268817
+anchor_right = 0.926587
+anchor_bottom = 0.591398
 theme = ExtResource( 2 )
 custom_fonts/font = SubResource( 9 )
 text = "close"
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="selector" type="Label" parent="links/close"]
 visible = false

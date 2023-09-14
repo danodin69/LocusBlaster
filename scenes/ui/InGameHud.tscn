@@ -499,11 +499,9 @@ anchor_bottom = 0.5
 margin_top = -620.0
 margin_right = 929.584
 margin_bottom = 620.0
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="shoot" type="TouchScreenButton" parent="mobile_controls/shooter"]
+visible = false
 position = Vector2( 285.584, 336 )
 scale = Vector2( 0.874418, 0.874418 )
 normal = ExtResource( 16 )

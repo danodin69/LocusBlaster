@@ -169,7 +169,7 @@ func toggle_music_button():
 
 func toggle_effects_button():
 	e = e * -1
-	print(e)
+
 	if e == 1:
 		
 		mainScript.fx_on = false
@@ -183,17 +183,17 @@ func toggle_effects_button():
 		mainScript.save_settings()
 		
 func toggle_invert_controls():
-	t = t*-1
-	
+	t = t * -1
+
 	if t == 1:
-		
+
 		mainScript.inverted_controls = false
 		controls_hud.invert_mobile_controls(mainScript.inverted_controls)
 
 		
 	elif t == -1:
 		
-		
+		print_debug("INVERT CONTROL - TRUE")
 		mainScript.inverted_controls = true
 		controls_hud.invert_mobile_controls(mainScript.inverted_controls)
 		
@@ -205,10 +205,10 @@ func set_ui():
 	
 	match mainScript.inverted_controls:
 		true:
-			t = 1
+			t = -1
 			invert_controls.text = "   + o "
 		false:
-			t = -1
+			t = 1
 			invert_controls.text = "   o + "
 			
 			

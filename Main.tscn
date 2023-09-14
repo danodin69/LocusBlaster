@@ -271,9 +271,6 @@ anchor_bottom = 1.0
 
 [node name="InGameHud" parent="." instance=ExtResource( 8 )]
 
-[node name="mobile_controls" parent="InGameHud" index="10"]
-visible = false
-
 [node name="pause_HUD" type="Control" parent="."]
 pause_mode = 2
 visible = false
