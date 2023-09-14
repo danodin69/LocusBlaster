@@ -41,11 +41,12 @@ DESKTOP
 • GNU/Linux 🐧 
 
 MOBILE 
-• Future Version[ Android 🗿]
+• Android 🗿
+• Future Version[ iPhone ]
 
 <b>Technical Details</b> 🤓
 
-Software Type - Open Source🤍,
+Software Type - Source Available 💘,
 
 Market Type - Free to play 
 
@@ -53,7 +54,7 @@ Game Engine - Godot 🤖
 
 Language <\> - GDscript
 
-Version - 0.1.2
+Version - 0.2.3
 
 <b> MEDIA </b>
 
