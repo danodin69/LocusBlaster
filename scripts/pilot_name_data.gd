@@ -24,8 +24,8 @@ func get_player_name():
 			mainScript.player_data["pilot_name"] = pilot_name
 
 # warning-ignore:return_value_discarded
-			# Loader.load_scene("res://scenes/ui/tutorial.tscn")
-			Loader.load_scene("res://Main.tscn")	
+			Loader.load_scene("res://scenes/ui/tutorial.tscn")
+			# Loader.load_scene("res://Main.tscn")	
 
 	
 
@@ -43,5 +43,5 @@ func _on_TextureButton_pressed():
 		pilot_name = $LineEdit.text.to_lower()
 		mainScript.player_data["pilot_name"] = pilot_name
 	# warning-ignore:return_value_discarded
-		# Loader.load_scene("res://scenes/ui/tutorial.tscn")
-		Loader.load_scene("res://Main.tscn")		
+		Loader.load_scene("res://scenes/ui/tutorial.tscn")
+		# Loader.load_scene("res://Main.tscn")		
