@@ -6,7 +6,14 @@ extends KinematicBody
 
 
 const MAX_SPEED = 30.0
-const ACCELERATION = 0.5
+#---
+# 0.5 Min Acceleration, 0.75 - 0.84 Mid Acceleration, 0.9 - 1.0 Max Acceleration
+# This controls the sensitivity , increase it beyond 1.0 and you have an overly fast ship, vice versa for beyond
+# 0.5, This can be exported and used as values to help players adjust 'sensitivity'. 
+# This Problem of sensitivity though is more prevalent for mobile 
+
+const ACCELERATION = 0.84
+
 const COOLDOWN = 7
 
 var health : int = 100

@@ -8,9 +8,6 @@ export_presets.cfg
 .mono/
 data_*/
 
-# splash
-assets/splash_screen
-assets/images/panda_with_moon.png
 assets/images/signed_danodin.png
 assets/images/dan_odin.png
 
