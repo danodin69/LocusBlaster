@@ -171,7 +171,7 @@ anchor_right = 0.917902
 anchor_bottom = 0.810898
 theme = SubResource( 11 )
 custom_fonts/font = SubResource( 12 )
-text = "invert control"
+text = "invert controls"
 __meta__ = {
 "_edit_use_anchors_": true,
 "_editor_description_": ""

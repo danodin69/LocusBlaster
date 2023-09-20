@@ -1173,6 +1173,7 @@ custom_fonts/font = SubResource( 29 )
 text = "CHIPS ( 3 )"
 
 [node name="watch_add_label" type="Label" parent="continue_options/TextureRect"]
+visible = false
 anchor_left = 0.452915
 anchor_top = 0.683036
 anchor_right = 0.551009
@@ -1244,6 +1245,7 @@ text = "+ 50% health
 + 2   shields"
 
 [node name="ads_label" type="Label" parent="continue_options/TextureRect/power_ups"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5

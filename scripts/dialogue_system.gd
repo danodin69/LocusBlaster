@@ -157,7 +157,7 @@ func close_continue_options_dialogue():
 func input_manager():
 	handle_continue_options_input()
 	
-	if Input.is_action_just_pressed("enter") ||  Input.is_action_just_pressed("ui_down") || Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("enter"):
 		if obj_dialogue.visible == true:
 			_on_d_sys_out_pressed()
 			get_parent().toggle_accept_button_mobile(false)
